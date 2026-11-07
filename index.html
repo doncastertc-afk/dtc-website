@@ -330,7 +330,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
  <div class="sh rv"><div><span class="kicker">Competition &amp; Results</span><h2>How the club is going</h2></div><a class="btn btn-g" href="courts.html">Competition hub →</a></div>
  <div class="rteaser">
   <a class="rcard rv" href="courts.html#ladders"><span class="tag">Live from TROLS</span><h3>Competition Ladders</h3><p>Blackburn District Night Tennis, Eastern Region and Waverley.</p><span class="more">View ladders →</span></a>
-  <a class="rcard rv" href="results.html#honour-board"><span class="tag">Since 2007</span><h3>Honour Board</h3><p>Mens and ladies singles champions.</p><span class="more">View honour board →</span></a>
+  <a class="rcard rv" href="results.html#honour-board"><span class="tag" data-honour-since hidden style="display:none"></span><h3>Honour Board</h3><p>Mens and ladies singles champions.</p><span class="more">View honour board →</span></a>
   <a class="rcard rv" href="results.html#seniors"><span class="tag">Seniors</span><h3>Club Championships</h3><p>Event results for 2026 and 2025.</p><span class="more">View results →</span></a>
   <a class="rcard rv" href="results.html#juniors"><span class="tag">Juniors</span><h3>Junior Club Championships</h3><p>Results by year, boys and girls.</p><span class="more">View results →</span></a>
   <a class="rcard rv" href="wall-of-fame.html"><span class="tag">Premiers</span><h3>Wall of Fame</h3><p>Our premiership teams, from the 1970s to today.</p><span class="more">View Wall of Fame →</span></a>
@@ -492,6 +492,14 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
    var pick=L[Math.floor(Math.random()*L.length)],i=0;
    (function tryNext(){if(i>=pick.u.length)return;var src=pick.u[i++],pre=new Image();
     pre.onload=function(){if(pre.naturalWidth>1){img.src=src;img.removeAttribute('srcset');if(pick.a)img.alt=pick.a}else tryNext()};pre.onerror=tryNext;pre.src=src})()})});
+ // Honour Board teaser: earliest four-digit Year; no built-in year on errors.
+ var sinceTags=document.querySelectorAll('[data-honour-since]');
+ if(sinceTags.length)load('Honour Board','dtcHonourSince',function(rs){
+  var years=rs.map(function(c){var y=cell(c[0]);return /^\d{4}$/.test(y)?Number(y):NaN}).filter(function(y){return Number.isFinite(y)&&y>=1000});
+  if(!years.length)return;
+  var earliest=Math.min.apply(null,years);
+  sinceTags.forEach(function(tag){tag.textContent='Since '+earliest;tag.hidden=false;tag.style.removeProperty('display')});
+ });
  // Honour Board: Year | Men's Singles | Ladies' Singles
  var hb=document.querySelector('#honour-board table.hbt tbody');
  if(hb)load('Honour Board','dtcHonour',function(rs){rs=rs.filter(function(c){return cell(c[0])});if(!rs.length)return;
