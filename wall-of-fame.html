@@ -380,7 +380,9 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
   if(/^wof\/[A-Za-z0-9_-]+\.(jpe?g|png|webp)$/i.test(s))return [s];
   try{var u=new URL(s);if(u.protocol!=='https:'||u.username||u.password)return [];
    if(u.hostname==='drive.google.com'){var m=u.pathname.match(/^\/file\/d\/([\w-]+)/),id=m?m[1]:u.searchParams.get('id');
-    if(id&&/^[\w-]{10,}$/.test(id))return ['https://lh3.googleusercontent.com/d/'+id+'=w1600','https://drive.google.com/thumbnail?id='+id+'&sz=w1600'];return []}
+    var rk=u.searchParams.get('resourcekey');
+    if(id&&/^[\w-]{10,}$/.test(id)){var q=rk?('?resourcekey='+encodeURIComponent(rk)):'',amp=rk?('&resourcekey='+encodeURIComponent(rk)):'';
+     return ['https://lh3.googleusercontent.com/d/'+id+'=w1600'+q,'https://drive.google.com/thumbnail?id='+id+'&sz=w1600'+amp]}return []}
    return [u.href];
   }catch(e){return []}
  }
