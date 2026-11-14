@@ -286,7 +286,7 @@ table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;fo
  <a class="brand" href="index.html#top"><img src="logo.png" alt="Doncaster Tennis Club logo"><span>Doncaster Tennis Club<small>Est. 1921 · Doncaster, VIC</small></span></a>
  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
  <ul class="menu" id="menu">
-  <li><a href="index.html#membership">Membership</a></li><li><a href="index.html#play">Play</a></li><li><a href="courts.html" aria-current="page">Competition</a></li><li><a href="https://app.utrsports.net/club/1909847" target="_blank" rel="noopener" aria-label="UTR (opens in a new tab)">UTR <span aria-hidden="true" style="font-size:.8em">↗</span></a></li><li><a href="results.html">Club Champs</a></li><li><a href="index.html#news">News</a></li><li><a href="index.html#contact">Contact</a></li>
+  <li><a href="index.html#membership">Membership</a></li><li><a href="index.html#play">Play</a></li><li><a href="courts.html" aria-current="page">Competition</a></li><li><a href="https://app.utrsports.net/club/1909847" rel="noreferrer">UTR <span aria-hidden="true" style="font-size:.8em">↗</span></a></li><li><a href="results.html">Club Champs</a></li><li><a href="index.html#news">News</a></li><li><a href="index.html#contact">Contact</a></li>
   <li class="tsel"><button class="tbtn" aria-label="Colour theme" aria-expanded="false" title="Colour theme"><span class="tdot"></span></button><div class="tpop" hidden><button data-t="" data-n="DTC club colours" aria-label="DTC club colours theme" style="--sw:#246339"></button><button data-t="ao" data-n="Australian Open, Melbourne blue" aria-label="Australian Open, Melbourne blue theme" style="--sw:#0A6FB8"></button><button data-t="rg" data-n="French Open, Roland-Garros clay" aria-label="French Open, Roland-Garros clay theme" style="--sw:#B4482A"></button><button data-t="wim" data-n="Wimbledon, purple and green" aria-label="Wimbledon, purple and green theme" style="--sw:#4B1A6E"></button><button data-t="us" data-n="US Open, New York navy" aria-label="US Open, New York navy theme" style="--sw:#1B2F6E"></button></div></li><li><a class="btn btn-g" href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate" target="_blank" rel="noopener">Book now</a></li>
  </ul>
 </div></header>
@@ -328,30 +328,6 @@ m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.remove('open');b.s
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
-</script>
-<script>
-(function(){
- var mq=window.matchMedia('(max-width:900px), (hover:none) and (pointer:coarse)');
- var links=document.querySelectorAll('#menu a[href="https://app.utrsports.net/club/1909847"]');
- if(!links.length)return;
- function apply(){
-  links.forEach(function(a){
-   if(mq.matches)a.setAttribute('aria-label','What is UTR?');
-   else a.setAttribute('aria-label','UTR (opens in a new tab)');
-  });
- }
- apply();
- if(mq.addEventListener)mq.addEventListener('change',apply);else mq.addListener(apply);
- links.forEach(function(a){
-  a.addEventListener('click',function(e){
-   if(!mq.matches)return;
-   e.preventDefault();
-   var el=document.getElementById('utr');
-   if(el)el.scrollIntoView();
-   else location.href='index.html#utr';
-  });
- });
-})();
 </script>
 <script>
 (function(){var b=[].slice.call(document.querySelectorAll('.themes button,.tpop button'));function set(t){if(t)document.documentElement.dataset.theme=t;else delete document.documentElement.dataset.theme;try{localStorage.setItem('dtc-theme',t)}catch(e){}b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t===t)})}
