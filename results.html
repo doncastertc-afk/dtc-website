@@ -252,7 +252,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
   <li class="tsel"><button class="tbtn" aria-label="Colour theme" aria-expanded="false" title="Colour theme"><span class="tdot"></span></button><div class="tpop" hidden><button data-t="" data-n="DTC club colours" aria-label="DTC club colours theme" style="--sw:#246339"></button><button data-t="ao" data-n="Australian Open, Melbourne blue" aria-label="Australian Open, Melbourne blue theme" style="--sw:#0A6FB8"></button><button data-t="rg" data-n="French Open, Roland-Garros clay" aria-label="French Open, Roland-Garros clay theme" style="--sw:#B4482A"></button><button data-t="wim" data-n="Wimbledon, purple and green" aria-label="Wimbledon, purple and green theme" style="--sw:#4B1A6E"></button><button data-t="us" data-n="US Open, New York navy" aria-label="US Open, New York navy theme" style="--sw:#1B2F6E"></button></div></li><li><a class="btn btn-g" href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate" target="_blank" rel="noopener">Book now</a></li>
  </ul>
 </div></header>
-<main id="main"><section class="phead"><div class="wrap"><span class="kicker">Club Champs</span><h1>Club Championships &amp; Honour Board</h1><p>Junior and senior club championship results, plus the honour board.</p></div></section>
+<main id="main"><section class="phead"><div class="wrap"><span class="kicker">Club Champs</span><h1>Club Championships &amp; Honour Board</h1><p>Junior and senior club championship results, plus the senior and junior honour boards.</p></div></section>
 <section class="rpage" id="results"><div class="wrap">
  <div class="tabs" role="tablist" aria-label="Results">
   <button role="tab" id="t-honour-board" aria-controls="honour-board" aria-selected="true"><span class="lg-l">Honour Board</span><span class="sm-l">Honour Board</span></button>
@@ -299,13 +299,19 @@ table.hbt{width:100%;border-collapse:collapse;table-layout:fixed;font-family:inh
 .hbh .club{font-size:1rem;letter-spacing:.08em}.hbp h2{font-size:.9rem;letter-spacing:.22em}.hbp .est{font-size:.68rem;margin-bottom:10px}
 .hbt col.y{width:40px}.hbt th{font-size:.7rem;letter-spacing:.06em;padding:6px 3px 8px}.hbt td{font-size:.7rem;padding:7px 2px;letter-spacing:-.01em}
 .hbt th:first-child,.hbt td:first-child{padding-right:8px}.hbt th:last-child,.hbt td:last-child{padding-left:8px}}
+
+#junior-honour{margin-top:32px}
+#junior-honour .jhb-label{margin:0 0 4px;text-align:center;color:var(--g);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
+#junior-honour .hbw{box-shadow:0 18px 40px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.35),0 0 0 3px color-mix(in srgb,var(--g) 42%,transparent)}
+#junior-honour .hbw{margin-top:10px}
 </style><div class="hbw"><div class="hbp">
 <div class="hbh"><img src="logo.png" alt="DTC logo"><p class="club eng">Doncaster Tennis Club</p></div>
 <h2 class="eng">Club Champions</h2><p class="est eng">Est. 1921</p><div class="orn" aria-hidden="true">✦</div>
 <table class="hbt eng"><caption class="sr">Club Champions honour board: men's and ladies' singles champions by year, 2026 to 2007</caption>
 <colgroup><col><col class="y"><col></colgroup>
 <thead><tr><th scope="col">Men’s Singles</th><th scope="col" class="yr">Year</th><th scope="col">Ladies’ Singles</th></tr></thead><tbody><tr><td>Newnest Addakula</td><th scope="row" class="yr">2026</th><td>Chloe Wong</td></tr><tr><td>Aubrey Ho</td><th scope="row" class="yr">2025</th><td>Chloe Wong</td></tr><tr><td>David Lo</td><th scope="row" class="yr">2024</th><td>Chloe Wong</td></tr><tr><td>David Lo</td><th scope="row" class="yr">2023</th><td>Calista Yew</td></tr><tr><td>Ozan Sevik</td><th scope="row" class="yr">2022</th><td>Ayesha Dang</td></tr><tr><td>Vish Masand</td><th scope="row" class="yr">2021</th><td>Yihua Chen</td></tr><tr><td>David Lo</td><th scope="row" class="yr">2019</th><td>Mandy Gebert</td></tr><tr><td>Abhinav Mahajan</td><th scope="row" class="yr">2018</th><td>–</td></tr><tr><td>Andrew Sais</td><th scope="row" class="yr">2017</th><td>Eve Humphries</td></tr><tr><td>Joel Compagnino</td><th scope="row" class="yr">2016</th><td>Eve Humphries</td></tr><tr><td>Andrew Caldwell</td><th scope="row" class="yr">2015</th><td>–</td></tr><tr><td>Joel Compagnino</td><th scope="row" class="yr">2014</th><td>Eve Humphries</td></tr><tr><td>Joel Compagnino</td><th scope="row" class="yr">2013</th><td>Stephanie Tkalcevic</td></tr><tr><td>Andrew Caldwell</td><th scope="row" class="yr">2012</th><td>Stephanie Tkalcevic</td></tr><tr><td>Shing-Yue Sheung</td><th scope="row" class="yr">2011</th><td>Nikita Anderson</td></tr><tr><td>Joel Compagnino</td><th scope="row" class="yr">2010</th><td>–</td></tr><tr><td>Shing-Yue Sheung</td><th scope="row" class="yr">2009</th><td>–</td></tr><tr><td>Aaron Pisani</td><th scope="row" class="yr">2008</th><td>Louise Martin</td></tr><tr><td>Joel Compagnino</td><th scope="row" class="yr">2007</th><td>Mary Vitinaros</td></tr></tbody></table>
-<p class="note">A dash (–) indicates no ladies champion recorded for that year.</p></div></div></div>
+<p class="note">A dash (–) indicates no ladies champion recorded for that year.</p></div></div>
+<div id="junior-honour"></div></div>
 </div></section></main>
 <footer><div class="wrap">
  <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster</div></div>
@@ -419,6 +425,19 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
  if(hb)load('Honour Board','dtcHonour',function(rs){rs=rs.filter(function(c){return cell(c[0])});if(!rs.length)return;
   function v(s){return !s||s==='-'||s==='–'?'–':esc(s)}
   hb.innerHTML=rs.map(function(c){return '<tr><td>'+v(cell(c[1]))+'</td><th scope="row" class="yr">'+esc(cell(c[0]))+'</th><td>'+v(cell(c[2]))+'</td></tr>'}).join('')});
+ // Junior Honour Board: Year | Boys | Girls  (sheet-only, no fallback)
+ var jh=document.getElementById('junior-honour');
+ if(jh)load('Junior Honour Board','dtcJrHonour',function(rs){rs=rs.filter(function(c){return cell(c[0])});if(!rs.length)return;
+  function v(s){return !s||s==='-'||s==='–'?'–':esc(s)}
+  var rows=rs.map(function(c){return '<tr><td>'+v(cell(c[1]))+'</td><th scope="row" class="yr">'+esc(cell(c[0]))+'</th><td>'+v(cell(c[2]))+'</td></tr>'}).join('');
+  var h='<p class="jhb-label">Junior Singles Champions</p><div class="hbw"><div class="hbp">';
+  h+='<div class="hbh"><img src="logo.png" alt="DTC logo"><p class="club eng">Doncaster Tennis Club</p></div>';
+  h+='<h2 class="eng">Junior Champions</h2><div class="orn" aria-hidden="true">✦</div>';
+  h+='<table class="hbt eng"><caption class="sr">Junior champions honour board: boys and girls singles champions by year</caption>';
+  h+='<colgroup><col><col class="y"><col></colgroup>';
+  h+='<thead><tr><th scope="col">Boys</th><th scope="col" class="yr">Year</th><th scope="col">Girls</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  h+='</div></div>';
+  jh.innerHTML=h});
 })();
 </script>
 <script>(function(){var h=location.hash.slice(1);if(h=="wall-of-fame"||h.indexOf("wof-")===0)location.replace("wall-of-fame.html"+(h=="wall-of-fame"?"":"#"+h))})();</script>
