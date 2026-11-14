@@ -146,6 +146,11 @@ details .tw{margin-top:12px}
 @media (max-width:960px){.lad{grid-template-columns:1fr}}
 @media (max-width:600px){.lg-l{display:none}.sm-l{display:inline}.tabs{width:100%}.tabs button{flex:1}.tp{padding:18px}.tabs button{padding:9px 13px;font-size:.9rem}#lif{height:480px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+@media (max-width:1280px) and (min-width:961px){
+ .menu{gap:0}
+ .menu a{padding:8px 8px;font-size:.88rem}
+ .menu .btn{padding:9px 14px;margin-left:4px}
+}
 @media (max-width:960px){
  .menu{position:fixed;inset:68px 0 auto 0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 24px;gap:2px;box-shadow:var(--sh);transform:translateY(-12px);opacity:0;visibility:hidden;transition:.25s;z-index:-1;top:68px;bottom:auto}
  .menu.open{transform:none;opacity:1;visibility:visible}.menu a{padding:14px 12px;font-size:1.05rem}.menu .btn{margin:10px 0 0}
@@ -263,7 +268,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
  <a class="brand" href="#top"><img src="logo.png" alt="Doncaster Tennis Club logo"><span>Doncaster Tennis Club<small>Est. 1921 · Doncaster, VIC</small></span></a>
  <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
  <ul class="menu" id="menu">
-  <li><a href="#membership">Membership</a></li><li><a href="#play">Play</a></li><li><a href="courts.html">Competition</a></li><li><a href="https://app.utrsports.net/club/1909847" target="_blank" rel="noopener" aria-label="UTR (opens in a new tab)">UTR <span aria-hidden="true" style="font-size:.8em">↗</span></a></li><li><a href="results.html">Club Champs</a></li><li><a href="#news">News</a></li><li><a href="#contact">Contact</a></li>
+  <li><a href="#membership">Membership</a></li><li><a href="#play">Play</a></li><li><a href="courts.html">Competition</a></li><li><a href="https://app.utrsports.net/club/1909847" target="_blank" rel="noopener" aria-label="UTR (opens in a new tab)">UTR <span aria-hidden="true" style="font-size:.8em">↗</span></a></li><li><a href="results.html">Club Champs</a></li><li><a href="office-bearers.html">Office Bearers</a></li><li><a href="#news">News</a></li><li><a href="#contact">Contact</a></li>
   <li class="tsel"><button class="tbtn" aria-label="Colour theme" aria-expanded="false" title="Colour theme"><span class="tdot"></span></button><div class="tpop" hidden><button data-t="" data-n="DTC club colours" aria-label="DTC club colours theme" style="--sw:#246339"></button><button data-t="ao" data-n="Australian Open, Melbourne blue" aria-label="Australian Open, Melbourne blue theme" style="--sw:#0A6FB8"></button><button data-t="rg" data-n="French Open, Roland-Garros clay" aria-label="French Open, Roland-Garros clay theme" style="--sw:#B4482A"></button><button data-t="wim" data-n="Wimbledon, purple and green" aria-label="Wimbledon, purple and green theme" style="--sw:#4B1A6E"></button><button data-t="us" data-n="US Open, New York navy" aria-label="US Open, New York navy theme" style="--sw:#1B2F6E"></button></div></li><li><a class="btn btn-g" href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate" target="_blank" rel="noopener">Book now</a></li>
  </ul>
 </div></header>
@@ -346,6 +351,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
  <div class="rteaser">
   <a class="rcard rv" href="courts.html#ladders"><span class="tag">Live from TROLS</span><h3>Competition Ladders</h3><p>Blackburn District Night Tennis, Eastern Region and Waverley.</p><span class="more">View ladders →</span></a>
   <a class="rcard rv" href="results.html#honour-board"><span class="tag" data-honour-since hidden style="display:none"></span><h3>Honour Board</h3><p>Mens and ladies singles champions.</p><span class="more">View honour board →</span></a>
+  <a class="rcard rv" href="office-bearers.html"><span class="tag">Club history</span><h3>Office Bearers</h3><p>Presidents, secretaries, treasurers and club captains by year.</p><span class="more">View office bearers →</span></a>
   <a class="rcard rv" href="results.html#seniors"><span class="tag">Seniors</span><h3>Club Championships</h3><p>Event results for 2026 and 2025.</p><span class="more">View results →</span></a>
   <a class="rcard rv" href="results.html#juniors"><span class="tag">Juniors</span><h3>Junior Club Championships</h3><p>Results by year, boys and girls.</p><span class="more">View results →</span></a>
   <a class="rcard rv" href="wall-of-fame.html"><span class="tag">Premiers</span><h3>Wall of Fame</h3><p>Our premiership teams, from the 1970s to today.</p><span class="more">View Wall of Fame →</span></a>
