@@ -105,6 +105,14 @@ footer{background:#163d24;color:#cfe0d3;padding:48px 0 110px;font-size:.92rem}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer a{color:#fff}footer img{width:40px}
 .fb{display:flex;gap:12px;align-items:center}
+.soc{display:flex;gap:8px;align-items:center}
+.soc a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:2px solid currentColor;color:var(--g);text-decoration:none;background:transparent;flex-shrink:0}
+.soc a:hover,.soc a:focus-visible{background:var(--g);color:#fff;outline:2px solid var(--g);outline-offset:2px}
+.soc a svg{width:18px;height:18px;fill:currentColor;display:block}
+.fb .soc{margin-top:10px}
+footer .soc a{color:#fff;border-color:rgba(255,255,255,.65)}
+footer .soc a:hover,footer .soc a:focus-visible{background:#fff;color:#163d24;outline-color:#fff}
+
 /* mobile bar */
 .mbar{display:none}
 /* reveal */
@@ -328,7 +336,7 @@ table.hbt{width:100%;border-collapse:collapse;table-layout:fixed;font-family:inh
  </div>
 </div></section></main>
 <footer><div class="wrap">
- <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster</div></div>
+ <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster<div class="soc" data-social hidden></div></div></div>
  <div><a href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate">Book a court</a> · <a href="https://play.tennis.com.au/doncastertennisclub/Membership/Join">Join</a> · <a href="mailto:enquiries@doncastertc.org.au">Contact</a> · <a href="office-bearers.html">Office Bearers</a></div>
  <div class="fpol" style="font-size:.85rem;opacity:.85"><a href="https://www.tennis.com.au/" target="_blank" rel="noopener">Tennis Australia</a> · <a href="https://www.tennis.com.au/tas/files/2016/04/Member-Protection-Policy.pdf" target="_blank" rel="noopener">Member Protection Policy</a> · <a href="https://www.tennis.com.au/nsw/files/2021/12/Safeguarding-Children-Code-of-Conduct-6-Oct-2021.pdf" target="_blank" rel="noopener">Safeguarding Children Code of Conduct</a> · <a href="https://www.tennis.com.au/information-for-clubs-associations" target="_blank" rel="noopener">A Safer Game Plan</a> · <a href="https://www.tennis.com.au/conditions-of-use" target="_blank" rel="noopener">Terms &amp; Conditions</a> · <a href="https://www.tennis.com.au/privacy" target="_blank" rel="noopener">Privacy Policy</a></div>
  <div class="themes" role="group" aria-label="Colour theme"><span>Theme:</span><button data-t="" style="--sw:#246339">DTC</button><button data-t="ao" style="--sw:#0A6FB8">Australian Open</button><button data-t="rg" style="--sw:#B4482A">French Open</button><button data-t="wim" style="--sw:#4B1A6E">Wimbledon</button><button data-t="us" style="--sw:#1B2F6E">US Open</button></div>
@@ -385,6 +393,34 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
    if(lu&&/^https?:\/\//i.test(lu))h+=' <a class="bmore" href="'+esc(lu)+'" target="_blank" rel="noopener">'+esc(lt||'Details →')+'</a>';
    p.innerHTML=h;b.hidden=false;return}
   b.hidden=true});
+
+ // Social: Network | URL | Show  (sheet-only; icons hidden if unavailable)
+ function socialIcon(name){
+  var n=name.toLowerCase();
+  if(n.indexOf('facebook')>=0) return {label:'Facebook',svg:'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>'};
+  if(n.indexOf('instagram')>=0) return {label:'Instagram',svg:'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.75 6.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>'};
+  return null;
+ }
+ function socialOk(u){
+  try{
+   var x=new URL(u),h=x.hostname.replace(/^www\./i,'').toLowerCase();
+   if(x.protocol!=='http:'&&x.protocol!=='https:')return false;
+   return h==='facebook.com'||h.slice(-13)==='.facebook.com'||h==='fb.com'||h.slice(-7)==='.fb.com'||h==='instagram.com'||h.slice(-14)==='.instagram.com';
+  }catch(e){return false}
+ }
+ function renderSocial(rs){
+  var html='';
+  for(var i=0;i<rs.length;i++){
+   var c=rs[i],net=cell(c[0]),url=cell(c[1]),show=cell(c[2]).toLowerCase();
+   if(show==='no')continue;
+   if(!url||!socialOk(url))continue;
+   var ic=socialIcon(net);if(!ic)continue;
+   html+='<a href="'+esc(url)+'" target="_blank" rel="noopener" aria-label="Doncaster Tennis Club on '+ic.label+' (opens in a new tab)">'+ic.svg+'</a>';
+  }
+  var boxes=document.querySelectorAll('[data-social]');
+  for(var j=0;j<boxes.length;j++){boxes[j].innerHTML=html;boxes[j].hidden=!html}
+ }
+ load('Social','dtcSocial',renderSocial);
  // Contacts: Order | Show | Row | Role | Name | Phone | Email | Website
  var cg=document.querySelectorAll('#contacts .cgrid');
  if(cg.length===2)load('Contacts','dtcContacts',function(rs){

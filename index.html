@@ -115,6 +115,14 @@ footer{background:#163d24;color:#cfe0d3;padding:48px 0 110px;font-size:.92rem}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer a{color:#fff}footer img{width:40px}
 .fb{display:flex;gap:12px;align-items:center}
+.soc{display:flex;gap:8px;align-items:center}
+.soc a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:2px solid currentColor;color:var(--g);text-decoration:none;background:transparent;flex-shrink:0}
+.soc a:hover,.soc a:focus-visible{background:var(--g);color:#fff;outline:2px solid var(--g);outline-offset:2px}
+.soc a svg{width:18px;height:18px;fill:currentColor;display:block}
+.fb .soc{margin-top:10px}
+footer .soc a{color:#fff;border-color:rgba(255,255,255,.65)}
+footer .soc a:hover,footer .soc a:focus-visible{background:#fff;color:#163d24;outline-color:#fff}
+
 /* mobile bar */
 .mbar{display:none}
 /* reveal */
@@ -220,7 +228,12 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 .board h2{margin:4px 0 2px;color:var(--g)}.board .bs{margin:0 0 14px;font-style:italic;color:var(--m)}.board table{text-align:left}.board .rt{min-width:0}.hb td.w{color:inherit;font-weight:500}
 .slides{max-width:860px;margin:30px auto 0;aspect-ratio:16/9.6}.slides iframe{min-height:0;height:100%;border-radius:14px}
 .note{font-size:.88rem;color:var(--m)}
-.rteaser{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.rteaser{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rteaser .rcard{display:flex;flex-direction:column;box-sizing:border-box;height:100%}
+.rteaser .rcard > .tag{align-self:flex-start}
+.rcard .more,.rcard .mores{margin-top:auto}
+.rcard .mores{display:flex;flex-wrap:wrap;gap:8px 18px}
+.rcard .mores .more{margin-top:0}
 .utr-band .utr{margin-top:0}
 .comps{margin-top:28px;background:var(--card,#fff);border-radius:18px;box-shadow:0 6px 24px rgba(0,0,0,.06);padding:28px;border-top:4px solid var(--gold,#f2c94c);scroll-margin-top:90px}
 .comps h3{margin:6px 0 6px;font-size:1.5rem;color:var(--green,#1f5c36)}.comps-sub{margin:0 0 18px;color:var(--m)}
@@ -327,11 +340,11 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 <section class="band" id="play"><div class="wrap">
  <div class="sh rv"><div><span class="kicker">Ways to play</span><h2>Social, competitive or just starting out</h2><p class="sub">Winter season runs April–August, summer October–March.</p></div></div>
  <div class="ways">
-  <article class="way rv"><img data-photo="Social" src="d11.jpg" alt="Illustration of kids playing on a clay court" loading="lazy"><div class="b"><h3>Social tennis</h3><p>Friendly hit-ups for members on <b>Monday and Wednesday mornings, Thursday evenings and Sunday afternoons</b>. A great way to meet people.</p><a class="btn btn-og" href="#contacts">Ask about social tennis</a></div></article>
+  <article class="way rv"><div class="way-photos" id="social-photos" hidden role="region" aria-roledescription="carousel" aria-label="Social tennis photos"></div><div class="b"><h3>Social tennis</h3><p>Friendly hit-ups for members on <b>Monday and Wednesday mornings, Thursday evenings and Sunday afternoons</b>. A great way to meet people.</p><a class="btn btn-og" href="#contacts">Ask about social tennis</a></div></article>
   <article class="way rv"><div class="way-photos" id="comp-photos" hidden role="region" aria-roledescription="carousel" aria-label="Wall of Fame competition photos"></div><div class="b"><h3>Competition</h3>
    <div><span class="tag">Junior</span><span class="tag">Open · ERT, BDNTA &amp; Waverley</span><span class="tag">Ladies · EDWTA &amp; MEMRLTA</span><span class="tag">Open · Sat &amp; Sun</span><span class="tag">Night · Mon–Thu</span><span class="tag">Midweek ladies · Tue–Thu</span></div>
    <p>We play in:</p><div class="comp-list-label">Open</div><ul class="plays"><li><a href="https://ertinc.au/" target="_blank" rel="noopener">Eastern Region Tennis</a></li><li><a href="https://www.bdnta.com/" target="_blank" rel="noopener">Blackburn &amp; District Night Tennis Association</a></li><li><a href="https://www.waverleytennis.asn.au/" target="_blank" rel="noopener">Waverley Tennis Association</a></li></ul><div class="comp-list-label">Ladies</div><ul class="plays"><li><a href="https://play.tennis.com.au/easterndistrictswomenstennisassociation" target="_blank" rel="noopener">Eastern Districts Women's Tennis Association (EDWTA)</a></li><li><a href="https://www.memrlta.org.au/" target="_blank" rel="noopener">Midweek Eastern Metropolitan Region Ladies' Tennis Association (MEMRLTA)</a></li></ul><a class="btn btn-og" href="#competitions">Learn more</a></div></article>
-  <article class="way rv" id="coaching"><img data-photo="Coaching" src="d17.jpg" alt="Illustration of a coach with a young player" loading="lazy"><div class="b"><h3>Coaching</h3><p>Daily coaching by <b>Slamin Tennis &amp; Fitness</b>, for juniors and adults. <b>New adult members get a free group lesson.</b></p><p>📞 <a href="tel:0489931075">0489 931 075</a></p><a class="btn btn-og" href="https://www.slamin.com.au/" target="_blank" rel="noopener">Visit Slamin Tennis →</a></div></article>
+  <article class="way rv" id="coaching"><div class="way-photos" id="coaching-photos" hidden role="region" aria-roledescription="carousel" aria-label="Coaching photos"></div><div class="b"><h3>Coaching</h3><p>Daily coaching by <b>Slamin Tennis &amp; Fitness</b>, for juniors and adults. <b>New adult members get a free group lesson.</b></p><p>📞 <a href="tel:0489931075">0489 931 075</a></p><a class="btn btn-og" href="https://www.slamin.com.au/" target="_blank" rel="noopener">Visit Slamin Tennis →</a></div></article>
  </div>
 </div></section>
 
@@ -365,11 +378,13 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 <section class="band" id="results"><div class="wrap">
  <div class="sh rv"><div><span class="kicker">Competition &amp; Results</span><h2>How the club is going</h2></div><a class="btn btn-g" href="courts.html">Competition hub →</a></div>
  <div class="rteaser">
-  <a class="rcard rv" href="courts.html#ladders"><span class="tag">Live from TROLS</span><h3>Competition Ladders</h3><p>Blackburn District Night Tennis, Eastern Region and Waverley.</p><span class="more">View ladders →</span></a>
-  <a class="rcard rv" href="results.html#honour-board"><span class="tag" data-honour-since hidden style="display:none"></span><h3>Honour Board</h3><p>Mens and ladies singles champions.</p><span class="more">View honour board →</span></a>
-  <a class="rcard rv" href="office-bearers.html"><span class="tag">Club history</span><h3>Office Bearers</h3><p>Presidents, secretaries, treasurers and club captains by year.</p><span class="more">View office bearers →</span></a>
-  <a class="rcard rv" href="results.html#seniors"><span class="tag">Seniors</span><h3>Club Championships</h3><p>Event results for 2026 and 2025.</p><span class="more">View results →</span></a>
-  <a class="rcard rv" href="results.html#juniors"><span class="tag">Juniors</span><h3>Junior Club Championships</h3><p>Results by year, boys and girls.</p><span class="more">View results →</span></a>
+  <article class="rcard rv">
+   <div><span class="tag">Ladders</span><span class="tag">Allocations</span></div>
+   <h3>Competition Ladders &amp; Court Allocations</h3>
+   <p>Live ladders from TROLS, plus Open Night and weekend court allocations.</p>
+   <div class="mores"><a class="more" href="courts.html#ladders">View ladders →</a><a class="more" href="courts.html#monday">View court allocations →</a></div>
+  </article>
+  <a class="rcard rv" href="results.html"><span class="tag">Results</span><h3>Club Champions</h3><p>Senior and junior championship results and honour boards.</p><span class="more">View results →</span></a>
   <a class="rcard rv" href="wall-of-fame.html"><span class="tag">Premiers</span><h3>Wall of Fame</h3><p>Our premiership teams, from the 1970s to today.</p><span class="more">View Wall of Fame →</span></a>
  </div>
  <div class="comps rv" id="competitions" aria-labelledby="comps-h">
@@ -394,7 +409,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
    <dt>Address</dt><dd>Athenaeum Drive, 802 Doncaster Road, Doncaster VIC 3108<br><span style="color:var(--m)">(behind Audi)</span></dd>
    <dt>General enquiries</dt><dd><a href="mailto:enquiries@doncastertc.org.au">enquiries@doncastertc.org.au</a></dd>
    <dt>Membership</dt><dd><a href="mailto:membership@doncastertc.org.au">membership@doncastertc.org.au</a></dd></dl>
-   <div class="social"><a class="btn btn-og" href="https://www.facebook.com/DoncasterTennisClub/" target="_blank" rel="noopener">Facebook</a><a class="btn btn-og" href="https://www.instagram.com/doncastertennisclub/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&destination=802+Doncaster+Road+Doncaster+VIC+3108" target="_blank" rel="noopener">Directions</a></div>
+   <div class="social"><span class="soc" data-social hidden></span><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&destination=802+Doncaster+Road+Doncaster+VIC+3108" target="_blank" rel="noopener">Directions</a></div>
   </div>
   <iframe class="rv" title="Map to Doncaster Tennis Club" loading="lazy" src="https://maps.google.com/maps?q=802%20Doncaster%20Road%20Doncaster%20VIC%203108&z=16&output=embed"></iframe>
  </div>
@@ -415,7 +430,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 </section>
 </main>
 <footer><div class="wrap">
- <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster</div></div>
+ <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster<div class="soc" data-social hidden></div></div></div>
  <div><a href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate">Book a court</a> · <a href="https://play.tennis.com.au/doncastertennisclub/Membership/Join">Join</a> · <a href="mailto:enquiries@doncastertc.org.au">Contact</a> · <a href="office-bearers.html">Office Bearers</a></div>
  <div class="fpol" style="font-size:.85rem;opacity:.85"><a href="https://www.tennis.com.au/" target="_blank" rel="noopener">Tennis Australia</a> · <a href="https://www.tennis.com.au/tas/files/2016/04/Member-Protection-Policy.pdf" target="_blank" rel="noopener">Member Protection Policy</a> · <a href="https://www.tennis.com.au/nsw/files/2021/12/Safeguarding-Children-Code-of-Conduct-6-Oct-2021.pdf" target="_blank" rel="noopener">Safeguarding Children Code of Conduct</a> · <a href="https://www.tennis.com.au/information-for-clubs-associations" target="_blank" rel="noopener">A Safer Game Plan</a> · <a href="https://www.tennis.com.au/conditions-of-use" target="_blank" rel="noopener">Terms &amp; Conditions</a> · <a href="https://www.tennis.com.au/privacy" target="_blank" rel="noopener">Privacy Policy</a></div>
  <div class="themes" role="group" aria-label="Colour theme"><span>Theme:</span><button data-t="" style="--sw:#246339">DTC</button><button data-t="ao" style="--sw:#0A6FB8">Australian Open</button><button data-t="rg" style="--sw:#B4482A">French Open</button><button data-t="wim" style="--sw:#4B1A6E">Wimbledon</button><button data-t="us" style="--sw:#1B2F6E">US Open</button></div>
@@ -493,6 +508,34 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
    if(lu&&/^https?:\/\//i.test(lu))h+=' <a class="bmore" href="'+esc(lu)+'" target="_blank" rel="noopener">'+esc(lt||'Details →')+'</a>';
    p.innerHTML=h;b.hidden=false;return}
   b.hidden=true});
+
+ // Social: Network | URL | Show  (sheet-only; icons hidden if unavailable)
+ function socialIcon(name){
+  var n=name.toLowerCase();
+  if(n.indexOf('facebook')>=0) return {label:'Facebook',svg:'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>'};
+  if(n.indexOf('instagram')>=0) return {label:'Instagram',svg:'<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.75 6.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>'};
+  return null;
+ }
+ function socialOk(u){
+  try{
+   var x=new URL(u),h=x.hostname.replace(/^www\./i,'').toLowerCase();
+   if(x.protocol!=='http:'&&x.protocol!=='https:')return false;
+   return h==='facebook.com'||h.slice(-13)==='.facebook.com'||h==='fb.com'||h.slice(-7)==='.fb.com'||h==='instagram.com'||h.slice(-14)==='.instagram.com';
+  }catch(e){return false}
+ }
+ function renderSocial(rs){
+  var html='';
+  for(var i=0;i<rs.length;i++){
+   var c=rs[i],net=cell(c[0]),url=cell(c[1]),show=cell(c[2]).toLowerCase();
+   if(show==='no')continue;
+   if(!url||!socialOk(url))continue;
+   var ic=socialIcon(net);if(!ic)continue;
+   html+='<a href="'+esc(url)+'" target="_blank" rel="noopener" aria-label="Doncaster Tennis Club on '+ic.label+' (opens in a new tab)">'+ic.svg+'</a>';
+  }
+  var boxes=document.querySelectorAll('[data-social]');
+  for(var j=0;j<boxes.length;j++){boxes[j].innerHTML=html;boxes[j].hidden=!html}
+ }
+ load('Social','dtcSocial',renderSocial);
  // Contacts: Order | Show | Row | Role | Name | Phone | Email | Website
  var cg=document.querySelectorAll('#contacts .cgrid');
  if(cg.length===2)load('Contacts','dtcContacts',function(rs){
@@ -534,70 +577,88 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
   var L=rs.map(function(c,i){return {c:c,i:i,o:parseFloat(cell(c[0]))}}).filter(function(x){return yes(cell(x.c[1]))&&cell(x.c[2])});if(!L.length)return;
   L.sort(function(a,b){var ao=isNaN(a.o)?1e9:a.o,bo=isNaN(b.o)?1e9:b.o;return ao-bo||a.i-b.i});
   hf.innerHTML=L.map(function(x){var c=x.c;return '\n   <tr><td>'+esc(cell(c[2]))+'</td><td class="p">'+esc(cell(c[3])||'–')+'</td><td class="p">'+esc(cell(c[4])||'–')+'</td></tr>'}).join('')});
- // Photos: Show | Category | Photo link | Description  (random Show=Yes photo per category)
- if(document.querySelector('img[data-photo]'))load('Photos','dtcPhotos',function(rs){var by={};
-  function url(u){var m=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:[^#]*&)?id=)([\w-]{10,})/)||u.match(/drive\.google\.com\/[^#]*[?&]id=([\w-]{10,})/);
-   if(m)return ['https://lh3.googleusercontent.com/d/'+m[1]+'=w1600','https://drive.google.com/thumbnail?id='+m[1]+'&sz=w1600'];return /^https:\/\/[^\s"'<>]+$/i.test(u)?[u]:[]}
-  rs.forEach(function(c){var k=cell(c[1]).toLowerCase();if(cell(c[0]).toLowerCase()!=='yes'||!k)return;var u=url(cell(c[2]));if(u.length)(by[k]=by[k]||[]).push({u:u,a:cell(c[3])})});
-  [].forEach.call(document.querySelectorAll('img[data-photo]'),function(img){var L=by[img.getAttribute('data-photo').toLowerCase()];if(!L||!L.length)return;
-   var pick=L[Math.floor(Math.random()*L.length)],i=0;
-   (function tryNext(){if(i>=pick.u.length)return;var src=pick.u[i++],pre=new Image();
-    pre.onload=function(){if(pre.naturalWidth>1){img.src=src;img.removeAttribute('srcset');if(pick.a)img.alt=pick.a}else tryNext()};pre.onerror=tryNext;pre.src=src})()})});
- // Wall of Fame home photos: Era | Year | Caption | Photo URL | Era Order | Photo Order | Show | Show on home
- (function(){
-  var mount=document.getElementById('comp-photos');if(!mount)return;
-  function wofUrls(s){
-   if(/^wof\/[A-Za-z0-9_-]+\.(jpe?g|png|webp)$/i.test(s))return [s];
-   try{var u=new URL(s);if(u.protocol!=='https:'||u.username||u.password)return [];
-    if(u.hostname==='drive.google.com'){var m=u.pathname.match(/^\/file\/d\/([\w-]+)/),id=m?m[1]:u.searchParams.get('id');
-     var rk=u.searchParams.get('resourcekey');
-     if(id&&/^[\w-]{10,}$/.test(id)){var q=rk?('?resourcekey='+encodeURIComponent(rk)):'',amp=rk?('&resourcekey='+encodeURIComponent(rk)):'';
-      return ['https://lh3.googleusercontent.com/d/'+id+'=w1600'+q,'https://drive.google.com/thumbnail?id='+id+'&sz=w1600'+amp]}return []}
-    return [u.href];
-   }catch(e){return []}
-  }
-  function num(v){var n=Number(v);return v!==''&&Number.isFinite(n)?n:1e9}
-  function slug(y){return String(y).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
-  var timer=null,slides=[],dots=[],cur=0;
-  function stop(){if(timer){clearInterval(timer);timer=null}}
+ // Home card carousels (Competition from Wall of Fame; Social & Coaching from Photos)
+ function photoUrls(s){
+  if(/^(?:[\w.-]+\/)*[\w.-]+\.(jpe?g|png|webp)$/i.test(s))return [s];
+  try{var u=new URL(s);if(u.protocol!=='https:'||u.username||u.password)return [];
+   if(u.hostname==='drive.google.com'){var m=u.pathname.match(/^\/file\/d\/([\w-]+)/),id=m?m[1]:u.searchParams.get('id');
+    var rk=u.searchParams.get('resourcekey');
+    if(id&&/^[\w-]{10,}$/.test(id)){var q=rk?('?resourcekey='+encodeURIComponent(rk)):'',amp=rk?('&resourcekey='+encodeURIComponent(rk)):'';
+     return ['https://lh3.googleusercontent.com/d/'+id+'=w1600'+q,'https://drive.google.com/thumbnail?id='+id+'&sz=w1600'+amp]}return []}
+   return [u.href];
+  }catch(e){return []}
+ }
+ function num(v){var n=Number(v);return v!==''&&Number.isFinite(n)?n:1e9}
+ function startWayCarousel(mount,photos,opts){
+  opts=opts||{};
+  var timer=null,slides=[],dots=[],cur=0,delay=opts.delay||0;
+  function stop(){if(timer){clearTimeout(timer);clearInterval(timer);timer=null}}
   function hide(){stop();mount.hidden=true;mount.innerHTML=''}
+  if(!photos||!photos.length){hide();return}
   function go(n){if(!slides.length)return;cur=(n+slides.length)%slides.length;
    slides.forEach(function(s,i){var on=i===cur;s.classList.toggle('is-on',on);s.setAttribute('aria-hidden',on?'false':'true');if(on)s.removeAttribute('tabindex');else s.tabIndex=-1});
    dots.forEach(function(d,i){if(i===cur)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})}
-  function play(){stop();if(slides.length<2)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;timer=setInterval(function(){go(cur+1)},5500)}
-  function bindDots(){dots.forEach(function(d,i){d.onclick=function(){go(i);play()}})}
+  function play(first){stop();if(slides.length<2)return;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+   var wait=first?delay+5500:5500;
+   timer=setTimeout(function(){go(cur+1);timer=setInterval(function(){go(cur+1)},5500)},wait)}
+  function bindDots(){dots.forEach(function(d,i){d.onclick=function(){go(i);play(false)}})}
   function prune(slide){var i=slides.indexOf(slide);if(slide&&slide.parentNode)slide.remove();if(dots[i]&&dots[i].parentNode)dots[i].remove();
    slides=[].slice.call(mount.querySelectorAll('.wp-slide'));dots=[].slice.call(mount.querySelectorAll('.wp-dots button'));
    if(!slides.length){hide();return}if(slides.length===1){var bar=mount.querySelector('.wp-dots');if(bar)bar.remove();stop()}
    bindDots();go(Math.min(cur,slides.length-1))}
+  var h='',hrefFn=opts.href||null;
+  photos.forEach(function(r,i){
+   var href=hrefFn?hrefFn(r):'',tag=href?'a':'div';
+   h+='<'+tag+' class="wp-slide'+(i?'':' is-on')+'"'+(href?(' href="'+esc(href)+'"'):'')+(i?' aria-hidden="true" tabindex="-1"':'')+'>';
+   h+='<img alt="'+esc(r.caption||'')+'" width="800" height="600" decoding="async"'+(i?' loading="lazy"':'')+'>';
+   if(r.caption)h+='<span class="wp-cap">'+esc(r.caption)+'</span>';
+   h+='</'+tag+'>'});
+  if(photos.length>1){h+='<div class="wp-dots">';
+   photos.forEach(function(r,i){h+='<button type="button" aria-label="Show photo '+(i+1)+' of '+photos.length+(r.caption?(': '+esc(r.caption)):'')+'"'+(i?'':' aria-current="true"')+'></button>'});
+   h+='</div>'}
+  mount.innerHTML=h;mount.hidden=false;
+  slides=[].slice.call(mount.querySelectorAll('.wp-slide'));
+  dots=[].slice.call(mount.querySelectorAll('.wp-dots button'));
+  bindDots();
+  mount.addEventListener('mouseenter',stop);mount.addEventListener('mouseleave',function(){play(false)});
+  mount.addEventListener('focusin',stop);mount.addEventListener('focusout',function(e){if(!mount.contains(e.relatedTarget))play(false)});
+  var started=false;
+  slides.forEach(function(s,i){
+   var img=s.querySelector('img'),list=photos[i].u,n=0;
+   function fail(){if(++n<list.length){img.src=list[n];return}prune(s)}
+   img.addEventListener('error',fail);
+   img.addEventListener('load',function(){if(img.naturalWidth>1){if(!started){started=true;play(true)}}else fail()});
+   img.src=list[0]});
+ }
+
+ // Wall of Fame home photos: Era | Year | Caption | Photo URL | Era Order | Photo Order | Show | Show on home
+ (function(){
+  var mount=document.getElementById('comp-photos');if(!mount)return;
+  function slug(y){return String(y).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
   load('Wall of Fame','dtcWofHome',function(rs){
-   var photos=rs.map(function(c,i){return {year:cell(c[1]),caption:cell(c[2]),u:wofUrls(cell(c[3])),eo:num(cell(c[4])),po:num(cell(c[5])),show:cell(c[6]).toLowerCase(),home:cell(c[7]).toLowerCase(),i:i}})
+   var photos=rs.map(function(c,i){return {year:cell(c[1]),caption:cell(c[2]),u:photoUrls(cell(c[3])),eo:num(cell(c[4])),po:num(cell(c[5])),show:cell(c[6]).toLowerCase(),home:cell(c[7]).toLowerCase(),i:i}})
     .filter(function(r){return r.home==='yes'&&r.show==='yes'&&r.caption&&r.u.length});
    photos.sort(function(a,b){return a.eo-b.eo||a.po-b.po||a.i-b.i});
-   if(!photos.length){hide();return}
-   var h='';
-   photos.forEach(function(r,i){
-    var href='wall-of-fame.html'+(r.year?('#wof-'+slug(r.year)):'');
-    h+='<a class="wp-slide'+(i?'':' is-on')+'" href="'+esc(href)+'"'+(i?' aria-hidden="true" tabindex="-1"':'')+'>';
-    h+='<img alt="'+esc(r.caption)+'" width="800" height="600" decoding="async"'+(i?' loading="lazy"':'')+'>';
-    h+='<span class="wp-cap">'+esc(r.caption)+'</span></a>'});
-   if(photos.length>1){h+='<div class="wp-dots">';
-    photos.forEach(function(r,i){h+='<button type="button" aria-label="Show photo '+(i+1)+' of '+photos.length+': '+esc(r.caption)+'"'+(i?'':' aria-current="true"')+'></button>'});
-    h+='</div>'}
-   mount.innerHTML=h;mount.hidden=false;
-   slides=[].slice.call(mount.querySelectorAll('.wp-slide'));
-   dots=[].slice.call(mount.querySelectorAll('.wp-dots button'));
-   bindDots();
-   mount.addEventListener('mouseenter',stop);mount.addEventListener('mouseleave',play);
-   mount.addEventListener('focusin',stop);mount.addEventListener('focusout',function(e){if(!mount.contains(e.relatedTarget))play()});
-   var started=false;
-   slides.forEach(function(s,i){
-    var img=s.querySelector('img'),list=photos[i].u,n=0;
-    function fail(){if(++n<list.length){img.src=list[n];return}prune(s)}
-    img.addEventListener('error',fail);
-    img.addEventListener('load',function(){if(img.naturalWidth>1){if(!started){started=true;play()}}else fail()});
-    img.src=list[0]});
-  },hide);
+   startWayCarousel(mount,photos,{delay:1800,href:function(r){return 'wall-of-fame.html'+(r.year?('#wof-'+slug(r.year)):'')}});
+  },function(){mount.hidden=true;mount.innerHTML=''});
+ })();
+
+ // Photos: Show | Category | Photo link | Description | Order  (sheet-only slideshows for Social & Coaching)
+ (function(){
+  var mounts={social:document.getElementById('social-photos'),coaching:document.getElementById('coaching-photos')};
+  if(!mounts.social&&!mounts.coaching)return;
+  function hideAll(){['social','coaching'].forEach(function(k){if(mounts[k]){mounts[k].hidden=true;mounts[k].innerHTML=''}})}
+  load('Photos','dtcHomeCardPhotos',function(rs){
+   var by={social:[],coaching:[]};
+   rs.forEach(function(c,i){
+    var cat=cell(c[1]).toLowerCase();if(!by[cat])return;
+    if(cell(c[0]).toLowerCase()!=='yes')return;
+    var u=photoUrls(cell(c[2]));if(!u.length)return;
+    by[cat].push({u:u,caption:cell(c[3]),o:num(cell(c[4])),i:i});
+   });
+   if(mounts.social)startWayCarousel(mounts.social,by.social.slice().sort(function(a,b){return a.o-b.o||a.i-b.i}),{delay:0});
+   if(mounts.coaching)startWayCarousel(mounts.coaching,by.coaching.slice().sort(function(a,b){return a.o-b.o||a.i-b.i}),{delay:3600});
+  },hideAll);
  })();
  // Honour Board teaser: earliest four-digit Year; no built-in year on errors.
  var sinceTags=document.querySelectorAll('[data-honour-since]');
