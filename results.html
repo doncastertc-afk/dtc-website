@@ -356,6 +356,30 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
 <script>
+(function(){
+ var mq=window.matchMedia('(max-width:900px), (hover:none) and (pointer:coarse)');
+ var links=document.querySelectorAll('#menu a[href="https://app.utrsports.net/club/1909847"]');
+ if(!links.length)return;
+ function apply(){
+  links.forEach(function(a){
+   if(mq.matches)a.setAttribute('aria-label','What is UTR?');
+   else a.setAttribute('aria-label','UTR (opens in a new tab)');
+  });
+ }
+ apply();
+ if(mq.addEventListener)mq.addEventListener('change',apply);else mq.addListener(apply);
+ links.forEach(function(a){
+  a.addEventListener('click',function(e){
+   if(!mq.matches)return;
+   e.preventDefault();
+   var el=document.getElementById('utr');
+   if(el)el.scrollIntoView();
+   else location.href='index.html#utr';
+  });
+ });
+})();
+</script>
+<script>
 (function(){var b=[].slice.call(document.querySelectorAll('.themes button,.tpop button'));function set(t){if(t)document.documentElement.dataset.theme=t;else delete document.documentElement.dataset.theme;try{localStorage.setItem('dtc-theme',t)}catch(e){}b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t===t)})}
 var cur=document.documentElement.dataset.theme||'';b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t===cur);x.onclick=function(){set(x.dataset.t)}})})();
 </script>
