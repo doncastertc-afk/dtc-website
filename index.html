@@ -260,6 +260,20 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 .comp-list-label{font-size:.8rem;font-weight:800;color:var(--g);margin:12px 0 4px;letter-spacing:.03em}.ways .comp-list-label+.plays{margin-top:0}
 .comp-group-title{font-size:1.1rem;color:var(--g);margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--y)}
 @media(min-width:901px){.comps-open{grid-template-columns:repeat(3,minmax(0,1fr))}.comps-ladies{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* office bearers CTA under contact */
+.ob-cta{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:#fff;border:1px solid #e3eae2;border-top:4px solid var(--y);border-radius:22px;padding:32px 36px;box-shadow:var(--sh);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.ob-cta:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.ob-cta img{width:84px;height:84px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--y),0 2px 8px rgba(0,0,0,.12)}
+.ob-cta .kicker{display:block}
+.ob-cta h2{margin:6px 0 8px;color:var(--g)}
+.ob-cta p{margin:0 0 18px;color:var(--m)}
+.ob-cta .btn{pointer-events:none}
+@media (max-width:700px){
+ .ob-cta{grid-template-columns:1fr;padding:24px 20px;text-align:center;justify-items:center;gap:16px}
+ .ob-cta img{width:72px;height:72px}
+ .ob-cta p{margin-bottom:16px}
+}
+
 </style>
 <script>try{var t=localStorage.getItem("dtc-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
@@ -386,6 +400,19 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
  </div>
  <div class="contacts rv" id="contacts" style="scroll-margin-top:90px"><h3>Contacts</h3><div class="cgrid"><div class="cc"><span class="cr">Club President</span><b>James Manger</b><a href="tel:+61417541870">0417 541 870</a><a href="mailto:president@doncastertc.org.au">president@doncastertc.org.au</a></div><div class="cc"><span class="cr">Membership</span><b>Budi Salim</b><a href="tel:+61412820247">0412 820 247</a><a href="mailto:membership@doncastertc.org.au">membership@doncastertc.org.au</a></div><div class="cc"><span class="cr">Coaching</span><b>Slamin Tennis &amp; Fitness</b><a href="tel:+61489931075">0489 931 075</a><a href="https://slamin.com.au" target="_blank" rel="noopener">slamin.com.au</a></div></div><div class="cgrid" style="margin-top:14px"><div class="cc"><span class="cr">Junior competition</span><b>Jill Morrison</b><a href="tel:+61450588642">0450 588 642</a><a href="mailto:dcjlmorrison@bigpond.com">dcjlmorrison@bigpond.com</a></div><div class="cc"><span class="cr">Senior competition (Open)</span><b>Bronwyn Dreher</b><a href="tel:+61413283174">0413 283 174</a><a href="mailto:brondreher1@bigpond.com">brondreher1@bigpond.com</a></div><div class="cc"><span class="cr">Night tennis</span><b>Vas Socratous</b><a href="tel:+61409432633">0409 432 633</a><a href="mailto:nighttennis@doncastertc.org.au">nighttennis@doncastertc.org.au</a></div><div class="cc"><span class="cr">Midweek ladies</span><b>Atousa Aminian</b><a href="tel:+61425725135">0425 725 135</a><a href="mailto:midweekladies@doncastertc.org.au">midweekladies@doncastertc.org.au</a></div></div></div>
 </div></section>
+<section class="band" id="office-bearers-cta" aria-labelledby="ob-cta-h">
+ <div class="wrap">
+  <a class="ob-cta rv" href="office-bearers.html">
+   <img src="logo.png" alt="Doncaster Tennis Club logo">
+   <div>
+    <span class="kicker">Club history</span>
+    <h2 id="ob-cta-h">Club Office Bearers</h2>
+    <p>Presidents, secretaries, treasurers and club captains since 1969.</p>
+    <span class="btn btn-g">View the board</span>
+   </div>
+  </a>
+ </div>
+</section>
 </main>
 <footer><div class="wrap">
  <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster</div></div>
