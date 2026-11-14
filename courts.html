@@ -256,6 +256,9 @@ table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;fo
 .ca tr.now:not(.np) td{background:#fff6d6}.ca tr.np.now td.dt{box-shadow:inset 4px 0 0 var(--y),1px 0 0 #e3eae2}.ca tr.np.now td.dt::after{color:var(--y)}.ca tr.now:not(.np) td.dt{background:#fff6d6;box-shadow:inset 4px 0 0 var(--y),1px 0 0 #e3eae2}
 .ca tr.now td.dt::after{content:"This week";display:block;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:var(--g2,#1d5230)}
 .ca-soon{padding:40px 20px;text-align:center;color:var(--m);background:#fff;border:1px dashed #cfd8d1;border-radius:14px;margin-top:14px}.ca-soon h3{color:var(--g);margin:0 0 6px}
+.ca-toggle{margin:8px 0 0;text-align:right}
+.ca-past{background:none;border:0;padding:0;font:inherit;font-size:.82rem;font-weight:600;color:var(--m);cursor:pointer}
+.ca-past:hover,.ca-past:focus-visible{color:var(--g);text-decoration:underline;text-underline-offset:3px}
 @media(min-width:900px){.ca tr.np td span{left:auto;position:static;display:block;text-align:center}}
 @media(max-width:600px){.ca tr.np td span{visibility:hidden}.ca tr.np:not(.now) td.dt::after{content:"No play";display:block;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:#cfd8d1}.ca th,.ca td{padding:8px 8px;font-size:.85rem}.ca thead th{min-width:110px}.ca .dt{min-width:84px}#courts .tabs button{flex:1 1 auto;padding:9px 6px;font-size:.85rem}}
 </style>
@@ -416,25 +419,34 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
  function cell(c){if(!c)return '';if(c.f!=null)return String(c.f).trim();return c.v==null?'':String(c.v).trim()}
  function esc(t){return String(t).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;'}[ch]})}
  function day(s){var m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?new Date(+m[3],+m[2]-1,+m[1]):null}
+ function todayMelb(){var p=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),g={};
+  p.forEach(function(x){g[x.type]=x.value});return new Date(+g.year,+g.month-1,+g.day)}
  function soon(b){b.innerHTML='<div class="ca-soon"><h3>Allocations coming soon</h3><p>Check back closer to the season start.</p></div>'}
  function cls(v){var u=v.toUpperCase();if(!v)return ['',''];if(u==='AWAY')return ['aw',esc(v)];if(u==='SF'||u==='GF')return ['fin','<span>'+esc(u)+'</span>'];if(u==='SPARE')return ['sp',esc(v)];if(/^\d/.test(v))return ['ct',esc(v)];return ['',esc(v)]}
  function render(p,r){var b=p.querySelector('.ca-body'),R=((r&&r.table&&r.table.rows)||[]).map(function(x){return (x.c||[]).map(cell)});
   if(R.length<1)return soon(b);var H=R[0],D=-1;for(var i=1;i<H.length;i++)if(/^duty/i.test(H[i])){D=i;break}
   var end=D<0?H.length:D,cols=[];for(i=1;i<end;i++)if(H[i])cols.push(i);
-  var rows=R.slice(3).filter(function(x){return day(x[0]||'')});if(!cols.length||!rows.length)return soon(b);
-  var cap=R[1]||[],ph=R[2]||[],now=new Date();now.setHours(0,0,0,0);var up=-1;rows.forEach(function(x,k){if(up<0&&day(x[0])>=now)up=k});
-  var t='<div class="ca-wrap"><table class="ca"><thead><tr><th class="dt" scope="col">Date</th>';
-  cols.forEach(function(c){var n=cap[c]||'',tel=(ph[c]||'').replace(/[^\d+]/g,'');if(tel.charAt(0)==='0')tel='+61'+tel.slice(1);
-   t+='<th scope="col">'+esc(H[c])+((n||ph[c])?'<span class="cap">'+esc(n)+(ph[c]?(n?'<br>':'')+(/^\+?\d{8,}$/.test(tel)?'<a href="tel:'+esc(tel)+'">'+esc(ph[c])+'</a>':esc(ph[c])):'')+'</span>':'')+'</th>'});
-  if(D>=0)t+='<th scope="col">'+esc(H[D])+'</th>';t+='</tr></thead><tbody>';
-  rows.forEach(function(x,k){var dd=day(x[0]),lbl=dd.getDate()+'/'+('0'+(dd.getMonth()+1)).slice(-2)+'/'+dd.getFullYear();
-   var empty=cols.every(function(c){return !x[c]})&&!(D>=0&&x[D]);
-   if(empty){t+='<tr class="np'+(k===up?' now':'')+'"><td class="dt">'+esc(lbl)+'</td><td colspan="'+(cols.length+(D>=0?1:0))+'"><span>No play</span></td></tr>';return}
-   t+='<tr'+(k===up?' class="now"':'')+'><td class="dt">'+esc(lbl)+'</td>';
-   cols.forEach(function(c){var z=cls(x[c]||'');t+='<td'+(z[0]?' class="'+z[0]+'"':'')+'>'+z[1]+'</td>'});
-   if(D>=0)t+='<td class="duty">'+esc(x[D]||'')+'</td>';t+='</tr>'});
-  b.innerHTML=t+'</tbody></table></div>';
-  if(up>=0&&!p.hidden){var tr=b.querySelector('tr.now');}}
+  var all=R.slice(3).filter(function(x){return day(x[0]||'')});if(!cols.length||!all.length)return soon(b);
+  var cap=R[1]||[],ph=R[2]||[],now=todayMelb();
+  var past=all.filter(function(x){return day(x[0])<now}),upcoming=all.filter(function(x){return day(x[0])>=now});
+  function table(rows){var up=-1;rows.forEach(function(x,k){if(up<0&&day(x[0])>=now)up=k});
+   var t='<div class="ca-wrap"><table class="ca"><thead><tr><th class="dt" scope="col">Date</th>';
+   cols.forEach(function(c){var n=cap[c]||'',tel=(ph[c]||'').replace(/[^\d+]/g,'');if(tel.charAt(0)==='0')tel='+61'+tel.slice(1);
+    t+='<th scope="col">'+esc(H[c])+((n||ph[c])?'<span class="cap">'+esc(n)+(ph[c]?(n?'<br>':'')+(/^\+?\d{8,}$/.test(tel)?'<a href="tel:'+esc(tel)+'">'+esc(ph[c])+'</a>':esc(ph[c])):'')+'</span>':'')+'</th>'});
+   if(D>=0)t+='<th scope="col">'+esc(H[D])+'</th>';t+='</tr></thead><tbody>';
+   rows.forEach(function(x,k){var dd=day(x[0]),lbl=dd.getDate()+'/'+('0'+(dd.getMonth()+1)).slice(-2)+'/'+dd.getFullYear();
+    var empty=cols.every(function(c){return !x[c]})&&!(D>=0&&x[D]);
+    if(empty){t+='<tr class="np'+(k===up?' now':'')+'"><td class="dt">'+esc(lbl)+'</td><td colspan="'+(cols.length+(D>=0?1:0))+'"><span>No play</span></td></tr>';return}
+    t+='<tr'+(k===up?' class="now"':'')+'><td class="dt">'+esc(lbl)+'</td>';
+    cols.forEach(function(c){var z=cls(x[c]||'');t+='<td'+(z[0]?' class="'+z[0]+'"':'')+'>'+z[1]+'</td>'});
+    if(D>=0)t+='<td class="duty">'+esc(x[D]||'')+'</td>';t+='</tr>'});
+   return t+'</tbody></table></div>'}
+  function draw(showPast){var rows=showPast?all:upcoming,h='';
+   if(past.length)h+='<p class="ca-toggle"><button type="button" class="ca-past" aria-pressed="'+(showPast?'true':'false')+'">'+(showPast?'Hide past weeks':'Show past weeks')+'</button></p>';
+   if(!rows.length)h+='<div class="ca-soon"><h3>No upcoming fixtures.</h3></div>';
+   else h+=table(rows);
+   b.innerHTML=h;var btn=b.querySelector('.ca-past');if(btn)btn.onclick=function(){draw(!showPast)}}
+  draw(false)}
  [].forEach.call(document.querySelectorAll('#courts [data-sheet]'),function(p,i){var cb='dtcCourts'+i,b=p.querySelector('.ca-body'),done=false;
   window[cb]=function(r){done=true;try{if(r&&r.status==='error'){b.innerHTML='<div class="ca-soon"><h3>Allocations unavailable</h3><p>Please try again later.</p></div>';return}render(p,r)}catch(e){soon(b)}};
   var s=document.createElement('script');s.src='https://docs.google.com/spreadsheets/d/'+ID+'/gviz/tq?tqx=out:json;responseHandler:'+cb+'&sheet='+encodeURIComponent(p.dataset.sheet)+'&headers=0&t='+T;
