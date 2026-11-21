@@ -255,6 +255,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 .jump .chip{font-size:.82rem}.lg-l{display:none}.sm-l{display:inline}.rt{min-width:520px}.board .rt{min-width:0}}
 @media(max-width:600px){#results .tabs{border-radius:14px;padding:4px;gap:2px;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}#results .tabs button{flex:1 0 auto;padding:9px 10px;font-size:.8rem;letter-spacing:-.01em}}
 </style>
+<link rel="stylesheet" href="search.css">
 <script>try{var t=localStorage.getItem("dtc-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
@@ -267,6 +268,9 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
   <li><a href="index.html#membership">Membership</a></li><li><a href="index.html#play">Play</a></li><li><a href="courts.html">Competition</a></li><li><a href="https://app.utrsports.net/club/1909847" rel="noreferrer">UTR <span aria-hidden="true" style="font-size:.8em">↗</span></a></li><li><a href="results.html" aria-current="page">Club Champs</a></li><li><a href="index.html#news">News</a></li><li><a href="index.html#contact">Contact</a></li>
   <li class="tsel"><button class="tbtn" aria-label="Colour theme" aria-expanded="false" title="Colour theme"><span class="tdot"></span></button><div class="tpop" hidden><button data-t="" data-n="DTC club colours" aria-label="DTC club colours theme" style="--sw:#246339"></button><button data-t="ao" data-n="Australian Open, Melbourne blue" aria-label="Australian Open, Melbourne blue theme" style="--sw:#0A6FB8"></button><button data-t="rg" data-n="French Open, Roland-Garros clay" aria-label="French Open, Roland-Garros clay theme" style="--sw:#B4482A"></button><button data-t="wim" data-n="Wimbledon, purple and green" aria-label="Wimbledon, purple and green theme" style="--sw:#4B1A6E"></button><button data-t="us" data-n="US Open, New York navy" aria-label="US Open, New York navy theme" style="--sw:#1B2F6E"></button></div></li><li><a class="btn btn-g" href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate" target="_blank" rel="noopener">Book now</a></li>
  </ul>
+ <button class="sbtn" type="button" aria-label="Search the club website" aria-haspopup="dialog" aria-controls="dtc-search" aria-expanded="false" title="Search (/ or Ctrl+K)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+ </button>
 </div></header>
 <main id="main"><section class="phead"><div class="wrap"><span class="kicker">Club Champs</span><h1>Club Championships</h1></div></section>
 <section class="rpage" id="results"><div class="wrap">
@@ -337,7 +341,7 @@ table.hbt{width:100%;border-collapse:collapse;table-layout:fixed;font-family:inh
 </div></section></main>
 <footer><div class="wrap">
  <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster<div class="soc" data-social hidden></div></div></div>
- <div><a href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate">Book a court</a> · <a href="https://play.tennis.com.au/doncastertennisclub/Membership/Join">Join</a> · <a href="mailto:enquiries@doncastertc.org.au">Contact</a> · <a href="office-bearers.html">Office Bearers</a></div>
+ <div><a href="https://play.tennis.com.au/doncastertennisclub/Booking/BookByDate">Book a court</a> · <a href="https://play.tennis.com.au/doncastertennisclub/Membership/Join">Join</a> · <a href="mailto:enquiries@doncastertc.org.au">Contact</a> · <a href="office-bearers.html">Office Bearers</a> · <a href="faq.html">FAQ</a></div>
  <div class="fpol" style="font-size:.85rem;opacity:.85"><a href="https://www.tennis.com.au/" target="_blank" rel="noopener">Tennis Australia</a> · <a href="https://www.tennis.com.au/tas/files/2016/04/Member-Protection-Policy.pdf" target="_blank" rel="noopener">Member Protection Policy</a> · <a href="https://www.tennis.com.au/nsw/files/2021/12/Safeguarding-Children-Code-of-Conduct-6-Oct-2021.pdf" target="_blank" rel="noopener">Safeguarding Children Code of Conduct</a> · <a href="https://www.tennis.com.au/information-for-clubs-associations" target="_blank" rel="noopener">A Safer Game Plan</a> · <a href="https://www.tennis.com.au/conditions-of-use" target="_blank" rel="noopener">Terms &amp; Conditions</a> · <a href="https://www.tennis.com.au/privacy" target="_blank" rel="noopener">Privacy Policy</a></div>
  <div class="themes" role="group" aria-label="Colour theme"><span>Theme:</span><button data-t="" style="--sw:#246339">DTC</button><button data-t="ao" style="--sw:#0A6FB8">Australian Open</button><button data-t="rg" style="--sw:#B4482A">French Open</button><button data-t="wim" style="--sw:#4B1A6E">Wimbledon</button><button data-t="us" style="--sw:#1B2F6E">US Open</button></div>
  <div>© <span id="yr">2026</span> Doncaster Tennis Club</div>
@@ -512,5 +516,6 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
  window.addEventListener('hashchange',fromHash);fromHash();
 })();
 </script>
+<script src="search.js" defer></script>
 <script data-goatcounter="https://doncastertc.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body></html>
