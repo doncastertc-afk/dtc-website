@@ -259,7 +259,7 @@
         add({group:'faq',title:q,snippet:snip,url:'faq.html#'+slugQuestion(q),path:'FAQ'+(cat?' · '+cat:'')});
       });
     });
-    loadSheet(CONTENT,'Supervisor Roster',1,function(r){
+    loadSheet(ALLOC,'Junior Supervisors',1,function(r){
       function parseDate(c){
         if(!c)return null;
         if(c.v!=null && typeof c.v==='string'){var m=c.v.match(/^Date\((\d+),(\d+),(\d+)/);if(m)return new Date(+m[1],+m[2],+m[3]);}
