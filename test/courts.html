@@ -256,7 +256,7 @@ iframe.trols{width:100%;height:520px;min-height:0;border:0;border-radius:0;displ
 .rt.st td:nth-child(4)::before{content:" · ";color:var(--m)}.rt.st td:nth-child(4){color:var(--m);white-space:nowrap}.jump .chip{font-size:.82rem}.lg-l{display:none}.sm-l{display:inline}.rt{min-width:520px}.board .rt{min-width:0}}
 @media(max-width:600px){#results .tabs{border-radius:14px;padding:4px;gap:2px}#results .tabs button{flex:1 1 auto;padding:9px 6px;font-size:.8rem;letter-spacing:-.01em}}
 
-#courts .tabs{flex-wrap:wrap}@media(min-width:601px){#courts .tabs{gap:2px}#courts .tabs button{padding-left:12px;padding-right:12px;font-size:.9rem}}
+#courts .tabs{flex-wrap:wrap;width:100%;border-radius:16px}@media(min-width:601px){#courts .tabs{gap:2px}#courts .tabs button{padding-left:11px;padding-right:11px;font-size:.88rem}}
 .ca-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid #e3eae2;border-radius:14px;background:#fff;margin-top:14px}
 table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;font-size:.95rem}
 .ca th,.ca td{padding:9px 12px;text-align:center;border-bottom:1px solid #edf1ec;white-space:nowrap}
@@ -275,6 +275,25 @@ table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;fo
 .ca-toggle{margin:8px 0 0;text-align:right}
 .ca-past{background:none;border:0;padding:0;font:inherit;font-size:.82rem;font-weight:600;color:var(--m);cursor:pointer}
 .ca-past:hover,.ca-past:focus-visible{color:var(--g);text-decoration:underline;text-underline-offset:3px}
+
+/* Junior supervisor roster */
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+.sr-day h3{margin:0 0 10px;color:var(--g);font-size:1.15rem;letter-spacing:-.01em}
+.sr-card{border:1px solid #e3eae2;border-radius:14px;overflow:hidden;background:#fff}
+.sr-month{margin:0;padding:8px 14px;background:var(--l);color:var(--g2);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.sr-list{list-style:none;margin:0;padding:0}
+.sr-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;padding:11px 14px;border-top:1px solid #eef2ee}
+.sr-month + .sr-list .sr-row:first-child{border-top:0}
+.sr-date{font-weight:700;color:var(--t);min-width:6.5rem}
+.sr-name{font-weight:600;color:var(--t);flex:1}
+.sr-notes{flex-basis:100%;margin:0;color:var(--m);font-size:.88rem}
+.sr-badge{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);background:#fff6d6;border-radius:999px;padding:3px 8px}
+.sr-row.is-next{background:#fff6d6;box-shadow:inset 4px 0 0 var(--y)}
+.sr-soon{padding:36px 20px;text-align:center;color:var(--m)}
+.sr-soon h3{color:var(--g);margin:0 0 6px;font-size:1.05rem}
+.sr-fail{padding:28px 16px;text-align:center;color:var(--m)}
+@media(max-width:800px){.sr-grid{grid-template-columns:1fr;gap:16px}.sr-soon{padding:22px 16px}.sr-day h3{margin-bottom:8px}}
+
 @media(min-width:900px){.ca tr.np td span{left:auto;position:static;display:block;text-align:center}}
 @media(max-width:600px){.ca tr.np td span{visibility:hidden}.ca tr.np:not(.now) td.dt::after{content:"No play";display:block;font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;color:#cfd8d1}.ca th,.ca td{padding:8px 8px;font-size:.85rem}.ca thead th{min-width:110px}.ca .dt{min-width:84px}#courts .tabs button{flex:1 1 auto;padding:9px 6px;font-size:.85rem}}
 </style>
@@ -307,6 +326,7 @@ table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;fo
   <button role="tab" id="t-thursday" aria-controls="thursday" aria-selected="false" tabindex="-1"><span class="lg-l">Thursday Night</span><span class="sm-l">Thu</span></button>
   <button role="tab" id="t-saturday" aria-controls="saturday" aria-selected="false" tabindex="-1"><span class="lg-l">Saturday Afternoon</span><span class="sm-l">Sat</span></button>
   <button role="tab" id="t-sunday" aria-controls="sunday" aria-selected="false" tabindex="-1"><span class="lg-l">Sunday Afternoon</span><span class="sm-l">Sun</span></button>
+  <button role="tab" id="t-supervisors" aria-controls="supervisors" aria-selected="false" tabindex="-1"><span class="lg-l">Junior Supervisors</span><span class="sm-l">Supervisors</span></button>
  </div>
  <div class="tp" role="tabpanel" id="ladders" aria-labelledby="t-ladders"><h2 class="yh">Competition Ladders</h2><p class="intro">Ladders are the live versions taken directly from TROLS.</p><div class="chips jump"><a class="chip" href="#lad-bdnta">Blackburn District Night Tennis Association</a><a class="chip" href="#lad-erta">Eastern Region Tennis</a><a class="chip" href="#lad-wdta">Waverley Tennis</a></div><h2 class="assoc" id="lad-bdnta">Blackburn District Night Tennis Association</h2><div class="lsec"><div class="lhead"><h3>Monday Night</h3><a href="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=MN&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Blackburn District Night Tennis Association – Monday Night ladder" loading="lazy" src="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=MN&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Tuesday Night</h3><a href="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=TN&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Blackburn District Night Tennis Association – Tuesday Night ladder" loading="lazy" src="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=TN&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Wednesday Night</h3><a href="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=WN&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Blackburn District Night Tennis Association – Wednesday Night ladder" loading="lazy" src="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=WN&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Thursday Night</h3><a href="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=HN&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Blackburn District Night Tennis Association – Thursday Night ladder" loading="lazy" src="https://www.trols.org.au/bdnta/ladders.php?style=iframe&amp;which=2&amp;daytime=HN&amp;section=&amp;club=Doncaster"></iframe></div><h2 class="assoc" id="lad-erta">Eastern Region Tennis</h2><div class="lsec"><div class="lhead"><h3>Saturday AM</h3><a href="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=AA&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Eastern Region Tennis – Saturday AM ladder" loading="lazy" src="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=AA&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Saturday PM</h3><a href="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=AP&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Eastern Region Tennis – Saturday PM ladder" loading="lazy" src="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=AP&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Sunday AM</h3><a href="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=UA&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Eastern Region Tennis – Sunday AM ladder" loading="lazy" src="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=UA&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Sunday PM</h3><a href="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=UP&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Eastern Region Tennis – Sunday PM ladder" loading="lazy" src="https://www.trols.org.au/erta/ladders.php?style=iframe&amp;which=2&amp;daytime=UP&amp;section=&amp;club=Doncaster"></iframe></div><h2 class="assoc" id="lad-wdta">Waverley Tennis</h2><div class="lsec"><div class="lhead"><h3>Saturday PM</h3><a href="https://www.trols.org.au/wdta/ladders.php?style=iframe&amp;which=2&amp;daytime=AP&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Waverley Tennis – Saturday PM ladder" loading="lazy" src="https://www.trols.org.au/wdta/ladders.php?style=iframe&amp;which=2&amp;daytime=AP&amp;section=&amp;club=Doncaster"></iframe></div><div class="lsec"><div class="lhead"><h3>Thursday AM</h3><a href="https://www.trols.org.au/wdta/ladders.php?style=iframe&amp;which=2&amp;daytime=HA&amp;section=&amp;club=Doncaster" target="_blank" rel="noopener">Open in TROLS ↗</a></div><iframe class="trols" title="Waverley Tennis – Thursday AM ladder" loading="lazy" src="https://www.trols.org.au/wdta/ladders.php?style=iframe&amp;which=2&amp;daytime=HA&amp;section=&amp;club=Doncaster"></iframe></div></div>
  <div class="tp" role="tabpanel" id="monday" aria-labelledby="t-monday" data-sheet="Open Night - Monday" hidden><h2 class="yh">Open Night – Monday</h2><div class="ca-body"><p class="intro">Loading allocations…</p></div><p class="note" style="margin-top:18px">Court numbers in red are your home courts. Dark rows mean no play that week. Tap a captain's number to call.</p></div>
@@ -315,6 +335,11 @@ table.ca{border-collapse:separate;border-spacing:0;width:100%;min-width:640px;fo
  <div class="tp" role="tabpanel" id="thursday" aria-labelledby="t-thursday" data-sheet="Open Night - Thursday" hidden><h2 class="yh">Open Night – Thursday</h2><div class="ca-body"><p class="intro">Loading allocations…</p></div><p class="note" style="margin-top:18px">Court numbers in red are your home courts. Dark rows mean no play that week. Tap a captain's number to call.</p></div>
  <div class="tp" role="tabpanel" id="saturday" aria-labelledby="t-saturday" data-sheet="Saturday Afternoon" hidden><h2 class="yh">Saturday Afternoon</h2><p class="intro" style="margin:0">Saturday afternoon competition – court allocations</p><div class="ca-body"><p class="intro">Loading allocations…</p></div><p class="note" style="margin-top:18px">Court numbers in red are your home courts. Dark rows mean no play that week. Tap a captain's number to call.</p></div>
  <div class="tp" role="tabpanel" id="sunday" aria-labelledby="t-sunday" data-sheet="Sunday Afternoon" hidden><h2 class="yh">Sunday Afternoon</h2><p class="intro" style="margin:0">Sunday afternoon competition – court allocations</p><div class="ca-body"><p class="intro">Loading allocations…</p></div><p class="note" style="margin-top:18px">Court numbers in red are your home courts. Dark rows mean no play that week. Tap a captain's number to call.</p></div>
+ <div class="tp" role="tabpanel" id="supervisors" aria-labelledby="t-supervisors" hidden>
+  <h2 class="yh">Junior Supervisors</h2>
+  <p class="intro">Supervisor roster for Saturday and Sunday junior competition.</p>
+  <div id="sr-body"><p class="intro">Loading roster…</p></div>
+ </div>
 </div></section></main>
 <footer><div class="wrap">
  <div class="fb"><img src="logo.png" alt=""><div><b style="color:#fff">Doncaster Tennis Club</b><br>Est. 1921 · 802 Doncaster Road, Doncaster<div class="soc" data-social hidden></div></div></div>
@@ -501,6 +526,113 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
   window[cb]=function(r){done=true;try{if(r&&r.status==='error'){b.innerHTML='<div class="ca-soon"><h3>Allocations unavailable</h3><p>Please try again later.</p></div>';return}render(p,r)}catch(e){soon(b)}};
   var s=document.createElement('script');s.src='https://docs.google.com/spreadsheets/d/'+ID+'/gviz/tq?tqx=out:json;responseHandler:'+cb+'&sheet='+encodeURIComponent(p.dataset.sheet)+'&headers=0&t='+T;
   s.onerror=function(){if(!done)b.innerHTML='<div class="ca-soon"><h3>Allocations unavailable</h3><p>Couldn\'t load the allocations right now. Please try again later.</p></div>'};document.head.appendChild(s)});
+})();
+</script>
+
+<script>
+(function(){
+ var ID='1VqoOP7ec88J1Rl-DN7PtynWBuAoA3McwAMSIjn8o-FA',T=Math.floor(Date.now()/300000);
+ var DAYS=['Saturday','Sunday'];
+ var MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+ var WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+ function cell(c){if(!c)return '';if(c.f!=null)return String(c.f).trim();return c.v==null?'':String(c.v).trim()}
+ function esc(t){return String(t).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]})}
+ function parseDate(c){
+  if(!c)return null;
+  if(c.v!=null && typeof c.v==='string'){var m=c.v.match(/^Date\((\d+),(\d+),(\d+)/);if(m)return new Date(+m[1],+m[2],+m[3]);}
+  var s=cell(c),m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if(m)return new Date(+m[3],+m[2]-1,+m[1]);
+  m=s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if(m)return new Date(+m[1],+m[2]-1,+m[3]);
+  return null;
+ }
+ function todayMelb(){var p=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),g={};
+  p.forEach(function(x){g[x.type]=x.value});return new Date(+g.year,+g.month-1,+g.day)}
+ function startOfDay(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
+ function endOfWeek(now){var e=new Date(now);var add=now.getDay()===0?0:(7-now.getDay());e.setDate(now.getDate()+add);return e}
+ function labelDate(d){return WD[d.getDay()]+' '+d.getDate()+' '+MON[d.getMonth()].slice(0,3)}
+ function badge(d,now){
+  if(d.getTime()===now.getTime())return 'Today';
+  if(d<=endOfWeek(now))return 'This week';
+  return 'Next up';
+ }
+ function render(items){
+  var body=document.getElementById('sr-body'); if(!body)return;
+  var now=todayMelb();
+  function draw(showPast){
+   var pastAny=items.some(function(it){return it.date<now});
+   var html='';
+   if(pastAny) html+='<p class="ca-toggle"><button type="button" class="ca-past" aria-pressed="'+(showPast?'true':'false')+'">'+(showPast?'Hide past dates':'Show past dates')+'</button></p>';
+   html+='<div class="sr-grid">';
+   DAYS.forEach(function(day){
+    var all=items.filter(function(it){return it.day===day}).sort(function(a,b){return a.date-b.date});
+    var rows=showPast?all:all.filter(function(it){return it.date>=now});
+    var next=null; rows.forEach(function(it){if(!next&&it.date>=now)next=it});
+    html+='<div class="sr-day"><h3>'+esc(day)+'</h3>';
+    if(!all.length){
+     html+='<div class="sr-card"><div class="sr-soon"><h3>Roster coming soon</h3><p>The '+esc(day)+' junior supervisor roster will appear here once it is set.</p></div></div>';
+    } else if(!rows.length){
+     html+='<div class="sr-card"><div class="sr-soon"><h3>No upcoming dates</h3><p>There are no '+esc(day)+' dates from today onward.</p></div></div>';
+    } else {
+     html+='<div class="sr-card">';
+     var lastKey='';
+     rows.forEach(function(it){
+      var key=it.date.getFullYear()+'-'+it.date.getMonth();
+      if(key!==lastKey){
+       if(lastKey) html+='</ul>';
+       html+='<p class="sr-month">'+esc(MON[it.date.getMonth()]+' '+it.date.getFullYear())+'</p><ul class="sr-list">';
+       lastKey=key;
+      }
+      var isNext=next&&it===next;
+      var id='sr-'+it.date.getFullYear()+'-'+('0'+(it.date.getMonth()+1)).slice(-2)+'-'+('0'+it.date.getDate()).slice(-2);
+      html+='<li class="sr-row'+(isNext?' is-next':'')+'" id="'+id+'"><span class="sr-date">'+esc(labelDate(it.date))+'</span><span class="sr-name">'+esc(it.name)+'</span>'+(isNext?'<span class="sr-badge">'+esc(badge(it.date,now))+'</span>':'')+(it.notes?'<p class="sr-notes">'+esc(it.notes)+'</p>':'')+'</li>';
+     });
+     if(lastKey) html+='</ul>';
+     html+='</div>';
+    }
+    html+='</div>';
+   });
+   html+='</div>';
+   body.innerHTML=html;
+   var btn=body.querySelector('.ca-past');
+   if(btn) btn.onclick=function(){draw(!showPast)};
+   var hash=(location.hash||'').slice(1);
+   if(hash&&hash.indexOf('sr-')===0){
+    var el=document.getElementById(hash);
+    if(el){ if(el.closest && !body.contains(el) && pastAny && !showPast){ draw(true); return; }
+      setTimeout(function(){el.scrollIntoView({block:'start',behavior:'instant'})},50); }
+   }
+  }
+  draw(false);
+ }
+ function fail(){
+  var body=document.getElementById('sr-body');
+  if(body) body.innerHTML='<div class="sr-fail"><p>The supervisor roster is unavailable right now. Please try again later.</p></div>';
+ }
+ var done=false;
+ window.dtcSupervisors=function(r){
+  if(done)return; done=true;
+  try{
+   if(!r||r.status==='error'){fail();return}
+   var rs=(r.table&&r.table.rows)||[], items=[];
+   rs.forEach(function(row){
+    var c=row.c||[];
+    if(cell(c[4]).toLowerCase()!=='yes')return;
+    var d=parseDate(c[1]); if(!d)return;
+    var day=cell(c[0]); if(!day)return;
+    if(!/^(saturday|sunday)$/i.test(day))return;
+    var name=cell(c[2]); if(!name)return;
+    items.push({day:day.charAt(0).toUpperCase()+day.slice(1).toLowerCase(), date:startOfDay(d), name:name, notes:cell(c[3])});
+   });
+   // Normalize Saturday/SUNDAY etc already handled; "Saturday" after capitalize of first only works if rest lowercased - "SATURDAY" -> "Saturday" yes.
+   render(items);
+  }catch(e){fail()}
+ };
+ var s=document.createElement('script');
+ s.src='https://docs.google.com/spreadsheets/d/'+ID+'/gviz/tq?tqx=out:json;responseHandler:dtcSupervisors&sheet='+encodeURIComponent('Supervisor Roster')+'&headers=1&t='+T;
+ s.onerror=function(){if(!done){done=true;fail()}};
+ document.head.appendChild(s);
+ setTimeout(function(){if(!done){done=true;fail()}},12000);
 })();
 </script>
 <script src="search.js" defer></script>
