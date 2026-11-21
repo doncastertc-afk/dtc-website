@@ -1,0 +1,55 @@
+/* Site search mock-up — DTC branding, used by search.js on every page */
+.sbtn{order:3;flex-shrink:0;width:40px;height:40px;margin-left:8px;border:1px solid #dfe6de;border-radius:10px;background:#fff;color:var(--t);cursor:pointer;display:grid;place-items:center;padding:0;transition:background .15s,color .15s,border-color .15s}
+.sbtn svg{width:20px;height:20px;display:block}
+.sbtn:hover,.sbtn:focus-visible{background:var(--l);color:var(--g);border-color:var(--g);outline:none}
+.sbtn[aria-expanded=true]{background:var(--l);color:var(--g)}
+.menu{margin-left:auto}
+.burger{order:4}
+
+.s-ov{position:fixed;inset:0;z-index:200;display:flex;align-items:flex-start;justify-content:center;padding:56px 20px 28px;background:rgba(31,42,36,.46);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.s-ov[hidden]{display:none}
+.s-panel{width:min(680px,100%);max-height:100%;background:#fff;border-radius:var(--r);box-shadow:0 24px 60px rgba(31,42,36,.22);border-top:4px solid var(--y);display:flex;flex-direction:column;overflow:hidden;color:var(--t)}
+.s-head{display:flex;align-items:center;gap:10px;padding:14px 16px 12px;border-bottom:1px solid #e6ece6}
+.s-ico{flex-shrink:0;color:var(--g);display:grid;place-items:center}
+.s-ico svg{width:22px;height:22px}
+.s-input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:1.15rem;font-weight:500;color:var(--t);outline:none;padding:8px 0}
+.s-input::placeholder{color:var(--m);font-weight:400}
+.s-x{flex-shrink:0;width:36px;height:36px;border:0;border-radius:10px;background:transparent;color:var(--m);cursor:pointer;display:grid;place-items:center;padding:0}
+.s-x:hover,.s-x:focus-visible{background:var(--l);color:var(--t);outline:none}
+.s-x svg{width:18px;height:18px}
+.s-keys{display:flex;gap:6px;flex-shrink:0}
+.s-keys kbd{font:600 .7rem/1 Inter,system-ui,sans-serif;color:var(--m);border:1px solid #dfe6de;background:#f7faf6;border-radius:6px;padding:3px 6px}
+.s-body{overflow:auto;padding:6px 8px 12px;flex:1;-webkit-overflow-scrolling:touch;min-height:0}
+.s-msg{margin:0;padding:28px 20px;text-align:center;color:var(--m);font-size:.95rem}
+.s-msg b{color:var(--t)}
+.s-group{padding:8px 8px 2px}
+.s-label{margin:0 8px 6px;color:var(--g2);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}
+.s-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.s-item{display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:inherit;padding:8px 12px;border-radius:12px;border:1px solid transparent}
+.s-item:hover,.s-item:focus-visible,.s-item.is-active{background:var(--l);border-color:#e3ece0;outline:none}
+.s-thumb{flex-shrink:0;width:52px;height:52px;border-radius:10px;object-fit:cover;background:#e8eee6}
+.s-item.has-thumb .s-text{padding-top:1px}
+.s-title{font-weight:700;font-size:.98rem;letter-spacing:-.01em;line-height:1.3;color:var(--t)}
+.s-snips{margin:3px 0 0;font-size:.85rem;line-height:1.4;color:var(--m);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.s-snips:empty{display:none}
+.s-path{margin:4px 0 0;font-size:.75rem;font-weight:600;color:var(--g2)}
+.s-item mark{background:color-mix(in srgb,var(--y) 78%,#fff);color:var(--t);font-weight:700;padding:0 .12em;border-radius:3px}
+.s-foot{padding:7px 16px 8px;border-top:1px solid #e6ece6;color:var(--m);font-size:.75rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#fff;flex-shrink:0}
+.s-foot span{white-space:nowrap}.s-hint{margin-left:auto}
+
+@media (max-width:1020px){
+  .menu{margin-left:0}
+  .sbtn{margin-left:auto;width:44px;height:44px}
+  .s-ov{padding:8px;align-items:stretch}
+  .s-panel{width:100%;max-height:none;height:100%;border-radius:16px}
+  .s-hint{display:none}
+  .s-foot{justify-content:flex-start}
+  .s-item{padding:7px 10px}
+
+  .s-input{font-size:1.05rem}
+  .s-keys{display:none}
+  .s-thumb{width:48px;height:48px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sbtn,.s-item,.s-x{transition:none}
+  .s-ov{backdrop-filter:none;-webkit-backdrop-filter:none}
+}

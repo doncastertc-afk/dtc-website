@@ -1,0 +1,25 @@
+/* Test-site only: not for the live site. */
+:root{--test-h:36px}
+html{scroll-padding-top:calc(80px + var(--test-h))}
+body{padding-top:var(--test-h)}
+header{top:var(--test-h)}
+.skip:focus{top:calc(10px + var(--test-h))}
+.dtc-test{
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  box-sizing:border-box;min-height:var(--test-h);
+  display:flex;align-items:center;justify-content:center;
+  gap:.55em;padding:0 16px;
+  background:#1F2A24;color:#fff;
+  font:600 13px/1.3 Inter,system-ui,-apple-system,sans-serif;
+  letter-spacing:.01em;text-align:center;
+}
+.dtc-test a{color:var(--y,#F2C94C);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.dtc-test a:hover,.dtc-test a:focus-visible{color:#fff}
+@media (max-width:1020px){
+  .menu{top:calc(68px + var(--test-h));inset:calc(68px + var(--test-h)) 0 auto 0}
+}
+@media (max-width:420px){
+  :root{--test-h:44px}
+  .dtc-test{font-size:12px;padding:6px 12px}
+}
+.s-ov{inset:var(--test-h) 0 0 0}
