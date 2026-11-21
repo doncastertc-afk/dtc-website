@@ -5,12 +5,13 @@
   var T=Math.floor(Date.now()/300000);
   var GROUPS=[
     {id:'pages',label:'Pages & sections'},
+    {id:'faq',label:'FAQs'},
     {id:'champions',label:'Club Champions'},
     {id:'wof',label:'Wall of Fame'},
     {id:'office',label:'Office Bearers'},
     {id:'courts',label:'Ladders & Court Allocations'}
   ];
-  var PAGES=['index.html','courts.html','results.html','wall-of-fame.html','office-bearers.html'];
+  var PAGES=['index.html','courts.html','results.html','wall-of-fame.html','office-bearers.html','faq.html'];
   var ALLOC_TABS=[
     {sheet:'Open Night - Monday',url:'courts.html#monday',title:'Open Night – Monday allocations'},
     {sheet:'Open Night - Tuesday',url:'courts.html#tuesday',title:'Open Night – Tuesday allocations'},
@@ -30,6 +31,7 @@
   function esc(t){return String(t).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]})}
   function norm(s){return String(s||'').replace(/\s+/g,' ').trim()}
   function low(s){return norm(s).toLowerCase()}
+  function slugQuestion(q){var s=String(q||'').toLowerCase().replace(/[''\u2019\u2032]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');return 'q-'+(s||'question')}
   function yes(s){return String(s||'').toLowerCase()!=='no'}
   function splitNames(s){return String(s||'').split(/\s*(?:\/|&|,|\band\b)\s*/i).map(norm).filter(function(n){return n&&n!=='-'&&n!=='–'})}
   function visibleText(el){
@@ -93,7 +95,7 @@
     var pageTitle=h1?norm(h1.textContent):'';
     var pageIntro=intro?visibleText(intro):'';
     if(pageTitle){
-      var pgrp=(file==='courts.html')?'courts':(file==='wall-of-fame.html')?'wof':(file==='office-bearers.html')?'office':(file==='results.html')?'champions':'pages';
+      var pgrp=(file==='courts.html')?'courts':(file==='wall-of-fame.html')?'wof':(file==='office-bearers.html')?'office':(file==='results.html')?'champions':(file==='faq.html')?'faq':'pages';
       add({group:pgrp,title:pageTitle,snippet:pageIntro||('The '+pageTitle+' page'),url:file,path:pageTitle,extra:file});
     }
     var seen={};
@@ -245,6 +247,15 @@
         var title=cell(c[4]), det=cell(c[5]), date=cell(c[1]);
         if(!title)return;
         add({group:'pages',title:title,snippet:[date,det].filter(Boolean).join(' — '),url:'index.html#events',path:'Events'});
+      });
+    });
+    loadSheet(CONTENT,'FAQ',1,function(r){
+      rows(r).forEach(function(c){
+        if(cell(c[4]).toLowerCase()!=='yes')return;
+        var q=cell(c[1]), a=cell(c[2]); if(!q)return;
+        var cat=cell(c[0]);
+        var snip=a.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'$1').replace(/\s+/g,' ').trim();
+        add({group:'faq',title:q,snippet:snip,url:'faq.html#'+slugQuestion(q),path:'FAQ'+(cat?' · '+cat:'')});
       });
     });
     ALLOC_TABS.forEach(function(tab){
