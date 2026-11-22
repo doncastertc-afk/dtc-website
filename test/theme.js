@@ -88,7 +88,14 @@
     Object.keys(KEYS).forEach(function(k){root.classList.remove(KEYS[k].cls)});
     current=key?{key:key,msg:(msg&&String(msg).trim())||KEYS[key].def}:null;
     if(current)root.classList.add(KEYS[current.key].cls);
-    if(document.body)mountRibbon();
+    if(document.body){mountRibbon();syncCopy()}
+  }
+  function syncCopy(){
+    var cny=current&&current.key==='chinese-new-year';
+    document.querySelectorAll('p.note').forEach(function(el){
+      if(!el.dataset.dtcNote)el.dataset.dtcNote=el.textContent;
+      el.textContent=cny?el.dataset.dtcNote.replace('in red','in gold'):el.dataset.dtcNote;
+    });
   }
   function mountRibbon(){
     var el=document.getElementById('dtc-season');
@@ -347,6 +354,6 @@
       if(cached)apply(cached.key,cached.msg);
     }
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();load()});
-  else{if(current)mountRibbon();load()}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();syncCopy();load()});
+  else{if(current)mountRibbon();syncCopy();load()}
 })();

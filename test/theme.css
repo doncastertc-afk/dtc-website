@@ -88,22 +88,23 @@ html.theme-new-year{
   --strip:linear-gradient(90deg,#D4AF37,#E8EDF3 50%,#A8B0BC);
 }
 html.theme-chinese-new-year{
-  --g:#F0C14B;            /* gold links on red surfaces */
-  --g2:#FFD98A;
+  --g:#F0C14B;            /* gold trims and large headings only */
+  --g2:#FFE7A8;
   --y:#F0C14B;
-  --t:#FFF4D0;
-  --m:#F3D48A;
-  --l:#B31426;            /* lighter festal red band */
+  --t:#FFF8E0;            /* cream body text on deep red */
+  --m:#FFF4D0;            /* cream, not gold, for notes and secondary text */
+  --l:#8E0B1E;            /* deep red bands — dark enough for gold headings */
   --sh:0 10px 30px rgba(80,0,8,.18);
   --green:#F0C14B; --gold:#F0C14B;
-  --header-bg:linear-gradient(180deg,#E31B2D,#9A0D1C);
-  --header-fg:#FFF4D0;
-  --header-muted:#F0C14B;
-  --footer-bg:linear-gradient(180deg,#8E0B1E,#4A070E);
-  --footer-fg:#F0C14B;
+  --header-bg:linear-gradient(180deg,#8E0B1E,#6B0A14);
+  --header-fg:#FFF8E0;
+  --header-muted:#FFE7A8;
+  --footer-bg:linear-gradient(180deg,#6B0A14,#3A070C);
+  --footer-fg:#FFF8E0;
   --btn:#F0C14B; --btn-fg:#6B0A14;
   --border:#F0C14B;
-  --surface:#9A1220;
+  --surface:#8E0B1E;
+  --card:#8E0B1E;
   --strip:linear-gradient(90deg,#F0C14B,#FFF4D0 50%,#F0C14B);
 }
 html.theme-diwali{
@@ -116,7 +117,7 @@ html.theme-diwali{
   --l:#FFF3DC;
   --sh:0 10px 30px rgba(80,20,60,.12);
   --green:#0E7A4B; --gold:#C9A227;
-  --header-bg:linear-gradient(90deg,#7A1458,#B33A00 20%,#8F7010 40%,#0B5C38 60%,#086068 80%,#3E1468);
+  --header-bg:linear-gradient(90deg,#7A1458,#B33A00 20%,#6E560C 40%,#0B5C38 60%,#086068 80%,#3E1468);
   --header-fg:#FFF8E8;
   --header-muted:#FFE08A;
   --footer-bg:linear-gradient(90deg,#4A0E36,#6E2200 20%,#5A480C 40%,#06402A 60%,#053E44 80%,#2A0C48);
@@ -199,7 +200,7 @@ html.theme-chinese-new-year .season-ribbon-icon{
 }
 /* Diwali: rangoli rainbow ribbon, cream type, small diya icons */
 html.theme-diwali .season-ribbon{
-  background:linear-gradient(90deg,#7A1458,#B33A00 20%,#8F7010 40%,#0B5C38 60%,#086068 80%,#3E1468);
+  background:linear-gradient(90deg,#7A1458,#B33A00 20%,#6E560C 40%,#0B5C38 60%,#086068 80%,#3E1468);
   color:#FFF8E8;
   border-top:1px solid #FFE08A;
   border-bottom:3px solid #C9A227;
@@ -576,8 +577,8 @@ html.theme-new-year .phead{background:linear-gradient(100deg,#2A2D34 0%,#8A93A6 
 /* Chinese New Year: saturated red field, strong gold glow, static gold haze */
 html.theme-chinese-new-year .hero{
   background:
-    linear-gradient(135deg,rgba(140,8,18,.92) 0%,rgba(200,16,30,.78) 48%,rgba(100,6,12,.94) 100%),
-    url(hero-court.jpg) center 45%/cover no-repeat #9A0D1C;
+    linear-gradient(135deg,rgba(80,6,12,.92) 0%,rgba(110,8,16,.86) 48%,rgba(60,5,10,.94) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #6B0A14;
 }
 html.theme-chinese-new-year .hero::before,
 html.theme-chinese-new-year .phead::before{
@@ -587,7 +588,7 @@ html.theme-chinese-new-year .phead::before{
     radial-gradient(circle at 70% 20%, rgba(255,244,208,.16), transparent 36%),
     linear-gradient(180deg,rgba(255,230,150,.16),transparent 36%);
 }
-html.theme-chinese-new-year .phead{background:linear-gradient(100deg,#7A0A14 0%,#E31B2D 50%,#F0C14B 120%)}
+html.theme-chinese-new-year .phead{background:linear-gradient(100deg,#6B0A14 0%,#8E0B1E 70%,#F0C14B 130%)}
 
 /* Diwali: rangoli rainbow wash, static multi-colour diya-glow */
 html.theme-diwali .hero{
@@ -604,7 +605,7 @@ html.theme-diwali .phead::before{
     radial-gradient(circle at 74% 100%, rgba(126,220,230,.32), transparent 34%),
     radial-gradient(circle at 92% 84%, rgba(196,160,255,.34), transparent 34%);
 }
-html.theme-diwali .phead{background:linear-gradient(100deg,#7A1458 0%,#B33A00 22%,#8F7010 44%,#0B5C38 66%,#086068 84%,#3E1468 110%)}
+html.theme-diwali .phead{background:linear-gradient(100deg,#7A1458 0%,#B33A00 22%,#6E560C 44%,#0B5C38 66%,#086068 84%,#3E1468 110%)}
 @media (max-width:700px){
   html.theme-christmas .hero{background:linear-gradient(180deg,rgba(7,74,34,.88),rgba(20,128,60,.66) 55%,rgba(7,74,34,.90)),url(hero-court-m.jpg) center/cover no-repeat #0B5A2B}
   html.theme-easter .hero{background:linear-gradient(rgba(44,18,78,.30),rgba(44,18,78,.30)),linear-gradient(180deg,rgba(98,42,156,.76),rgba(226,92,156,.50) 52%,rgba(34,160,116,.58)),url(hero-court-m.jpg) center/cover no-repeat #4B2A7A}
@@ -1296,12 +1297,12 @@ html.theme-chinese-new-year .sr-card,
 html.theme-chinese-new-year .ca-wrap,
 html.theme-chinese-new-year .tpop,
 html.theme-chinese-new-year .tbtn{
-  background-color:#B31426;border-color:#F0C14B;color:#FFF4D0;
+  background-color:#8E0B1E;border-color:#F0C14B;color:#FFF8E0;
   box-shadow:0 0 0 1px #F0C14B;
 }
 html.theme-chinese-new-year .faq-item[open]{border-color:#FFE08A}
 html.theme-chinese-new-year .ico{background:#8E0B1E;color:#F0C14B}
-html.theme-chinese-new-year .tabs{background:#8E0B1E;border-color:#F0C14B}
+html.theme-chinese-new-year .tabs{background:#6B0A14;border-color:#F0C14B}
 html.theme-chinese-new-year .tabs button{color:#FFF4D0}
 html.theme-chinese-new-year .tabs button[aria-selected=true]{background:#F0C14B;color:#6B0A14}
 html.theme-chinese-new-year .chip{background:#8E0B1E;border-color:#F0C14B;color:#F0C14B}
@@ -1315,15 +1316,15 @@ html.theme-chinese-new-year .rt tbody tr:nth-child(even){background:color-mix(in
 html.theme-chinese-new-year .ca thead th{background:#F0C14B;color:#6B0A14}
 html.theme-chinese-new-year .ca .dt{background:#8E0B1E;color:#FFF4D0;box-shadow:1px 0 0 #F0C14B}
 html.theme-chinese-new-year footer{border-top:5px solid #F0C14B}
-html.theme-chinese-new-year footer a{color:#F0C14B}
-html.theme-chinese-new-year footer .soc a{color:#F0C14B;border-color:#F0C14B}
+html.theme-chinese-new-year footer a{color:#FFF8E0}
+html.theme-chinese-new-year footer .soc a{color:#FFF8E0;border-color:#F0C14B}
 html.theme-chinese-new-year .s-ov{background:rgba(100,8,14,.6)}
 html.theme-chinese-new-year .s-panel,
 html.theme-chinese-new-year .s-head,
 html.theme-chinese-new-year .s-foot{background:#8E0B1E;border-color:#F0C14B;color:#FFF4D0}
 html.theme-chinese-new-year .mbar{background:#6B0A14;border-top:2px solid #F0C14B}
 html.theme-chinese-new-year .mbar .btn-g{
-  background:linear-gradient(180deg,#FFE08A,#F0C14B 55%,#B8860B);color:#6B0A14!important;
+  background:linear-gradient(180deg,#FFE08A,#F0C14B 55%,#B8860B) #F0C14B;color:#6B0A14!important;
 }
 html.theme-chinese-new-year .mbar .btn-y{background:#FFF4D0;color:#6B0A14!important}
 html.theme-chinese-new-year .mbar .btn-og{border-color:#F0C14B;color:#FFF4D0}
@@ -1372,7 +1373,7 @@ html.theme-diwali .faq-item{
 html.theme-diwali .faq-item[open]{border-color:var(--accent,#9B1B6C)}
 html.theme-diwali .chip:nth-child(6n+1){border-color:#9B1B6C;color:#9B1B6C}
 html.theme-diwali .chip:nth-child(6n+2){border-color:#D35400;color:#D35400}
-html.theme-diwali .chip:nth-child(6n+3){border-color:#8F7010;color:#8F7010}
+html.theme-diwali .chip:nth-child(6n+3){border-color:#6E560C;color:#6E560C}
 html.theme-diwali .chip:nth-child(6n+4){border-color:#0E7A4B;color:#0E7A4B}
 html.theme-diwali .chip:nth-child(6n+5){border-color:#0A7C86;color:#0A7C86}
 html.theme-diwali .chip:nth-child(6n){border-color:#5A1E8A;color:#5A1E8A}
@@ -1380,30 +1381,303 @@ html.theme-diwali .chip.on,
 html.theme-diwali .chip:hover{background:var(--g);color:#fff;border-color:var(--g)}
 html.theme-diwali .chip:nth-child(6n+1).on,html.theme-diwali .chip:nth-child(6n+1):hover{background:#9B1B6C;border-color:#9B1B6C;color:#fff}
 html.theme-diwali .chip:nth-child(6n+2).on,html.theme-diwali .chip:nth-child(6n+2):hover{background:#D35400;border-color:#D35400;color:#fff}
-html.theme-diwali .chip:nth-child(6n+3).on,html.theme-diwali .chip:nth-child(6n+3):hover{background:#8F7010;border-color:#8F7010;color:#fff}
+html.theme-diwali .chip:nth-child(6n+3).on,html.theme-diwali .chip:nth-child(6n+3):hover{background:#6E560C;border-color:#6E560C;color:#fff}
 html.theme-diwali .chip:nth-child(6n+4).on,html.theme-diwali .chip:nth-child(6n+4):hover{background:#0E7A4B;border-color:#0E7A4B;color:#fff}
 html.theme-diwali .chip:nth-child(6n+5).on,html.theme-diwali .chip:nth-child(6n+5):hover{background:#0A7C86;border-color:#0A7C86;color:#fff}
 html.theme-diwali .chip:nth-child(6n).on,html.theme-diwali .chip:nth-child(6n):hover{background:#5A1E8A;border-color:#5A1E8A;color:#fff}
 html.theme-diwali .tabs button:nth-child(6n+1){color:#9B1B6C}
 html.theme-diwali .tabs button:nth-child(6n+2){color:#D35400}
-html.theme-diwali .tabs button:nth-child(6n+3){color:#8F7010}
+html.theme-diwali .tabs button:nth-child(6n+3){color:#6E560C}
 html.theme-diwali .tabs button:nth-child(6n+4){color:#0E7A4B}
 html.theme-diwali .tabs button:nth-child(6n+5){color:#0A7C86}
 html.theme-diwali .tabs button:nth-child(6n){color:#5A1E8A}
 html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+1){background:#9B1B6C;color:#fff}
 html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+2){background:#D35400;color:#fff}
-html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+3){background:#8F7010;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+3){background:#6E560C;color:#fff}
 html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+4){background:#0E7A4B;color:#fff}
 html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+5){background:#0A7C86;color:#fff}
 html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n){background:#5A1E8A;color:#fff}
 html.theme-diwali .lhead,
 html.theme-diwali .rt thead th,
 html.theme-diwali .ca thead th{
-  background:linear-gradient(90deg,#9B1B6C,#D35400 20%,#8F7010 40%,#0E7A4B 60%,#0A7C86 80%,#5A1E8A);
+  background:linear-gradient(90deg,#9B1B6C,#D35400 20%,#6E560C 40%,#0E7A4B 60%,#0A7C86 80%,#5A1E8A);
   color:#FFF8E8;
 }
 html.theme-diwali .assoc{border-bottom-color:#C9A227}
 
+
+/* ---------- v10: Chinese New Year contrast (WCAG AA) ---------- */
+html.theme-chinese-new-year body{background:#8E0B1E;color:#FFF8E0}
+html.theme-chinese-new-year a:not(.btn):not(.btn-g):not(.btn-y):not(.btn-og):not(.btn-o):not(.sbtn):not(.bmore):not(.tag):not(.date){color:#FFF8E0}
+html.theme-chinese-new-year a:not(.btn):not(.btn-g):not(.btn-y):not(.btn-og):not(.btn-o):not(.sbtn):not(.bmore):not(.tag):not(.date):hover{color:#FFE7A8}
+html.theme-chinese-new-year .bmore,
+html.theme-chinese-new-year .banner a{color:#6B0A14}
+html.theme-chinese-new-year .bmore:hover,
+html.theme-chinese-new-year .banner a:hover{color:#4A070E}
+html.theme-chinese-new-year .tag,
+html.theme-chinese-new-year a.tag,
+html.theme-chinese-new-year .date,
+html.theme-chinese-new-year a.date{color:#6B0A14}
+html.theme-chinese-new-year .kicker{color:#F0C14B}
+html.theme-chinese-new-year header .brand small{color:#FFE7A8}
+html.theme-chinese-new-year .hero em,
+html.theme-chinese-new-year .hero p,
+html.theme-chinese-new-year .phead p{color:#FFF8E0}
+html.theme-chinese-new-year .news,
+html.theme-chinese-new-year .ev,
+html.theme-chinese-new-year .cc,
+html.theme-chinese-new-year .comp,
+html.theme-chinese-new-year .way,
+html.theme-chinese-new-year .way .b,
+html.theme-chinese-new-year .mem,
+html.theme-chinese-new-year .contact,
+html.theme-chinese-new-year .rcard,
+html.theme-chinese-new-year .utr,
+html.theme-chinese-new-year .faq-cta,
+html.theme-chinese-new-year .sh,
+html.theme-chinese-new-year .card,
+html.theme-chinese-new-year .fact,
+html.theme-chinese-new-year .tp,
+html.theme-chinese-new-year .lsec,
+html.theme-chinese-new-year .lframe,
+html.theme-chinese-new-year .wof-card,
+html.theme-chinese-new-year .sr-card,
+html.theme-chinese-new-year .ca-wrap,
+html.theme-chinese-new-year .ca-soon,
+html.theme-chinese-new-year .tpop,
+html.theme-chinese-new-year .tbtn,
+html.theme-chinese-new-year .tabs,
+html.theme-chinese-new-year .faq-item,
+html.theme-chinese-new-year .faq-cta{
+  background-color:#8E0B1E !important;
+  color:#FFF8E0;
+  border-color:#F0C14B;
+}
+html.theme-chinese-new-year .mem{color:#FFF8E0}
+html.theme-chinese-new-year .mem h2{color:#FFF8E0}
+html.theme-chinese-new-year .mem .kicker{color:#F0C14B}
+html.theme-chinese-new-year .mem a.link{color:#FFF8E0}
+html.theme-chinese-new-year .perks li{background:rgba(0,0,0,.18);border-color:#F0C14B;color:#FFF8E0}
+html.theme-chinese-new-year .perks b{color:#F0C14B}
+html.theme-chinese-new-year .intro,
+html.theme-chinese-new-year .note,
+html.theme-chinese-new-year .way p,
+html.theme-chinese-new-year .way li,
+html.theme-chinese-new-year .news p,
+html.theme-chinese-new-year .news .dt,
+html.theme-chinese-new-year .news .more,
+html.theme-chinese-new-year .ev p,
+html.theme-chinese-new-year .cc .cr,
+html.theme-chinese-new-year .comps-sub,
+html.theme-chinese-new-year .contact dt,
+html.theme-chinese-new-year .contact dd,
+html.theme-chinese-new-year .s-snips{color:#FFF4D0}
+html.theme-chinese-new-year .tag{
+  background:#F0C14B;color:#6B0A14;border-color:#F0C14B;
+}
+html.theme-chinese-new-year .btn-g,
+html.theme-chinese-new-year a.btn-g,
+html.theme-chinese-new-year .menu a.btn-g,
+html.theme-chinese-new-year .mbar .btn-g{
+  background:linear-gradient(180deg,#FFE08A,#F0C14B 55%,#B8860B) #F0C14B !important;
+  color:#6B0A14!important;
+  border:1px solid #FFF4D0;
+}
+html.theme-chinese-new-year .btn-og,
+html.theme-chinese-new-year .btn-o{border-color:#F0C14B;color:#FFF8E0;background:transparent}
+html.theme-chinese-new-year .btn-y{background:#FFF4D0!important;color:#6B0A14!important}
+html.theme-chinese-new-year input,
+html.theme-chinese-new-year textarea,
+html.theme-chinese-new-year select{
+  background:#FFF8E0;color:#6B0A14;border-color:#F0C14B;caret-color:#6B0A14;
+}
+html.theme-chinese-new-year input::placeholder,
+html.theme-chinese-new-year textarea::placeholder{color:#7A2A1A;opacity:1}
+html.theme-chinese-new-year mark{background:#F0C14B;color:#6B0A14}
+html.theme-chinese-new-year .s-item,
+html.theme-chinese-new-year .s-title,
+html.theme-chinese-new-year .s-panel,
+html.theme-chinese-new-year .s-head,
+html.theme-chinese-new-year .s-foot{color:#FFF8E0}
+html.theme-chinese-new-year .ca .ct{color:#F0C14B;font-weight:800}
+html.theme-chinese-new-year .ca .aw{color:#FFF4D0}
+html.theme-chinese-new-year .sr-row.is-next,
+html.theme-chinese-new-year .sr-badge{
+  background:#F0C14B!important;color:#6B0A14!important;
+}
+html.theme-chinese-new-year .sr-row.is-next .sr-name,
+html.theme-chinese-new-year .sr-row.is-next .sr-date,
+html.theme-chinese-new-year .sr-row.is-next .sr-notes{color:#6B0A14!important}
+html.theme-chinese-new-year .sr-name,
+html.theme-chinese-new-year .sr-date,
+html.theme-chinese-new-year .sr-notes,
+html.theme-chinese-new-year .sr-month{color:#FFF8E0}
+html.theme-chinese-new-year footer,
+html.theme-chinese-new-year footer a{color:#FFF8E0}
+html.theme-chinese-new-year footer a:hover{color:#F0C14B}
+html.theme-chinese-new-year footer .soc a{color:#FFF8E0;border-color:#F0C14B}
+html.theme-chinese-new-year .lhead,
+html.theme-chinese-new-year .lhead a,
+html.theme-chinese-new-year .lhead h3,
+html.theme-chinese-new-year .yh{color:#FFF8E0}
+html.theme-chinese-new-year .lhead a{color:#FFE7A8}
+html.theme-chinese-new-year .menu{background:#6B0A14}
+html.theme-chinese-new-year .wof-h{color:#F0C14B}
+html.theme-chinese-new-year .wof-card figcaption{color:#FFF8E0}
+html.theme-chinese-new-year .rt td,
+html.theme-chinese-new-year .rt th,
+html.theme-chinese-new-year .hire-fees td,
+html.theme-chinese-new-year td.p{color:#FFF8E0}
+html.theme-chinese-new-year .faq-item summary,
+html.theme-chinese-new-year .faq-item p,
+html.theme-chinese-new-year .faq-a{color:#FFF8E0}
+html.theme-chinese-new-year .date,
+html.theme-chinese-new-year .date span,
+html.theme-chinese-new-year .date small{color:#6B0A14;background:#F0C14B}
+html.theme-chinese-new-year .chip{background:#6B0A14;border-color:#F0C14B;color:#FFF8E0}
+html.theme-chinese-new-year .chip.on,
+html.theme-chinese-new-year .chip:hover{background:#F0C14B;color:#6B0A14;border-color:#FFF4D0}
+
+/* Diwali: cream nav on the darker gold stop; don't let magenta links sit on the rainbow */
+html.theme-diwali header .menu a,
+html.theme-diwali .hero,
+html.theme-diwali .phead,
+html.theme-diwali .hero a,
+html.theme-diwali .phead a{color:var(--header-fg)}
+html.theme-diwali .hero .kicker,
+html.theme-diwali .phead .kicker{color:#FFE08A}
+
+@media (max-width:1020px){
+  html.theme-chinese-new-year .menu{background:#6B0A14!important;color:#FFF8E0}
+  html.theme-chinese-new-year .menu a{color:#FFF8E0}
+}
+
+
+html.theme-chinese-new-year .comps,
+html.theme-chinese-new-year .ob-cta{
+  background:#8E0B1E !important;
+  color:#FFF8E0;
+  border-color:#F0C14B;
+}
+html.theme-chinese-new-year .comps h3,
+html.theme-chinese-new-year .ob-cta h2{color:#F0C14B}
+html.theme-chinese-new-year .ob-cta p,
+html.theme-chinese-new-year .comps-sub{color:#FFF4D0}
+html.theme-chinese-new-year .hbp .est,
+html.theme-chinese-new-year .hbp .orn,
+html.theme-chinese-new-year .hbp .note,
+html.theme-chinese-new-year .hbt td{color:#FFF8E0}
+html.theme-chinese-new-year .hbh .club,
+html.theme-chinese-new-year .hbp h2,
+html.theme-chinese-new-year .hbt th,
+html.theme-chinese-new-year .hbt .yr{color:#FFE7A8}
+html.theme-chinese-new-year .ca tr.now:not(.np) td,
+html.theme-chinese-new-year .ca tr.now:not(.np) td.dt{
+  background:#F0C14B !important;
+  color:#6B0A14 !important;
+}
+html.theme-chinese-new-year .ca tr.now:not(.np) .ct,
+html.theme-chinese-new-year .ca tr.now:not(.np) .aw{color:#6B0A14 !important}
+html.theme-chinese-new-year .s-snips,
+html.theme-chinese-new-year .s-title{color:#FFF8E0;background:transparent}
+html.theme-chinese-new-year .s-item mark,
+html.theme-chinese-new-year mark{background:#F0C14B;color:#6B0A14}
+html.theme-chinese-new-year .btn-o{color:#FFF8E0;border-color:#FFF8E0;background:transparent}
+html.theme-chinese-new-year .news-more,
+html.theme-chinese-new-year a.btn-og{background:transparent;color:#FFF8E0;border-color:#F0C14B}
+
+/* Other themes: readable hero emphasis and membership perk titles */
+html.theme-christmas .hero em,
+html.theme-easter .hero em,
+html.theme-melbourne-cup .hero em,
+html.theme-new-year .hero em,
+html.theme-chinese-new-year .hero em,
+html.theme-diwali .hero em{color:#fff}
+html.theme-new-year .mem .perks b,
+html.theme-diwali .mem .perks b,
+html.theme-easter .mem .perks b{color:#fff}
+html.theme-christmas .mem .btn-o,
+html.theme-easter .mem .btn-o,
+html.theme-melbourne-cup .mem .btn-o,
+html.theme-new-year .mem .btn-o,
+html.theme-diwali .mem .btn-o{color:#fff;border-color:#fff}
+
+
+html.theme-chinese-new-year .ca thead th .cap,
+html.theme-chinese-new-year .ca thead th .cap a{
+  color:#6B0A14 !important;
+}
+html.theme-chinese-new-year .ca tr.now td.dt::after{
+  color:#6B0A14 !important;
+}
+
+/* v10: other themes — announcement, membership kickers, date months, NY/Easter body text */
+html.theme-christmas .bmore{color:#7A0A14}
+html.theme-melbourne-cup .bmore{color:#5C1024}
+html.theme-new-year .banner{color:#1A1D24}
+html.theme-new-year .banner button{color:#1A1D24}
+html.theme-new-year .bmore{color:#1A1D24}
+html.theme-diwali .banner{color:#2A1030}
+html.theme-diwali .banner button{color:#2A1030}
+html.theme-diwali .bmore{color:#3E0A2C}
+
+html.theme-christmas .mem .kicker,
+html.theme-easter .mem .kicker,
+html.theme-melbourne-cup .mem .kicker,
+html.theme-new-year .mem .kicker,
+html.theme-diwali .mem .kicker{color:#fff}
+
+html.theme-christmas .date small{color:#FFF8E1}
+html.theme-melbourne-cup .date small{color:#FFF8E8}
+html.theme-new-year .date{background:#5A480C;color:#fff}
+html.theme-new-year .date small{color:#fff}
+html.theme-diwali .date small{color:#FFE08A}
+
+html.theme-easter .kicker{color:#0C5C42}
+html.theme-easter .mem .kicker{color:#fff}
+
+html.theme-new-year{--header-muted:#5A480C}
+html.theme-new-year a:not(.btn):not(.btn-g):not(.btn-y):not(.btn-og):not(.btn-o):not(.sbtn):not(.bmore):not(.brand){color:#5A480C}
+html.theme-new-year header a,
+html.theme-new-year .menu a{color:var(--header-fg)}
+html.theme-new-year footer a,
+html.theme-new-year footer .soc a{color:#F4E7C3!important}
+html.theme-new-year .dtc-test a{color:#F2C94C!important}
+html.theme-new-year .perks li{background:#5A480C;color:#fff}
+html.theme-new-year td.p{color:#5A480C}
+html.theme-new-year .kicker{color:#3E4650}
+html.theme-new-year .mem .kicker{color:#fff}
+html.theme-new-year .tag{color:#5A480C}
+html.theme-new-year .btn-og,
+html.theme-new-year a.btn-og{color:#5A480C;border-color:#5A480C}
+
+html.theme-chinese-new-year .btn-g,
+html.theme-chinese-new-year a.btn-g,
+html.theme-chinese-new-year .menu a.btn-g{
+  background-color:#F0C14B !important;
+  color:#6B0A14 !important;
+}
+
+
+html.theme-christmas header{background-color:#0B5A2B}
+html.theme-melbourne-cup header{background-color:#141417}
+html.theme-diwali header{background-color:#3E1468}
+html.theme-chinese-new-year header{background-color:#6B0A14}
+html.theme-new-year header{background-color:#E8EDF3}
+html.theme-easter header{background-color:#D3BEF7}
+html.theme-christmas footer{background-color:#083B1F}
+html.theme-melbourne-cup footer{background-color:#0B0B0D}
+html.theme-new-year footer{background-color:#1C1F26}
+html.theme-diwali footer{background-color:#2A0C48}
+html.theme-chinese-new-year footer{background-color:#3A070C}
+html.theme-easter footer{background-color:#3B2766}
+
+html.theme-christmas header .menu li,
+html.theme-easter header .menu li,
+html.theme-melbourne-cup header .menu li,
+html.theme-new-year header .menu li,
+html.theme-chinese-new-year header .menu li,
+html.theme-diwali header .menu li{color:var(--header-fg)}
 @media (prefers-reduced-motion:reduce){
   html.theme-christmas .hero::before,
   html.theme-christmas .phead::before{animation:none}
