@@ -1,8 +1,12 @@
-/* Seasonal site themes: client-side only, live Google Sheet. Not a visitor picker.
+/* Seasonal site themes: client-side only, live Google Sheet.
    Preview with ?theme=christmas|easter|melbourne-cup|new-year|chinese-new-year|diwali
+   or a slam name (ao, australian-open, rg, roland-garros, wim, wimbledon, us, us-open)
    (persists for this tab via sessionStorage).
    ?theme=none or ?theme=auto clears the preview and returns to the sheet (none also
-   forces the normal site on that one page). Christmas supports ?santa=now or ?fx=now. */
+   forces the normal site on that one page). Christmas supports ?santa=now or ?fx=now.
+
+   Festive sheet themes override the visitor colour picker. Slam sheet themes set
+   the default only: an explicit picker choice (including "DTC club colours") wins. */
 (function(){
   var CONTENT='1VqoOP7ec88J1Rl-DN7PtynWBuAoA3McwAMSIjn8o-FA';
   var KEYS={
@@ -11,7 +15,11 @@
     'melbourne-cup':{cls:'theme-melbourne-cup', def:'Happy Cup Day from DTC'},
     'new-year':{cls:'theme-new-year', def:'Happy New Year from DTC'},
     'chinese-new-year':{cls:'theme-chinese-new-year', def:'Happy Chinese New Year from DTC'},
-    diwali:{cls:'theme-diwali', def:'Happy Diwali from DTC'}
+    diwali:{cls:'theme-diwali', def:'Happy Diwali from DTC'},
+    ao:{cls:'theme-ao', def:'Australian Open time at DTC', slam:true},
+    rg:{cls:'theme-rg', def:'Roland-Garros time at DTC', slam:true},
+    wim:{cls:'theme-wim', def:'Wimbledon time at DTC', slam:true},
+    us:{cls:'theme-us', def:'US Open time at DTC', slam:true}
   };
   var CACHE='dtc-season-theme';
   var root=document.documentElement;
@@ -23,7 +31,38 @@
     if(s==='newyear'||s==='nye'||s==='new-years'||s==='new-years-eve')s='new-year';
     if(s==='cny'||s==='lunar-new-year'||s==='lunar'||s==='chinese-newyear'||s==='chinesenewyear')s='chinese-new-year';
     if(s==='deepavali'||s==='deepawali')s='diwali';
+    if(s==='australian-open'||s==='australianopen'||s==='aussie-open'||s==='australian')s='ao';
+    if(s==='roland-garros'||s==='rolandgarros'||s==='french-open'||s==='frenchopen'||s==='roland')s='rg';
+    if(s==='wimbledon')s='wim';
+    if(s==='us-open'||s==='usopen'||s==='u-s-open'||s==='uso')s='us';
     return KEYS[s]?s:'';
+  }
+  function isSlam(key){return !!(key&&KEYS[key]&&KEYS[key].slam)}
+  function pickerChoice(){
+    try{
+      var t=localStorage.getItem('dtc-theme');
+      return t===null?null:t;
+    }catch(e){return null}
+  }
+  function restorePickerTheme(){
+    var choice=pickerChoice();
+    if(choice)root.dataset.theme=choice;
+    else delete root.dataset.theme;
+  }
+  function syncPickerPressed(){
+    var cur=root.dataset.theme||'';
+    document.querySelectorAll('.themes button,.tpop button').forEach(function(x){
+      if(x.dataset&&('t' in x.dataset))x.setAttribute('aria-pressed',x.dataset.t===cur);
+    });
+  }
+  function paintSlamColours(key,force){
+    var use=force||pickerChoice()===null;
+    if(use){
+      root.classList.add(KEYS[key].cls);
+      root.dataset.theme=key;
+    }else{
+      restorePickerTheme();
+    }
   }
   var PREVIEW='dtc-theme-preview';
   function queryTheme(){
@@ -86,9 +125,13 @@
   function apply(key,msg){
     key=normKey(key);
     Object.keys(KEYS).forEach(function(k){root.classList.remove(KEYS[k].cls)});
+    restorePickerTheme();
     current=key?{key:key,msg:(msg&&String(msg).trim())||KEYS[key].def}:null;
-    if(current)root.classList.add(KEYS[current.key].cls);
-    if(document.body){mountRibbon();syncCopy()}
+    if(current){
+      if(isSlam(current.key))paintSlamColours(current.key, override===current.key);
+      else root.classList.add(KEYS[current.key].cls);
+    }
+    if(document.body){mountRibbon();syncCopy();syncPickerPressed()}
   }
   function syncCopy(){
     var cny=current&&current.key==='chinese-new-year';
@@ -354,6 +397,15 @@
       if(cached)apply(cached.key,cached.msg);
     }
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();syncCopy();load()});
-  else{if(current)mountRibbon();syncCopy();load()}
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest&&e.target.closest('.tpop button,.themes button');
+    if(!btn||!btn.dataset||!('t' in btn.dataset))return;
+    if(current&&isSlam(current.key)&&override===null){
+      Object.keys(KEYS).forEach(function(k){if(KEYS[k].slam)root.classList.remove(KEYS[k].cls)});
+      paintSlamColours(current.key,false);
+      if(document.body){mountRibbon();syncCopy();syncPickerPressed()}
+    }
+  });
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();syncCopy();syncPickerPressed();load()});
+  else{if(current)mountRibbon();syncCopy();syncPickerPressed();load()}
 })();
