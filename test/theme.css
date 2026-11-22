@@ -69,61 +69,62 @@ html.theme-melbourne-cup{
 }
 
 html.theme-new-year{
-  --g:#C9A227;            /* antique gold: buttons, links */
-  --g2:#8A93A6;           /* silver */
-  --y:#E8C56B;            /* champagne gold */
-  --t:#0E1628;
+  --g:#8F6E14;            /* deep gold links on silver */
+  --g2:#6B7380;           /* pewter */
+  --y:#D4AF37;            /* metallic gold */
+  --t:#1A1D24;
   --m:#4A5568;
-  --l:#E8EEF6;            /* pale silver band */
-  --sh:0 10px 30px rgba(8,16,40,.14);
-  --green:#8A93A6; --gold:#E8C56B;
-  --header-bg:linear-gradient(180deg,#152456,#0B1430);
-  --header-fg:#F4E7C3;
-  --header-muted:#E8C56B;
-  --footer-bg:#050816;
-  --footer-fg:#E8EEF6;
-  --btn:#C9A227; --btn-fg:#0E1628;
-  --border:#C5CDD8;
-  --surface:#F4F6FB;
-  --strip:linear-gradient(90deg,#C9A227,#D7DEE8 50%,#152456);
+  --l:#E8EDF3;            /* pale silver band */
+  --sh:0 10px 30px rgba(80,70,30,.12);
+  --green:#6B7380; --gold:#D4AF37;
+  --header-bg:linear-gradient(180deg,#FFFDF6 0%,#E8EDF3 36%,#C5CDD8 78%,#D4AF37 100%);
+  --header-fg:#1A1D24;
+  --header-muted:#8A6A12;
+  --footer-bg:linear-gradient(180deg,#3A3E46,#1C1F26);
+  --footer-fg:#E8EDF3;
+  --btn:#D4AF37; --btn-fg:#1A1D24;
+  --border:#B8C0CC;
+  --surface:#EEF1F6;
+  --strip:linear-gradient(90deg,#D4AF37,#E8EDF3 50%,#A8B0BC);
 }
 html.theme-chinese-new-year{
-  --g:#C8102E;            /* festal red */
-  --g2:#B8860B;           /* deep gold */
+  --g:#F0C14B;            /* gold links on red surfaces */
+  --g2:#FFD98A;
   --y:#F0C14B;
-  --t:#2A0A0A;
-  --m:#6A3A3A;
-  --l:#FFF1E4;            /* warm ivory band */
-  --sh:0 10px 30px rgba(120,10,16,.12);
-  --green:#B8860B; --gold:#F0C14B;
-  --header-bg:linear-gradient(180deg,#E31B2D,#8E0B1E);
+  --t:#FFF4D0;
+  --m:#F3D48A;
+  --l:#B31426;            /* lighter festal red band */
+  --sh:0 10px 30px rgba(80,0,8,.18);
+  --green:#F0C14B; --gold:#F0C14B;
+  --header-bg:linear-gradient(180deg,#E31B2D,#9A0D1C);
   --header-fg:#FFF4D0;
   --header-muted:#F0C14B;
-  --footer-bg:#5A0A12;
-  --footer-fg:#FFF4D0;
-  --btn:#C8102E; --btn-fg:#fff;
-  --border:#F0D5B8;
-  --surface:#FFF8F0;
-  --strip:linear-gradient(90deg,#C8102E,#F0C14B);
+  --footer-bg:linear-gradient(180deg,#8E0B1E,#4A070E);
+  --footer-fg:#F0C14B;
+  --btn:#F0C14B; --btn-fg:#6B0A14;
+  --border:#F0C14B;
+  --surface:#9A1220;
+  --strip:linear-gradient(90deg,#F0C14B,#FFF4D0 50%,#F0C14B);
 }
 html.theme-diwali{
-  --g:#B31B6E;            /* magenta */
-  --g2:#C45C00;           /* saffron */
-  --y:#FFC44D;            /* marigold gold */
+  --r1:#9B1B6C; --r2:#D35400; --r3:#C9A227; --r4:#0E7A4B; --r5:#0A7C86; --r6:#5A1E8A;
+  --g:#9B1B6C;            /* magenta links on cream */
+  --g2:#0A7C86;           /* turquoise accents */
+  --y:#C9A227;
   --t:#2A1030;
-  --m:#6A4560;
-  --l:#FBE8C8;            /* pale saffron band */
-  --sh:0 10px 30px rgba(80,10,60,.12);
-  --green:#C45C00; --gold:#FFC44D;
-  --header-bg:linear-gradient(90deg,#4A0A58,#B31B6E 55%,#C45C00);
-  --header-fg:#FFF4D0;
-  --header-muted:#FFC44D;
-  --footer-bg:#2A0A36;
-  --footer-fg:#FFC44D;
-  --btn:#B31B6E; --btn-fg:#fff;
-  --border:#E8C88A;
-  --surface:#FFF8EC;
-  --strip:linear-gradient(90deg,#C45C00,#FFC44D 40%,#B31B6E 72%,#4A0A58);
+  --m:#5A3A60;
+  --l:#FFF3DC;
+  --sh:0 10px 30px rgba(80,20,60,.12);
+  --green:#0E7A4B; --gold:#C9A227;
+  --header-bg:linear-gradient(90deg,#7A1458,#B33A00 20%,#8F7010 40%,#0B5C38 60%,#086068 80%,#3E1468);
+  --header-fg:#FFF8E8;
+  --header-muted:#FFE08A;
+  --footer-bg:linear-gradient(90deg,#4A0E36,#6E2200 20%,#5A480C 40%,#06402A 60%,#053E44 80%,#2A0C48);
+  --footer-fg:#FFE08A;
+  --btn:#9B1B6C; --btn-fg:#fff;
+  --border:#E2C48A;
+  --surface:#FFF8EF;
+  --strip:linear-gradient(90deg,#9B1B6C,#D35400 20%,#C9A227 40%,#0E7A4B 60%,#0A7C86 80%,#5A1E8A);
 }
 
 /* ---------- Ribbon under the header ---------- */
@@ -176,29 +177,32 @@ html.theme-melbourne-cup .season-ribbon-icon{
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 28c-6.2-4-9-9-8.2-14.2 3.8-1.6 6 2.2 8.2 2.2s4.4-3.8 8.2-2.2C25 19 22.2 24 16 28z' fill='%23E0B84F'/><circle cx='16' cy='12' r='6.8' fill='%23A81F45'/><circle cx='16' cy='12' r='3.9' fill='%23D2325A'/><circle cx='16' cy='12' r='1.6' fill='%23F6E7B9'/></svg>");
 }
 
-/* New Year: midnight navy ribbon, gold type, tiny sparkle icons */
+/* New Year: metallic gold-and-silver ribbon, dark type, tiny sparkle icons */
 html.theme-new-year .season-ribbon{
-  background:linear-gradient(90deg,#050816,#0B1430 18%,#152456 82%,#050816);
-  color:#F4E7C3;
-  border-bottom:2px solid #E8C56B;
+  background:linear-gradient(90deg,#D4AF37,#F4E7C3 18%,#E8EDF3 50%,#C5CDD8 82%,#D4AF37);
+  color:#1A1D24;
+  border-top:1px solid #F8F1D6;
+  border-bottom:3px solid #8A6A12;
 }
 html.theme-new-year .season-ribbon-icon{
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2 L18.3 13.1 L30 16 L18.3 18.9 L16 30 L13.7 18.9 L2 16 L13.7 13.1 Z' fill='%23E8C56B'/><path d='M25.5 5 L26.4 8.8 L30.2 9.7 L26.4 10.6 L25.5 14.4 L24.6 10.6 L20.8 9.7 L24.6 8.8 Z' fill='%23D7DEE8'/></svg>");
 }
-/* Chinese New Year: festal red ribbon, gold edge, simple lantern icons */
+/* Chinese New Year: saturated red ribbon, heavy gold edges, simple lantern icons */
 html.theme-chinese-new-year .season-ribbon{
-  background:linear-gradient(90deg,#8E0B1E,#C8102E 18%,#C8102E 82%,#8E0B1E);
+  background:linear-gradient(90deg,#7A0A14,#E31B2D 18%,#C8102E 50%,#E31B2D 82%,#7A0A14);
   color:#FFF4D0;
-  border-bottom:2px solid #F0C14B;
+  border-top:2px solid #F0C14B;
+  border-bottom:3px solid #F0C14B;
 }
 html.theme-chinese-new-year .season-ribbon-icon{
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='13' y='3' width='6' height='3.2' rx='.8' fill='%23F0C14B'/><path d='M8 8 Q16 5.5 24 8 L24 21 Q16 25.5 8 21 Z' fill='%23C8102E'/><path d='M8.6 12.2 H23.4' stroke='%23F0C14B' stroke-width='1.5'/><path d='M9.2 16.4 H22.8' stroke='%23F0C14B' stroke-width='1.2'/><path d='M16 25 V29' stroke='%23F0C14B' stroke-width='1.6' stroke-linecap='round'/><circle cx='16' cy='30' r='1.2' fill='%23F0C14B'/></svg>");
 }
-/* Diwali: saffron-to-magenta ribbon, gold edge, small diya icons */
+/* Diwali: rangoli rainbow ribbon, cream type, small diya icons */
 html.theme-diwali .season-ribbon{
-  background:linear-gradient(90deg,#C45C00,#B31B6E 52%,#4A0A58);
-  color:#FFF4D0;
-  border-bottom:2px solid #FFC44D;
+  background:linear-gradient(90deg,#7A1458,#B33A00 20%,#8F7010 40%,#0B5C38 60%,#086068 80%,#3E1468);
+  color:#FFF8E8;
+  border-top:1px solid #FFE08A;
+  border-bottom:3px solid #C9A227;
 }
 html.theme-diwali .season-ribbon-icon{
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 20 C13.6 15.5 14.4 10 16 6 C17.6 10 18.4 15.5 16 20 Z' fill='%23FFC44D'/><path d='M16 18 C14.8 15 15.4 11 16 8 C16.6 11 17.2 15 16 18 Z' fill='%23FFF3C4'/><ellipse cx='16' cy='24' rx='12' ry='5' fill='%23C45C00'/><ellipse cx='16' cy='22.4' rx='10.5' ry='3.6' fill='%23E46B00'/><ellipse cx='16' cy='21.4' rx='6.5' ry='1.8' fill='%23301808'/></svg>");
@@ -273,51 +277,50 @@ html.theme-melbourne-cup .season-lights i:nth-child(3n){--c:#F6F1E6}
 html.theme-melbourne-cup .season-lights i:nth-child(2n)::after{animation-delay:-1.6s}
 @keyframes dtc-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
-html.theme-new-year{--wire:rgba(232,197,107,.75)}
+html.theme-new-year{--wire:#C9A227}
 html.theme-chinese-new-year{--wire:#F0C14B}
-html.theme-diwali{--wire:#FFC44D}
+html.theme-diwali{--wire:#C9A227}
 
 /* New Year: static gold and silver sparkles (no animation) */
 html.theme-new-year .season-lights i::after{
-  width:10px;height:10px;left:calc(50% - 5px);top:12px;
-  background:var(--c,#E8C56B);
+  width:12px;height:12px;left:calc(50% - 6px);top:11px;
+  background:var(--c,#D4AF37);
   clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);
-  box-shadow:0 0 7px 1px color-mix(in srgb,var(--c,#E8C56B) 55%,transparent);
+  box-shadow:0 0 8px 2px color-mix(in srgb,var(--c,#D4AF37) 60%,transparent);
 }
-html.theme-new-year .season-lights i:nth-child(3n+1){--c:#E8C56B}
-html.theme-new-year .season-lights i:nth-child(3n+2){--c:#D7DEE8}
-html.theme-new-year .season-lights i:nth-child(3n){--c:#F4E7C3}
+html.theme-new-year .season-lights i:nth-child(3n+1){--c:#D4AF37}
+html.theme-new-year .season-lights i:nth-child(3n+2){--c:#E8EDF3}
+html.theme-new-year .season-lights i:nth-child(3n){--c:#C5CDD8}
 
 /* Chinese New Year: static red-and-gold lanterns (no animation, no caricature) */
 html.theme-chinese-new-year .season-lights i::after{
-  width:11px;height:15px;left:calc(50% - 5.5px);top:10px;border-radius:45%;
+  width:12px;height:16px;left:calc(50% - 6px);top:9px;border-radius:45%;
   background:
-    linear-gradient(#F0C14B,#F0C14B) 50% 0/8px 3px no-repeat,
-    linear-gradient(180deg,#E31B2D 0 38%,#F0C14B 38% 46%,#C8102E 46% 100%);
+    linear-gradient(#F0C14B,#F0C14B) 50% 0/9px 3px no-repeat,
+    linear-gradient(180deg,#E31B2D 0 38%,#F0C14B 38% 48%,#C8102E 48% 100%);
   box-shadow:inset 0 -2px 0 #F0C14B,0 3px 0 -1px #F0C14B;
 }
 html.theme-chinese-new-year .season-lights i:nth-child(2n)::after{
   background:
-    linear-gradient(#F0C14B,#F0C14B) 50% 0/8px 3px no-repeat,
-    linear-gradient(180deg,#C8102E 0 38%,#F0C14B 38% 46%,#8E0B1E 46% 100%);
+    linear-gradient(#F0C14B,#F0C14B) 50% 0/9px 3px no-repeat,
+    linear-gradient(180deg,#C8102E 0 38%,#FFF4D0 38% 48%,#8E0B1E 48% 100%);
 }
 
-/* Diwali: static diya lamps with a gold glow (no animation) */
+/* Diwali: static rangoli-coloured diyas (no animation) */
 html.theme-diwali .season-lights i::after{
   width:14px;height:8px;left:calc(50% - 7px);top:18px;
   border-radius:0 0 70% 70%/0 0 100% 100%;
-  background:linear-gradient(180deg,#E46B00,#9A3B00);
+  background:var(--c,#D35400);
   box-shadow:
-    0 -7px 0 -4px #FFC44D,
-    0 -9px 8px -1px rgba(255,196,77,.55),
-    0 0 6px rgba(255,196,77,.35);
+    0 -7px 0 -4px var(--flame,#FFC44D),
+    0 -9px 8px -1px color-mix(in srgb,var(--flame,#FFC44D) 55%,transparent);
 }
-html.theme-diwali .season-lights i:nth-child(3n)::after{
-  box-shadow:
-    0 -7px 0 -4px #FFE08A,
-    0 -9px 8px -1px rgba(255,224,138,.55),
-    0 0 6px rgba(255,196,77,.35);
-}
+html.theme-diwali .season-lights i:nth-child(6n+1){--c:#9B1B6C;--flame:#FF8FC1}
+html.theme-diwali .season-lights i:nth-child(6n+2){--c:#D35400;--flame:#FFC44D}
+html.theme-diwali .season-lights i:nth-child(6n+3){--c:#C9A227;--flame:#FFE08A}
+html.theme-diwali .season-lights i:nth-child(6n+4){--c:#0E7A4B;--flame:#8FE3B4}
+html.theme-diwali .season-lights i:nth-child(6n+5){--c:#0A7C86;--flame:#7EDCE6}
+html.theme-diwali .season-lights i:nth-child(6n){--c:#5A1E8A;--flame:#C4A0FF}
 
 /* ---------- Santa on his sleigh (Christmas only; created by theme.js) ---------- */
 #dtc-santa{position:fixed;left:0;top:0;z-index:150;pointer-events:none;will-change:transform;
@@ -549,56 +552,59 @@ html.theme-melbourne-cup .phead::before{
 }
 html.theme-melbourne-cup .phead{background:linear-gradient(110deg,#09090B,#1B1B20 55%,#6E1530 120%)}
 
-/* New Year: midnight navy, gold and silver, static star field */
+/* New Year: silver and gold metallic wash, graphite only as a deep base, static sparkles */
 html.theme-new-year .hero{
   background:
-    linear-gradient(135deg,rgba(6,10,28,.94) 0%,rgba(18,32,72,.80) 48%,rgba(8,12,32,.93) 100%),
-    url(hero-court.jpg) center 45%/cover no-repeat #0B1430;
+    linear-gradient(135deg,rgba(212,175,55,.42) 0%,rgba(200,210,220,.28) 36%,rgba(28,31,38,.78) 100%),
+    linear-gradient(180deg,rgba(28,31,38,.28),rgba(28,31,38,.62)),
+    url(hero-court.jpg) center 45%/cover no-repeat #2A2D34;
 }
 html.theme-new-year .hero::before,
 html.theme-new-year .phead::before{
   background:
-    radial-gradient(circle 1.4px at 20px 24px, rgba(255,255,255,.95) 55%, transparent 60%),
-    radial-gradient(circle 1.1px at 90px 50px, rgba(232,197,107,.9) 55%, transparent 60%),
-    radial-gradient(circle 1.6px at 150px 18px, rgba(215,222,232,.85) 55%, transparent 60%),
-    radial-gradient(circle 1.2px at 210px 72px, rgba(255,255,255,.7) 55%, transparent 60%),
-    linear-gradient(180deg,rgba(232,197,107,.18),transparent 42%),
-    radial-gradient(ellipse at 92% 88%, rgba(192,199,209,.16), transparent 40%);
-  background-size:220px 180px,170px 160px,250px 200px,190px 170px,100% 100%,100% 100%;
+    radial-gradient(circle 1.5px at 20px 24px, rgba(255,255,255,.95) 55%, transparent 60%),
+    radial-gradient(circle 1.3px at 90px 50px, rgba(212,175,55,.95) 55%, transparent 60%),
+    radial-gradient(circle 1.7px at 150px 18px, rgba(232,237,243,.9) 55%, transparent 60%),
+    radial-gradient(circle 1.2px at 210px 72px, rgba(212,175,55,.8) 55%, transparent 60%),
+    linear-gradient(180deg,rgba(244,231,195,.28),transparent 44%),
+    radial-gradient(ellipse at 88% 100%, rgba(212,175,55,.28), transparent 42%);
+  background-size:200px 160px,150px 140px,230px 180px,170px 150px,100% 100%,100% 100%;
   background-repeat:repeat,repeat,repeat,repeat,no-repeat,no-repeat;
 }
-html.theme-new-year .phead{background:linear-gradient(100deg,#050816 0%,#152456 58%,#8A6A1A 120%)}
+html.theme-new-year .phead{background:linear-gradient(100deg,#2A2D34 0%,#8A93A6 48%,#D4AF37 100%)}
 
-/* Chinese New Year: festal red and gold, static gold haze */
+/* Chinese New Year: saturated red field, strong gold glow, static gold haze */
 html.theme-chinese-new-year .hero{
   background:
-    linear-gradient(135deg,rgba(120,8,16,.88) 0%,rgba(180,16,24,.70) 50%,rgba(80,6,10,.90) 100%),
-    url(hero-court.jpg) center 45%/cover no-repeat #8E0B1E;
+    linear-gradient(135deg,rgba(140,8,18,.92) 0%,rgba(200,16,30,.78) 48%,rgba(100,6,12,.94) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #9A0D1C;
 }
 html.theme-chinese-new-year .hero::before,
 html.theme-chinese-new-year .phead::before{
   background:
-    radial-gradient(ellipse at 8% 0%, rgba(240,193,75,.28), transparent 42%),
-    radial-gradient(ellipse at 92% 100%, rgba(240,193,75,.18), transparent 40%),
-    linear-gradient(180deg,rgba(255,230,150,.10),transparent 36%);
+    radial-gradient(ellipse at 8% 0%, rgba(240,193,75,.42), transparent 44%),
+    radial-gradient(ellipse at 92% 100%, rgba(240,193,75,.32), transparent 42%),
+    radial-gradient(circle at 70% 20%, rgba(255,244,208,.16), transparent 36%),
+    linear-gradient(180deg,rgba(255,230,150,.16),transparent 36%);
 }
-html.theme-chinese-new-year .phead{background:linear-gradient(100deg,#7A0A14 0%,#C8102E 58%,#B8860B 120%)}
+html.theme-chinese-new-year .phead{background:linear-gradient(100deg,#7A0A14 0%,#E31B2D 50%,#F0C14B 120%)}
 
-/* Diwali: deep purple, magenta and saffron, static diya-glow */
+/* Diwali: rangoli rainbow wash, static multi-colour diya-glow */
 html.theme-diwali .hero{
   background:
-    linear-gradient(135deg,rgba(48,10,56,.90) 0%,rgba(140,20,80,.70) 48%,rgba(154,60,0,.78) 100%),
-    url(hero-court.jpg) center 45%/cover no-repeat #3B0A40;
+    linear-gradient(135deg,rgba(122,20,88,.86) 0%,rgba(179,58,0,.78) 20%,rgba(143,112,16,.74) 40%,rgba(11,92,56,.80) 60%,rgba(8,96,104,.82) 80%,rgba(62,20,104,.90) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #3E1468;
 }
 html.theme-diwali .hero::before,
 html.theme-diwali .phead::before{
   background:
-    radial-gradient(circle at 12% 88%, rgba(255,196,77,.38), transparent 36%),
-    radial-gradient(circle at 50% 100%, rgba(255,160,40,.22), transparent 42%),
-    radial-gradient(circle at 88% 80%, rgba(255,196,77,.32), transparent 36%),
-    linear-gradient(180deg,rgba(179,27,110,.16),transparent 40%);
+    radial-gradient(circle at 10% 88%, rgba(255,143,193,.36), transparent 32%),
+    radial-gradient(circle at 30% 100%, rgba(255,196,77,.34), transparent 34%),
+    radial-gradient(circle at 52% 92%, rgba(143,227,180,.30), transparent 34%),
+    radial-gradient(circle at 74% 100%, rgba(126,220,230,.32), transparent 34%),
+    radial-gradient(circle at 92% 84%, rgba(196,160,255,.34), transparent 34%);
 }
-html.theme-diwali .phead{background:linear-gradient(100deg,#3B0A40 0%,#B31B6E 52%,#E46B00 118%)}
+html.theme-diwali .phead{background:linear-gradient(100deg,#7A1458 0%,#B33A00 22%,#8F7010 44%,#0B5C38 66%,#086068 84%,#3E1468 110%)}
 @media (max-width:700px){
   html.theme-christmas .hero{background:linear-gradient(180deg,rgba(7,74,34,.88),rgba(20,128,60,.66) 55%,rgba(7,74,34,.90)),url(hero-court-m.jpg) center/cover no-repeat #0B5A2B}
   html.theme-easter .hero{background:linear-gradient(rgba(44,18,78,.30),rgba(44,18,78,.30)),linear-gradient(180deg,rgba(98,42,156,.76),rgba(226,92,156,.50) 52%,rgba(34,160,116,.58)),url(hero-court-m.jpg) center/cover no-repeat #4B2A7A}
@@ -980,9 +986,9 @@ html.theme-christmas .ca thead th.dt{background:#0B5A2B;color:#FFF8E1}
 html.theme-easter .ca thead th.dt{background:#3B2766;color:#FFF0B3}
 html.theme-melbourne-cup .ca thead th.dt{background:#141417;color:#F6E7B9}
 
-html.theme-new-year .ca thead th.dt{background:#0B1430;color:#F4E7C3}
-html.theme-chinese-new-year .ca thead th.dt{background:#8E0B1E;color:#FFF4D0}
-html.theme-diwali .ca thead th.dt{background:#4A0A58;color:#FFC44D}
+html.theme-new-year .ca thead th.dt{background:linear-gradient(180deg,#3A3E46,#1C1F26);color:#F4E7C3}
+html.theme-chinese-new-year .ca thead th.dt{background:#7A0A14;color:#F0C14B}
+html.theme-diwali .ca thead th.dt{background:linear-gradient(90deg,#7A1458,#0B5C38 50%,#3E1468);color:#FFF8E8}
 html.theme-christmas .ca .dt,
 html.theme-easter .ca .dt,
 html.theme-melbourne-cup .ca .dt,
@@ -1033,11 +1039,11 @@ html.theme-melbourne-cup .ca tr.np td,
 html.theme-melbourne-cup .ca tr.np td.dt{background:#0B0B0D;color:#F6E7B9}
 
 html.theme-new-year .ca tr.np td,
-html.theme-new-year .ca tr.np td.dt{background:#050816;color:#E8EEF6}
+html.theme-new-year .ca tr.np td.dt{background:#1C1F26;color:#E8EDF3}
 html.theme-chinese-new-year .ca tr.np td,
-html.theme-chinese-new-year .ca tr.np td.dt{background:#5A0A12;color:#FFF4D0}
+html.theme-chinese-new-year .ca tr.np td.dt{background:#6B0A14;color:#FFF4D0}
 html.theme-diwali .ca tr.np td,
-html.theme-diwali .ca tr.np td.dt{background:#2A0A36;color:#FBE8C8}
+html.theme-diwali .ca tr.np td.dt{background:#3E1468;color:#FFF8E8}
 
 /* Honour boards: keep the engraved plaque, shift metal and timber to the season */
 html.theme-christmas .hbw{
@@ -1134,15 +1140,15 @@ html.theme-melbourne-cup .hbt tbody tr:hover td,
 html.theme-melbourne-cup .hbt tbody tr:hover th{background:rgba(224,184,79,.08)}
 
 html.theme-new-year .hbw{
-  background:linear-gradient(145deg,#E8C56B 0%,#8A93A6 18%,#F4E7C3 34%,#0B1430 52%,#E8C56B 70%,#050816 86%,#E8C56B 100%);
+  background:linear-gradient(145deg,#F4E7C3 0%,#A8B0BC 16%,#D4AF37 34%,#E8EDF3 52%,#D4AF37 70%,#8A93A6 86%,#F4E7C3 100%);
 }
 html.theme-new-year .hbp{
   color:#F4E7C3;
-  box-shadow:inset 0 0 0 2px #050816,inset 0 0 0 5px rgba(232,197,107,.55),inset 0 0 0 7px #0B1430,inset 0 0 40px rgba(0,0,0,.65);
+  box-shadow:inset 0 0 0 2px #1C1F26,inset 0 0 0 5px rgba(212,175,55,.7),inset 0 0 0 7px #3A3E46,inset 0 0 40px rgba(0,0,0,.45);
   background:
-    radial-gradient(ellipse at 30% 0%,rgba(232,197,107,.14),transparent 60%),
-    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.16) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.08) 12px 19px),
-    linear-gradient(90deg,#050816,#0B1430 22%,#152456 45%,#0B1430 68%,#050816);
+    radial-gradient(ellipse at 30% 0%,rgba(212,175,55,.20),transparent 60%),
+    repeating-linear-gradient(92deg,transparent 0 7px,rgba(255,255,255,.07) 7px 9px,rgba(0,0,0,.10) 9px 12px,rgba(255,255,255,.04) 12px 19px),
+    linear-gradient(90deg,#2A2D34,#3A3E46 22%,#4A4F58 45%,#3A3E46 68%,#2A2D34);
 }
 html.theme-new-year .hbh .club,
 html.theme-new-year .hbp h2,
@@ -1151,29 +1157,29 @@ html.theme-new-year .hbt .yr{color:#F4E7C3}
 html.theme-new-year .hbp .est,
 html.theme-new-year .hbp .orn,
 html.theme-new-year .hbp .note,
-html.theme-new-year .hbt td{color:#E8C56B}
+html.theme-new-year .hbt td{color:#D4AF37}
 html.theme-new-year .hbt th,
 html.theme-new-year .hbt tbody tr:last-child td,
-html.theme-new-year .hbt tbody tr:last-child th{border-bottom-color:#E8C56B}
+html.theme-new-year .hbt tbody tr:last-child th{border-bottom-color:#D4AF37}
 html.theme-new-year .hbt td,
 html.theme-new-year .hbt .yr,
-html.theme-new-year .hbt th.yr{border-color:rgba(232,197,107,.4)}
-html.theme-new-year .hbh img{box-shadow:0 0 0 2px #E8C56B,0 2px 6px rgba(0,0,0,.6)}
+html.theme-new-year .hbt th.yr{border-color:rgba(212,175,55,.45)}
+html.theme-new-year .hbh img{box-shadow:0 0 0 2px #D4AF37,0 0 0 4px #C5CDD8,0 2px 6px rgba(0,0,0,.6)}
 html.theme-new-year .hbp .orn::before,
-html.theme-new-year .hbp .orn::after{background:linear-gradient(90deg,transparent,#E8C56B,transparent)}
+html.theme-new-year .hbp .orn::after{background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
 html.theme-new-year .hbt tbody tr:hover td,
-html.theme-new-year .hbt tbody tr:hover th{background:rgba(232,197,107,.08)}
+html.theme-new-year .hbt tbody tr:hover th{background:rgba(212,175,55,.10)}
 
 html.theme-chinese-new-year .hbw{
-  background:linear-gradient(145deg,#F0C14B 0%,#C8102E 18%,#FFF4D0 34%,#5A0A12 52%,#F0C14B 70%,#3A070C 86%,#F0C14B 100%);
+  background:linear-gradient(145deg,#FFE08A 0%,#F0C14B 14%,#E31B2D 32%,#F0C14B 50%,#C8102E 68%,#F0C14B 86%,#FFE08A 100%);
 }
 html.theme-chinese-new-year .hbp{
   color:#FFF4D0;
-  box-shadow:inset 0 0 0 2px #3A070C,inset 0 0 0 5px rgba(240,193,75,.55),inset 0 0 0 7px #5A0A12,inset 0 0 40px rgba(0,0,0,.55);
+  box-shadow:inset 0 0 0 2px #3A070C,inset 0 0 0 6px rgba(240,193,75,.8),inset 0 0 0 8px #7A0A14,inset 0 0 40px rgba(0,0,0,.45);
   background:
-    radial-gradient(ellipse at 30% 0%,rgba(240,193,75,.16),transparent 60%),
-    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.14) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.07) 12px 19px),
-    linear-gradient(90deg,#3A070C,#5A0A12 22%,#6B0A14 45%,#5A0A12 68%,#3A070C);
+    radial-gradient(ellipse at 30% 0%,rgba(240,193,75,.28),transparent 60%),
+    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.12) 7px 9px,rgba(255,244,208,.05) 9px 12px,rgba(0,0,0,.07) 12px 19px),
+    linear-gradient(90deg,#6B0A14,#8E0B1E 22%,#A01020 45%,#8E0B1E 68%,#6B0A14);
 }
 html.theme-chinese-new-year .hbh .club,
 html.theme-chinese-new-year .hbp h2,
@@ -1196,15 +1202,16 @@ html.theme-chinese-new-year .hbt tbody tr:hover td,
 html.theme-chinese-new-year .hbt tbody tr:hover th{background:rgba(240,193,75,.08)}
 
 html.theme-diwali .hbw{
-  background:linear-gradient(145deg,#FFC44D 0%,#B31B6E 18%,#FFF4D0 34%,#2A0A36 52%,#C45C00 70%,#4A0A58 86%,#FFC44D 100%);
+  background:linear-gradient(145deg,#9B1B6C 0%,#D35400 16%,#C9A227 32%,#0E7A4B 48%,#0A7C86 64%,#5A1E8A 82%,#9B1B6C 100%);
 }
 html.theme-diwali .hbp{
-  color:#FFF4D0;
-  box-shadow:inset 0 0 0 2px #1A0620,inset 0 0 0 5px rgba(255,196,77,.55),inset 0 0 0 7px #2A0A36,inset 0 0 40px rgba(0,0,0,.6);
+  color:#FFF8E8;
+  box-shadow:inset 0 0 0 2px #1A0620,inset 0 0 0 5px rgba(201,162,39,.7),inset 0 0 0 7px #3E1468,inset 0 0 40px rgba(0,0,0,.5);
   background:
-    radial-gradient(ellipse at 30% 0%,rgba(255,196,77,.16),transparent 60%),
+    radial-gradient(ellipse at 18% 0%,rgba(155,27,108,.28),transparent 50%),
+    radial-gradient(ellipse at 82% 0%,rgba(10,124,134,.22),transparent 50%),
     repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.14) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.07) 12px 19px),
-    linear-gradient(90deg,#1A0620,#2A0A36 22%,#4A0A58 45%,#3A0A30 68%,#1A0620);
+    linear-gradient(90deg,#2A0C30,#3E1468 28%,#06402A 52%,#3E1468 76%,#2A0C30);
 }
 html.theme-diwali .hbh .club,
 html.theme-diwali .hbp h2,
@@ -1225,6 +1232,177 @@ html.theme-diwali .hbp .orn::before,
 html.theme-diwali .hbp .orn::after{background:linear-gradient(90deg,transparent,#FFC44D,transparent)}
 html.theme-diwali .hbt tbody tr:hover td,
 html.theme-diwali .hbt tbody tr:hover th{background:rgba(255,196,77,.08)}
+
+
+/* ---------- v9: stronger NY silver-gold, CNY red-gold, Diwali rangoli ---------- */
+html.theme-new-year header{border-bottom:3px solid #D4AF37;box-shadow:0 1px 0 #E8EDF3}
+html.theme-new-year .btn-g,
+html.theme-new-year .menu a.btn-g{
+  background:linear-gradient(180deg,#F4E7C3,#D4AF37 58%,#8A6A12);
+  color:#1A1D24!important;border:1px solid #C9A227;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+}
+html.theme-new-year .btn-g:hover,
+html.theme-new-year .menu a.btn-g:hover{
+  background:linear-gradient(180deg,#FFF6D8,#C9A227 58%,#7A5C10);
+  color:#1A1D24!important;
+}
+html.theme-new-year .btn-og{border-color:#8A6A12;color:#8A6A12}
+html.theme-new-year .card,
+html.theme-new-year .fact,
+html.theme-new-year .lsec,
+html.theme-new-year .faq-item,
+html.theme-new-year .faq-cta,
+html.theme-new-year .tp,
+html.theme-new-year .wof-card,
+html.theme-new-year .sr-card,
+html.theme-new-year .ca-wrap{
+  background-color:#F7F8FB;border-color:#C5CDD8;
+  box-shadow:0 0 0 1px #D4AF37,0 8px 20px rgba(80,70,30,.08);
+}
+html.theme-new-year footer{border-top:5px solid #D4AF37;background:linear-gradient(180deg,#3A3E46,#1C1F26)}
+html.theme-new-year footer a{color:#F4E7C3}
+html.theme-new-year footer .soc a{color:#F4E7C3;border-color:#D4AF37}
+html.theme-new-year .s-ov{background:rgba(28,31,38,.55)}
+html.theme-new-year .rt tbody tr:nth-child(even){background:color-mix(in srgb,#E8EDF3 70%,#F4E7C3)}
+html.theme-new-year .tabs{background:#E8EDF3;border-color:#D4AF37}
+html.theme-new-year .mbar{background:#E8EDF3;border-top:2px solid #D4AF37}
+
+html.theme-chinese-new-year .banner{background:#F0C14B;color:#6B0A14;border-bottom:3px solid #7A0A14}
+html.theme-chinese-new-year .banner button{color:#6B0A14}
+html.theme-chinese-new-year .bnew{background:#9A1220;color:#FFF4D0}
+html.theme-chinese-new-year .bmore{color:#6B0A14}
+html.theme-chinese-new-year header{border-bottom:3px solid #F0C14B;box-shadow:0 1px 0 #7A0A14}
+html.theme-chinese-new-year .btn-g,
+html.theme-chinese-new-year .menu a.btn-g{
+  background:linear-gradient(180deg,#FFE08A,#F0C14B 55%,#B8860B);
+  color:#6B0A14!important;border:1px solid #FFF4D0;
+}
+html.theme-chinese-new-year .btn-g:hover,
+html.theme-chinese-new-year .menu a.btn-g:hover{
+  background:linear-gradient(180deg,#FFF4D0,#F0C14B 55%,#A0700A);
+  color:#6B0A14!important;
+}
+html.theme-chinese-new-year .btn-og{border-color:#F0C14B;color:#FFF4D0}
+html.theme-chinese-new-year .btn-y{background:#FFF4D0;color:#6B0A14!important}
+html.theme-chinese-new-year .card,
+html.theme-chinese-new-year .fact,
+html.theme-chinese-new-year .lsec,
+html.theme-chinese-new-year .faq-item,
+html.theme-chinese-new-year .faq-cta,
+html.theme-chinese-new-year .tp,
+html.theme-chinese-new-year .wof-card,
+html.theme-chinese-new-year .sr-card,
+html.theme-chinese-new-year .ca-wrap,
+html.theme-chinese-new-year .tpop,
+html.theme-chinese-new-year .tbtn{
+  background-color:#B31426;border-color:#F0C14B;color:#FFF4D0;
+  box-shadow:0 0 0 1px #F0C14B;
+}
+html.theme-chinese-new-year .faq-item[open]{border-color:#FFE08A}
+html.theme-chinese-new-year .ico{background:#8E0B1E;color:#F0C14B}
+html.theme-chinese-new-year .tabs{background:#8E0B1E;border-color:#F0C14B}
+html.theme-chinese-new-year .tabs button{color:#FFF4D0}
+html.theme-chinese-new-year .tabs button[aria-selected=true]{background:#F0C14B;color:#6B0A14}
+html.theme-chinese-new-year .chip{background:#8E0B1E;border-color:#F0C14B;color:#F0C14B}
+html.theme-chinese-new-year .chip.on,
+html.theme-chinese-new-year .chip:hover{background:#F0C14B;color:#6B0A14;border-color:#FFF4D0}
+html.theme-chinese-new-year .rt th,
+html.theme-chinese-new-year .rt td,
+html.theme-chinese-new-year .ca th,
+html.theme-chinese-new-year .ca td{border-color:#F0C14B;color:#FFF4D0}
+html.theme-chinese-new-year .rt tbody tr:nth-child(even){background:color-mix(in srgb,#7A0A14 70%,#B31426)}
+html.theme-chinese-new-year .ca thead th{background:#F0C14B;color:#6B0A14}
+html.theme-chinese-new-year .ca .dt{background:#8E0B1E;color:#FFF4D0;box-shadow:1px 0 0 #F0C14B}
+html.theme-chinese-new-year footer{border-top:5px solid #F0C14B}
+html.theme-chinese-new-year footer a{color:#F0C14B}
+html.theme-chinese-new-year footer .soc a{color:#F0C14B;border-color:#F0C14B}
+html.theme-chinese-new-year .s-ov{background:rgba(100,8,14,.6)}
+html.theme-chinese-new-year .s-panel,
+html.theme-chinese-new-year .s-head,
+html.theme-chinese-new-year .s-foot{background:#8E0B1E;border-color:#F0C14B;color:#FFF4D0}
+html.theme-chinese-new-year .mbar{background:#6B0A14;border-top:2px solid #F0C14B}
+html.theme-chinese-new-year .mbar .btn-g{
+  background:linear-gradient(180deg,#FFE08A,#F0C14B 55%,#B8860B);color:#6B0A14!important;
+}
+html.theme-chinese-new-year .mbar .btn-y{background:#FFF4D0;color:#6B0A14!important}
+html.theme-chinese-new-year .mbar .btn-og{border-color:#F0C14B;color:#FFF4D0}
+html.theme-chinese-new-year .wof-open{background:#8E0B1E;color:#FFF4D0}
+
+html.theme-diwali header{border-bottom:3px solid #C9A227}
+html.theme-diwali footer{border-top:5px solid transparent;border-image:linear-gradient(90deg,#9B1B6C,#D35400,#C9A227,#0E7A4B,#0A7C86,#5A1E8A) 1;background:var(--footer-bg)}
+html.theme-diwali footer a{color:#FFE08A}
+html.theme-diwali footer .soc a{color:#FFE08A;border-color:#C9A227}
+html.theme-diwali .s-ov{background:rgba(62,20,104,.5)}
+html.theme-diwali .btn-g,
+html.theme-diwali .menu a.btn-g{background:#9B1B6C;color:#fff!important;border-color:transparent}
+html.theme-diwali .mbar{border-top:3px solid transparent;border-image:linear-gradient(90deg,#9B1B6C,#D35400,#C9A227,#0E7A4B,#0A7C86,#5A1E8A) 1}
+html.theme-diwali .card:nth-child(6n+1),
+html.theme-diwali .fact:nth-child(6n+1),
+html.theme-diwali .wof-card:nth-child(6n+1),
+html.theme-diwali .faq-item:nth-child(6n+1){--accent:#9B1B6C}
+html.theme-diwali .card:nth-child(6n+2),
+html.theme-diwali .fact:nth-child(6n+2),
+html.theme-diwali .wof-card:nth-child(6n+2),
+html.theme-diwali .faq-item:nth-child(6n+2){--accent:#D35400}
+html.theme-diwali .card:nth-child(6n+3),
+html.theme-diwali .fact:nth-child(6n+3),
+html.theme-diwali .wof-card:nth-child(6n+3),
+html.theme-diwali .faq-item:nth-child(6n+3){--accent:#C9A227}
+html.theme-diwali .card:nth-child(6n+4),
+html.theme-diwali .fact:nth-child(6n+4),
+html.theme-diwali .wof-card:nth-child(6n+4),
+html.theme-diwali .faq-item:nth-child(6n+4){--accent:#0E7A4B}
+html.theme-diwali .card:nth-child(6n+5),
+html.theme-diwali .fact:nth-child(6n+5),
+html.theme-diwali .wof-card:nth-child(6n+5),
+html.theme-diwali .faq-item:nth-child(6n+5){--accent:#0A7C86}
+html.theme-diwali .card:nth-child(6n),
+html.theme-diwali .fact:nth-child(6n),
+html.theme-diwali .wof-card:nth-child(6n),
+html.theme-diwali .faq-item:nth-child(6n){--accent:#5A1E8A}
+html.theme-diwali .card,
+html.theme-diwali .fact,
+html.theme-diwali .wof-card,
+html.theme-diwali .faq-item{
+  border-color:var(--accent,#9B1B6C);
+  background-image:linear-gradient(var(--accent,#9B1B6C),var(--accent,#9B1B6C));
+  background-size:100% 5px;background-repeat:no-repeat;
+}
+html.theme-diwali .faq-item[open]{border-color:var(--accent,#9B1B6C)}
+html.theme-diwali .chip:nth-child(6n+1){border-color:#9B1B6C;color:#9B1B6C}
+html.theme-diwali .chip:nth-child(6n+2){border-color:#D35400;color:#D35400}
+html.theme-diwali .chip:nth-child(6n+3){border-color:#8F7010;color:#8F7010}
+html.theme-diwali .chip:nth-child(6n+4){border-color:#0E7A4B;color:#0E7A4B}
+html.theme-diwali .chip:nth-child(6n+5){border-color:#0A7C86;color:#0A7C86}
+html.theme-diwali .chip:nth-child(6n){border-color:#5A1E8A;color:#5A1E8A}
+html.theme-diwali .chip.on,
+html.theme-diwali .chip:hover{background:var(--g);color:#fff;border-color:var(--g)}
+html.theme-diwali .chip:nth-child(6n+1).on,html.theme-diwali .chip:nth-child(6n+1):hover{background:#9B1B6C;border-color:#9B1B6C;color:#fff}
+html.theme-diwali .chip:nth-child(6n+2).on,html.theme-diwali .chip:nth-child(6n+2):hover{background:#D35400;border-color:#D35400;color:#fff}
+html.theme-diwali .chip:nth-child(6n+3).on,html.theme-diwali .chip:nth-child(6n+3):hover{background:#8F7010;border-color:#8F7010;color:#fff}
+html.theme-diwali .chip:nth-child(6n+4).on,html.theme-diwali .chip:nth-child(6n+4):hover{background:#0E7A4B;border-color:#0E7A4B;color:#fff}
+html.theme-diwali .chip:nth-child(6n+5).on,html.theme-diwali .chip:nth-child(6n+5):hover{background:#0A7C86;border-color:#0A7C86;color:#fff}
+html.theme-diwali .chip:nth-child(6n).on,html.theme-diwali .chip:nth-child(6n):hover{background:#5A1E8A;border-color:#5A1E8A;color:#fff}
+html.theme-diwali .tabs button:nth-child(6n+1){color:#9B1B6C}
+html.theme-diwali .tabs button:nth-child(6n+2){color:#D35400}
+html.theme-diwali .tabs button:nth-child(6n+3){color:#8F7010}
+html.theme-diwali .tabs button:nth-child(6n+4){color:#0E7A4B}
+html.theme-diwali .tabs button:nth-child(6n+5){color:#0A7C86}
+html.theme-diwali .tabs button:nth-child(6n){color:#5A1E8A}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+1){background:#9B1B6C;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+2){background:#D35400;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+3){background:#8F7010;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+4){background:#0E7A4B;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n+5){background:#0A7C86;color:#fff}
+html.theme-diwali .tabs button[aria-selected=true]:nth-child(6n){background:#5A1E8A;color:#fff}
+html.theme-diwali .lhead,
+html.theme-diwali .rt thead th,
+html.theme-diwali .ca thead th{
+  background:linear-gradient(90deg,#9B1B6C,#D35400 20%,#8F7010 40%,#0E7A4B 60%,#0A7C86 80%,#5A1E8A);
+  color:#FFF8E8;
+}
+html.theme-diwali .assoc{border-bottom-color:#C9A227}
 
 @media (prefers-reduced-motion:reduce){
   html.theme-christmas .hero::before,
