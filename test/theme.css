@@ -1,29 +1,66 @@
 /* Seasonal site themes (Christmas, Easter, Melbourne Cup).
    Driven by the Themes tab in DTC Website Content — not a visitor picker.
-   Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none). */
+   Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none).
 
-html.theme-christmas:not([data-theme]){
-  --g:#1E4F32;
-  --g2:#2B6A43;
-  --y:#E4C76A;
-  --l:#F3F7F1;
-}
-html.theme-easter:not([data-theme]){
-  --g:#3A6A50;
-  --g2:#5E8A6E;
-  --y:#E6C9A8;
-  --l:#F7F4F1;
-}
-html.theme-melbourne-cup:not([data-theme]){
-  --g:#1C3F2D;
-  --g2:#2E5A40;
-  --y:#D4B45A;
-  --l:#F5F3EC;
-}
+   While a seasonal theme is active it wins over the footer slam colour
+   picker (data-theme=ao|rg|wim|us). The picker's choice is still saved
+   and returns when the seasonal theme ends. */
 
-html.theme-christmas header{border-bottom-color:#d4b45a}
-html.theme-easter header{border-bottom-color:#d7c0b0}
-html.theme-melbourne-cup header{border-bottom-color:#c9a227}
+/* --- Tokens: seasonal class beats [data-theme] via higher specificity --- */
+html.theme-christmas{
+  --g:#9B1B2C;
+  --g2:#1A5A32;
+  --y:#D4B44A;
+  --t:#1A1F1C;
+  --m:#5C5348;
+  --l:#F8F3E8;
+  --sh:0 10px 30px rgba(80,24,24,.08);
+  --header-bg:#153D28;
+  --header-fg:#F8EFCC;
+  --header-muted:#E4C76A;
+  --footer-bg:#10261B;
+  --footer-fg:#E8F0DC;
+  --btn:#9B1B2C;
+  --btn-fg:#fff;
+  --border:#E6D9B8;
+  --surface:#FFFCF7;
+}
+html.theme-easter{
+  --g:#6B3D7A;
+  --g2:#3F6F5A;
+  --y:#E6C44C;
+  --t:#2A2433;
+  --m:#6A6170;
+  --l:#F4EEF7;
+  --sh:0 10px 30px rgba(80,40,80,.08);
+  --header-bg:#EDE7F4;
+  --header-fg:#2A2433;
+  --header-muted:#6B3D7A;
+  --footer-bg:#4A3D5C;
+  --footer-fg:#F6E9C8;
+  --btn:#6B3D7A;
+  --btn-fg:#fff;
+  --border:#E0D4EA;
+  --surface:#FBF9FC;
+}
+html.theme-melbourne-cup{
+  --g:#8E1E3A;
+  --g2:#7A5C12;
+  --y:#C9A44A;
+  --t:#1A1814;
+  --m:#5E584C;
+  --l:#F6F1E6;
+  --sh:0 10px 30px rgba(20,16,10,.10);
+  --header-bg:#161618;
+  --header-fg:#F3E4B8;
+  --header-muted:#C9A44A;
+  --footer-bg:#111113;
+  --footer-fg:#F3E4B8;
+  --btn:#C9A44A;
+  --btn-fg:#1A1814;
+  --border:#E6DCC0;
+  --surface:#FBF8F1;
+}
 
 /* Ribbon under the header */
 .season-ribbon{
@@ -129,20 +166,22 @@ html.theme-christmas .phead::before{
   to{background-position:0 180px, 40px 160px, -20px 200px, 30px 170px}
 }
 
-/* Easter: soft pastel wash and a pair of quiet eggs */
+
+/* Easter: soft lavender, mint and blush wash */
 html.theme-easter .hero::before,
 html.theme-easter .phead::before{
   background:
-    radial-gradient(circle at 12% 80%, rgba(243,214,198,.28), transparent 42%),
-    radial-gradient(circle at 88% 24%, rgba(214,228,214,.3), transparent 46%);
+    radial-gradient(circle at 12% 80%, rgba(237,231,244,.32), transparent 46%),
+    radial-gradient(circle at 88% 24%, rgba(214,232,222,.30), transparent 48%),
+    radial-gradient(circle at 70% 90%, rgba(244,210,222,.22), transparent 42%);
 }
 
-/* Melbourne Cup: warm gold wash and a hint of rose */
+/* Melbourne Cup: warm gold wash and a hint of rose on charcoal */
 html.theme-melbourne-cup .hero::before,
 html.theme-melbourne-cup .phead::before{
   background:
-    linear-gradient(180deg, rgba(212,180,90,.12), transparent 42%),
-    radial-gradient(circle at 90% 86%, rgba(140,30,58,.22), transparent 34%);
+    linear-gradient(180deg, rgba(201,164,74,.16), transparent 42%),
+    radial-gradient(circle at 90% 86%, rgba(142,30,58,.22), transparent 34%);
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -153,4 +192,287 @@ html.theme-melbourne-cup .phead::before{
   .season-ribbon{gap:8px;padding:8px 14px;font-size:.82rem}
   .season-ribbon-icon{width:18px;height:18px}
   html.theme-melbourne-cup .season-ribbon{padding-left:20px;padding-right:20px}
+}
+
+/* --- Full-site chrome: headers, hero, buttons, cards, footer, tabs, search --- */
+html.theme-christmas,
+html.theme-easter,
+html.theme-melbourne-cup{background:var(--surface)}
+html.theme-christmas body,
+html.theme-easter body,
+html.theme-melbourne-cup body{background:var(--surface);color:var(--t)}
+
+/* Header / nav: distinctive bar, logo sits on a white tile so the crest stays clear */
+html.theme-christmas header,
+html.theme-easter header,
+html.theme-melbourne-cup header{
+  background:var(--header-bg);
+  border-bottom:1px solid color-mix(in srgb,var(--header-muted) 55%, transparent);
+  backdrop-filter:none;
+}
+html.theme-christmas header .brand,
+html.theme-easter header .brand,
+html.theme-melbourne-cup header .brand{color:var(--header-fg)}
+html.theme-christmas header .brand small,
+html.theme-easter header .brand small,
+html.theme-melbourne-cup header .brand small{color:var(--header-muted)}
+html.theme-christmas .brand img,
+html.theme-easter .brand img,
+html.theme-melbourne-cup .brand img,
+html.theme-christmas footer img,
+html.theme-easter footer img,
+html.theme-melbourne-cup footer img{
+  background:#fff;
+  border-radius:7px;
+  padding:2px;
+  box-sizing:content-box;
+}
+html.theme-christmas header .menu a,
+html.theme-easter header .menu a,
+html.theme-melbourne-cup header .menu a{color:var(--header-fg)}
+html.theme-christmas header .menu a:hover,
+html.theme-easter header .menu a:hover,
+html.theme-melbourne-cup header .menu a:hover{
+  background:color-mix(in srgb,var(--header-fg) 14%, transparent);
+  color:var(--header-muted);
+}
+html.theme-christmas header .menu a[aria-current=page],
+html.theme-easter header .menu a[aria-current=page],
+html.theme-melbourne-cup header .menu a[aria-current=page]{
+  box-shadow:inset 0 -2px 0 var(--header-muted);
+}
+html.theme-christmas .burger span,
+html.theme-easter .burger span,
+html.theme-melbourne-cup .burger span{background:var(--header-fg)}
+html.theme-christmas .sbtn,
+html.theme-easter .sbtn,
+html.theme-melbourne-cup .sbtn{
+  background:color-mix(in srgb,var(--header-fg) 10%, transparent);
+  border-color:color-mix(in srgb,var(--header-fg) 40%, transparent);
+  color:var(--header-fg);
+}
+html.theme-christmas .sbtn:hover,
+html.theme-christmas .sbtn:focus-visible,
+html.theme-christmas .sbtn[aria-expanded=true],
+html.theme-easter .sbtn:hover,
+html.theme-easter .sbtn:focus-visible,
+html.theme-easter .sbtn[aria-expanded=true],
+html.theme-melbourne-cup .sbtn:hover,
+html.theme-melbourne-cup .sbtn:focus-visible,
+html.theme-melbourne-cup .sbtn[aria-expanded=true]{
+  background:color-mix(in srgb,var(--header-muted) 22%, transparent);
+  border-color:var(--header-muted);
+  color:var(--header-muted);
+}
+
+/* Mobile drawer matches the header so it does not flash white on dark themes */
+@media (max-width:1020px){
+  html.theme-christmas .menu,
+  html.theme-easter .menu,
+  html.theme-melbourne-cup .menu{background:var(--header-bg)}
+}
+
+/* Hero + inner page heading: override the hardcoded club-green washes */
+html.theme-christmas .hero{
+  background:
+    linear-gradient(135deg, rgba(21,61,40,.90) 0%, rgba(155,27,44,.48) 52%, rgba(21,61,40,.82) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #153D28;
+}
+html.theme-easter .hero{
+  background:
+    linear-gradient(135deg, rgba(74,61,92,.78) 0%, rgba(63,111,90,.62) 48%, rgba(150,80,120,.58) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #4A3D5C;
+}
+html.theme-melbourne-cup .hero{
+  background:
+    linear-gradient(135deg, rgba(16,16,18,.92) 0%, rgba(50,28,24,.72) 50%, rgba(16,16,18,.88) 100%),
+    url(hero-court.jpg) center 45%/cover no-repeat #161618;
+}
+@media (max-width:700px){
+  html.theme-christmas .hero{
+    background:
+      linear-gradient(180deg, rgba(21,61,40,.88), rgba(155,27,44,.50) 55%, rgba(21,61,40,.84)),
+      url(hero-court-m.jpg) center/cover no-repeat #153D28;
+  }
+  html.theme-easter .hero{
+    background:
+      linear-gradient(180deg, rgba(74,61,92,.80), rgba(63,111,90,.60) 50%, rgba(150,80,120,.58)),
+      url(hero-court-m.jpg) center/cover no-repeat #4A3D5C;
+  }
+  html.theme-melbourne-cup .hero{
+    background:
+      linear-gradient(180deg, rgba(16,16,18,.90), rgba(50,28,24,.70) 50%, rgba(16,16,18,.88)),
+      url(hero-court-m.jpg) center/cover no-repeat #161618;
+  }
+}
+html.theme-christmas .phead{
+  background:linear-gradient(135deg,#10261B,#1A5A32 55%,#7A2230);
+  color:#fff;
+}
+html.theme-easter .phead{
+  background:linear-gradient(135deg,#4A3D5C,#5C6F8A 55%,#3F6F5A);
+  color:#fff;
+}
+html.theme-melbourne-cup .phead{
+  background:linear-gradient(135deg,#111113,#1C1C20 60%,#3A1A22);
+  color:#fff;
+}
+html.theme-christmas .phead p,
+html.theme-easter .phead p,
+html.theme-melbourne-cup .phead p{color:color-mix(in srgb,#fff 80%, var(--header-muted))}
+
+/* Buttons + links (btn-g is the primary CTA: red / plum / gold) */
+html.theme-christmas .btn-g,
+html.theme-easter .btn-g,
+html.theme-melbourne-cup .btn-g,
+html.theme-christmas .menu a.btn-g,
+html.theme-easter .menu a.btn-g,
+html.theme-melbourne-cup .menu a.btn-g{
+  background:var(--btn);
+  color:var(--btn-fg)!important;
+  border-color:transparent;
+}
+html.theme-christmas .btn-g:hover,
+html.theme-easter .btn-g:hover,
+html.theme-melbourne-cup .btn-g:hover,
+html.theme-christmas .menu a.btn-g:hover,
+html.theme-easter .menu a.btn-g:hover,
+html.theme-melbourne-cup .menu a.btn-g:hover{
+  background:color-mix(in srgb,var(--btn) 82%, var(--t));
+  color:var(--btn-fg)!important;
+}
+html.theme-christmas .btn-og,
+html.theme-easter .btn-og,
+html.theme-melbourne-cup .btn-og{border-color:var(--g);color:var(--g)}
+html.theme-christmas .btn-y,
+html.theme-easter .btn-y,
+html.theme-melbourne-cup .btn-y{background:var(--y);color:var(--t)!important}
+
+/* Cards, facts, section bands, headings */
+html.theme-christmas .band,
+html.theme-easter .band,
+html.theme-melbourne-cup .band,
+html.theme-christmas .rpage,
+html.theme-easter .rpage,
+html.theme-melbourne-cup .rpage{background:var(--l)}
+html.theme-christmas .card,
+html.theme-easter .card,
+html.theme-melbourne-cup .card,
+html.theme-christmas .fact,
+html.theme-easter .fact,
+html.theme-melbourne-cup .fact,
+html.theme-christmas .lsec,
+html.theme-easter .lsec,
+html.theme-melbourne-cup .lsec,
+html.theme-christmas .faq-item,
+html.theme-easter .faq-item,
+html.theme-melbourne-cup .faq-item,
+html.theme-christmas .faq-cta,
+html.theme-easter .faq-cta,
+html.theme-melbourne-cup .faq-cta{
+  border-color:var(--border);
+  background:var(--surface);
+}
+html.theme-christmas .ico,
+html.theme-easter .ico,
+html.theme-melbourne-cup .ico{background:var(--l)}
+html.theme-christmas h2,
+html.theme-easter h2,
+html.theme-melbourne-cup h2{color:var(--t)}
+html.theme-christmas .kicker,
+html.theme-easter .kicker,
+html.theme-melbourne-cup .kicker{color:var(--g2)}
+
+/* Footer + mobile action bar */
+html.theme-christmas footer,
+html.theme-easter footer,
+html.theme-melbourne-cup footer{
+  background:var(--footer-bg);
+  color:var(--footer-fg);
+}
+html.theme-christmas footer a,
+html.theme-easter footer a,
+html.theme-melbourne-cup footer a{color:#fff}
+html.theme-easter footer a{color:var(--footer-fg)}
+html.theme-melbourne-cup footer a{color:var(--y)}
+html.theme-christmas footer .soc a,
+html.theme-easter footer .soc a,
+html.theme-melbourne-cup footer .soc a{color:#fff;border-color:rgba(255,255,255,.65)}
+html.theme-christmas footer .soc a:hover,
+html.theme-christmas footer .soc a:focus-visible,
+html.theme-easter footer .soc a:hover,
+html.theme-easter footer .soc a:focus-visible,
+html.theme-melbourne-cup footer .soc a:hover,
+html.theme-melbourne-cup footer .soc a:focus-visible{
+  background:#fff;
+  color:var(--footer-bg);
+  outline-color:#fff;
+}
+html.theme-christmas .mbar,
+html.theme-easter .mbar,
+html.theme-melbourne-cup .mbar{
+  background:var(--surface);
+  box-shadow:0 -6px 20px rgba(0,0,0,.08);
+  border-top:1px solid var(--border);
+}
+
+/* Tab pills (courts / results) and chips */
+html.theme-christmas .tabs,
+html.theme-easter .tabs,
+html.theme-melbourne-cup .tabs{
+  background:var(--surface);
+  border-color:var(--border);
+}
+html.theme-christmas .tabs button,
+html.theme-easter .tabs button,
+html.theme-melbourne-cup .tabs button{color:var(--m)}
+html.theme-christmas .tabs button[aria-selected=true],
+html.theme-easter .tabs button[aria-selected=true],
+html.theme-melbourne-cup .tabs button[aria-selected=true]{
+  background:var(--btn);
+  color:var(--btn-fg);
+}
+html.theme-christmas .chip,
+html.theme-easter .chip,
+html.theme-melbourne-cup .chip{border-color:var(--g);color:var(--g);background:var(--surface)}
+html.theme-christmas .chip.on,
+html.theme-christmas .chip:hover,
+html.theme-easter .chip.on,
+html.theme-easter .chip:hover,
+html.theme-melbourne-cup .chip.on,
+html.theme-melbourne-cup .chip:hover{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+
+/* Search overlay accents */
+html.theme-christmas .s-ov{background:rgba(16,38,27,.52)}
+html.theme-easter .s-ov{background:rgba(74,61,92,.44)}
+html.theme-melbourne-cup .s-ov{background:rgba(10,10,12,.58)}
+html.theme-christmas .s-panel,
+html.theme-easter .s-panel,
+html.theme-melbourne-cup .s-panel{
+  border-top-color:var(--y);
+  background:var(--surface);
+}
+html.theme-christmas .s-head,
+html.theme-easter .s-head,
+html.theme-melbourne-cup .s-head,
+html.theme-christmas .s-foot,
+html.theme-easter .s-foot,
+html.theme-melbourne-cup .s-foot{border-color:var(--border);background:var(--surface)}
+html.theme-christmas .s-item:hover,
+html.theme-christmas .s-item:focus-visible,
+html.theme-christmas .s-item.is-active,
+html.theme-easter .s-item:hover,
+html.theme-easter .s-item:focus-visible,
+html.theme-easter .s-item.is-active,
+html.theme-melbourne-cup .s-item:hover,
+html.theme-melbourne-cup .s-item:focus-visible,
+html.theme-melbourne-cup .s-item.is-active{
+  background:var(--l);
+  border-color:var(--border);
+}
+html.theme-christmas .s-keys kbd,
+html.theme-easter .s-keys kbd,
+html.theme-melbourne-cup .s-keys kbd{
+  border-color:var(--border);
+  background:var(--l);
 }
