@@ -1,7 +1,7 @@
 /* Seasonal site themes (Christmas, Easter, Melbourne Cup).
    Driven by the Themes tab in DTC Website Content — not a visitor picker.
    Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none).
-   Christmas also supports ?santa=now to force a sleigh pass (preview only).
+   Preview travellers with ?santa=now, ?bunny=now, ?horses=now, or ?fx=now.
 
    While a seasonal theme is active it wins over the footer slam colour
    picker (data-theme=ao|rg|wim|us). The picker's choice is still saved
@@ -179,10 +179,13 @@ html.theme-melbourne-cup .season-lights i:nth-child(3n){--c:#F6F1E6}
 html.theme-melbourne-cup .season-lights i:nth-child(2n)::after{animation-delay:-1.6s}
 @keyframes dtc-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
 
-/* ---------- Santa on his sleigh (Christmas only; created by theme.js) ---------- */
-#dtc-santa{position:fixed;left:0;top:0;z-index:150;pointer-events:none;will-change:transform;
-  filter:drop-shadow(0 6px 8px rgba(0,0,0,.28))}
-#dtc-santa svg{display:block;width:100%;height:auto;overflow:visible}
+/* ---------- Seasonal travellers (created by theme.js; pointer-events none) ---------- */
+#dtc-santa,#dtc-bunny,#dtc-horses,.dtc-horse{position:fixed;left:0;top:0;z-index:150;pointer-events:none;will-change:transform}
+#dtc-santa{filter:drop-shadow(0 6px 8px rgba(0,0,0,.28))}
+#dtc-bunny{top:auto;bottom:0}
+#dtc-horses{inset:0;width:100%;height:100%;overflow:visible;will-change:auto}
+#dtc-horses .dtc-horse{position:absolute}
+#dtc-santa svg,#dtc-bunny svg,#dtc-horses svg{display:block;width:100%;height:auto;overflow:visible}
 
 /* ---------- Page basics ---------- */
 html.theme-christmas,
@@ -461,7 +464,7 @@ html.theme-melbourne-cup .s-keys kbd{border-color:var(--border);background:var(-
   html.theme-christmas .hero::before,
   html.theme-christmas .phead::before{animation:none}
   .season-lights i::after{animation:none!important}
-  #dtc-santa{display:none!important}
+  #dtc-santa,#dtc-bunny,#dtc-horses{display:none!important}
 }
 @media (max-width:700px){
   .season-ribbon{gap:8px;padding:8px 14px;font-size:.82rem}
