@@ -1,5 +1,6 @@
 /* Seasonal site themes: client-side only, live Google Sheet. Not a visitor picker.
-   Preview with ?theme=christmas|easter|melbourne-cup (persists for this tab via sessionStorage).
+   Preview with ?theme=christmas|easter|melbourne-cup|new-year|chinese-new-year|diwali
+   (persists for this tab via sessionStorage).
    ?theme=none or ?theme=auto clears the preview and returns to the sheet (none also
    forces the normal site on that one page). Christmas supports ?santa=now or ?fx=now. */
 (function(){
@@ -7,7 +8,10 @@
   var KEYS={
     christmas:{cls:'theme-christmas', def:'Merry Christmas from DTC'},
     easter:{cls:'theme-easter', def:'Happy Easter from DTC'},
-    'melbourne-cup':{cls:'theme-melbourne-cup', def:'Happy Cup Day from DTC'}
+    'melbourne-cup':{cls:'theme-melbourne-cup', def:'Happy Cup Day from DTC'},
+    'new-year':{cls:'theme-new-year', def:'Happy New Year from DTC'},
+    'chinese-new-year':{cls:'theme-chinese-new-year', def:'Happy Chinese New Year from DTC'},
+    diwali:{cls:'theme-diwali', def:'Happy Diwali from DTC'}
   };
   var CACHE='dtc-season-theme';
   var root=document.documentElement;
@@ -16,6 +20,9 @@
   function normKey(s){
     s=(s||'').toString().trim().toLowerCase().replace(/[_\s]+/g,'-');
     if(s==='cup'||s==='melbournecup'||s==='melbourn-cup')s='melbourne-cup';
+    if(s==='newyear'||s==='nye'||s==='new-years'||s==='new-years-eve')s='new-year';
+    if(s==='cny'||s==='lunar-new-year'||s==='lunar'||s==='chinese-newyear'||s==='chinesenewyear')s='chinese-new-year';
+    if(s==='deepavali'||s==='deepawali')s='diwali';
     return KEYS[s]?s:'';
   }
   var PREVIEW='dtc-theme-preview';
