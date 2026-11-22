@@ -1,7 +1,7 @@
 /* Seasonal site themes (Christmas, Easter, Melbourne Cup).
    Driven by the Themes tab in DTC Website Content — not a visitor picker.
-   Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none).
-   Christmas supports ?santa=now or ?fx=now to force a sleigh pass (preview only).
+   Preview with ?theme=christmas|easter|melbourne-cup (persists for this tab).
+   ?theme=none or ?theme=auto clears the preview. Christmas supports ?santa=now or ?fx=now.
 
    While a seasonal theme is active it wins over the footer slam colour
    picker (data-theme=ao|rg|wim|us). The picker's choice is still saved
@@ -456,6 +456,201 @@ html.theme-melbourne-cup .s-item.is-active{background:var(--l);border-color:var(
 html.theme-christmas .s-keys kbd,
 html.theme-easter .s-keys kbd,
 html.theme-melbourne-cup .s-keys kbd{border-color:var(--border);background:var(--l)}
+
+
+/* ---------- Inner pages: panels, tables, boards, FAQ, roster ---------- */
+html.theme-christmas .tp,
+html.theme-christmas .lframe,
+html.theme-christmas .lsec,
+html.theme-christmas .wof-card,
+html.theme-christmas .faq-item,
+html.theme-christmas .faq-soon,
+html.theme-christmas .sr-card,
+html.theme-christmas .ca-wrap,
+html.theme-christmas .ca-soon,
+html.theme-christmas .ob-cta,
+html.theme-easter .tp,
+html.theme-easter .lframe,
+html.theme-easter .lsec,
+html.theme-easter .wof-card,
+html.theme-easter .faq-item,
+html.theme-easter .faq-soon,
+html.theme-easter .sr-card,
+html.theme-easter .ca-wrap,
+html.theme-easter .ca-soon,
+html.theme-easter .ob-cta,
+html.theme-melbourne-cup .tp,
+html.theme-melbourne-cup .lframe,
+html.theme-melbourne-cup .lsec,
+html.theme-melbourne-cup .wof-card,
+html.theme-melbourne-cup .faq-item,
+html.theme-melbourne-cup .faq-soon,
+html.theme-melbourne-cup .sr-card,
+html.theme-melbourne-cup .ca-wrap,
+html.theme-melbourne-cup .ca-soon,
+html.theme-melbourne-cup .ob-cta{background-color:var(--surface);border-color:var(--border)}
+html.theme-christmas .wof-card,
+html.theme-easter .wof-card,
+html.theme-melbourne-cup .wof-card{background-image:var(--strip);background-size:100% 4px;background-repeat:no-repeat}
+html.theme-christmas .wof-open,
+html.theme-easter .wof-open,
+html.theme-melbourne-cup .wof-open{background:var(--l)}
+html.theme-christmas .faq-item[open],
+html.theme-easter .faq-item[open],
+html.theme-melbourne-cup .faq-item[open]{border-color:var(--g)}
+html.theme-christmas .tpop,
+html.theme-easter .tpop,
+html.theme-melbourne-cup .tpop{background:var(--surface);border-color:var(--border)}
+html.theme-christmas .tbtn,
+html.theme-easter .tbtn,
+html.theme-melbourne-cup .tbtn{background:var(--surface);border-color:var(--border)}
+
+/* Results / courts tables */
+html.theme-christmas .rt tbody tr:nth-child(even),
+html.theme-easter .rt tbody tr:nth-child(even),
+html.theme-melbourne-cup .rt tbody tr:nth-child(even){background:color-mix(in srgb,var(--l) 72%,var(--surface))}
+html.theme-christmas .rt th,
+html.theme-christmas .rt td,
+html.theme-christmas .rt.st tr,
+html.theme-easter .rt th,
+html.theme-easter .rt td,
+html.theme-easter .rt.st tr,
+html.theme-melbourne-cup .rt th,
+html.theme-melbourne-cup .rt td,
+html.theme-melbourne-cup .rt.st tr{border-color:var(--border)}
+html.theme-christmas .ca th,
+html.theme-christmas .ca td,
+html.theme-easter .ca th,
+html.theme-easter .ca td,
+html.theme-melbourne-cup .ca th,
+html.theme-melbourne-cup .ca td{border-bottom-color:var(--border)}
+html.theme-christmas .ca thead th,
+html.theme-easter .ca thead th,
+html.theme-melbourne-cup .ca thead th{background:var(--btn);color:var(--btn-fg)}
+html.theme-christmas .ca thead th.dt{background:#0B5A2B;color:#FFF8E1}
+html.theme-easter .ca thead th.dt{background:#3B2766;color:#FFF0B3}
+html.theme-melbourne-cup .ca thead th.dt{background:#141417;color:#F6E7B9}
+html.theme-christmas .ca .dt,
+html.theme-easter .ca .dt,
+html.theme-melbourne-cup .ca .dt{background:var(--surface);box-shadow:1px 0 0 var(--border)}
+html.theme-christmas .ca thead th.dt,
+html.theme-easter .ca thead th.dt,
+html.theme-melbourne-cup .ca thead th.dt{box-shadow:1px 0 0 transparent}
+html.theme-christmas .ca .cap,
+html.theme-easter .ca .cap,
+html.theme-melbourne-cup .ca .cap{color:color-mix(in srgb,var(--btn-fg) 78%,transparent)}
+html.theme-christmas .ca tr.now:not(.np) td,
+html.theme-easter .ca tr.now:not(.np) td,
+html.theme-melbourne-cup .ca tr.now:not(.np) td,
+html.theme-christmas .sr-row.is-next,
+html.theme-easter .sr-row.is-next,
+html.theme-melbourne-cup .sr-row.is-next,
+html.theme-christmas .sr-badge,
+html.theme-easter .sr-badge,
+html.theme-melbourne-cup .sr-badge{background:color-mix(in srgb,var(--y) 38%,var(--surface))}
+html.theme-christmas .sr-row,
+html.theme-easter .sr-row,
+html.theme-melbourne-cup .sr-row{border-top-color:var(--border)}
+html.theme-christmas .ca tr.np td,
+html.theme-christmas .ca tr.np td.dt{background:#083B1F;color:#E9F5D8}
+html.theme-easter .ca tr.np td,
+html.theme-easter .ca tr.np td.dt{background:#3B2766;color:#EEE2FB}
+html.theme-melbourne-cup .ca tr.np td,
+html.theme-melbourne-cup .ca tr.np td.dt{background:#0B0B0D;color:#F6E7B9}
+
+/* Honour boards: keep the engraved plaque, shift metal and timber to the season */
+html.theme-christmas .hbw{
+  background:linear-gradient(145deg,#F0C14B 0%,#8E0B20 18%,#F6D365 34%,#0B5A2B 52%,#F0C14B 70%,#083B1F 86%,#F0C14B 100%);
+}
+html.theme-christmas .hbp{
+  color:#F6E7B9;
+  box-shadow:inset 0 0 0 2px #062616,inset 0 0 0 5px rgba(240,193,75,.55),inset 0 0 0 7px #0B3A1C,inset 0 0 40px rgba(0,0,0,.55);
+  background:
+    radial-gradient(ellipse at 30% 0%,rgba(240,193,75,.14),transparent 60%),
+    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.13) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.06) 12px 19px),
+    linear-gradient(90deg,#062616,#0B3A1C 22%,#083B1F 45%,#0E4A24 68%,#062616);
+}
+html.theme-christmas .hbh .club,
+html.theme-christmas .hbp h2,
+html.theme-christmas .hbt th,
+html.theme-christmas .hbt .yr{color:#F6E7B9}
+html.theme-christmas .hbp .est,
+html.theme-christmas .hbp .orn,
+html.theme-christmas .hbp .note,
+html.theme-christmas .hbt td{color:#E8C96A}
+html.theme-christmas .hbt th,
+html.theme-christmas .hbt tbody tr:last-child td,
+html.theme-christmas .hbt tbody tr:last-child th{border-bottom-color:#F0C14B}
+html.theme-christmas .hbt td,
+html.theme-christmas .hbt .yr,
+html.theme-christmas .hbt th.yr{border-color:rgba(240,193,75,.4)}
+html.theme-christmas .hbh img{box-shadow:0 0 0 2px #F0C14B,0 2px 6px rgba(0,0,0,.6)}
+html.theme-christmas .hbp .orn::before,
+html.theme-christmas .hbp .orn::after{background:linear-gradient(90deg,transparent,#F0C14B,transparent)}
+html.theme-christmas .hbt tbody tr:hover td,
+html.theme-christmas .hbt tbody tr:hover th{background:rgba(240,193,75,.08)}
+
+html.theme-easter .hbw{
+  background:linear-gradient(145deg,#FFD84D 0%,#B58CF2 18%,#FFF0B3 34%,#7A36B1 52%,#FF8FC1 70%,#3B2766 86%,#FFD84D 100%);
+}
+html.theme-easter .hbp{
+  color:#FFF0B3;
+  box-shadow:inset 0 0 0 2px #2A1848,inset 0 0 0 5px rgba(255,216,77,.5),inset 0 0 0 7px #3B2766,inset 0 0 40px rgba(20,8,40,.55);
+  background:
+    radial-gradient(ellipse at 30% 0%,rgba(255,143,193,.16),transparent 60%),
+    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.13) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.06) 12px 19px),
+    linear-gradient(90deg,#2A1848,#3B2766 22%,#4A2A70 45%,#3B2766 68%,#2A1848);
+}
+html.theme-easter .hbh .club,
+html.theme-easter .hbp h2,
+html.theme-easter .hbt th,
+html.theme-easter .hbt .yr{color:#FFF0B3}
+html.theme-easter .hbp .est,
+html.theme-easter .hbp .orn,
+html.theme-easter .hbp .note,
+html.theme-easter .hbt td{color:#E8D48A}
+html.theme-easter .hbt th,
+html.theme-easter .hbt tbody tr:last-child td,
+html.theme-easter .hbt tbody tr:last-child th{border-bottom-color:#FFD84D}
+html.theme-easter .hbt td,
+html.theme-easter .hbt .yr,
+html.theme-easter .hbt th.yr{border-color:rgba(255,216,77,.4)}
+html.theme-easter .hbh img{box-shadow:0 0 0 2px #FFD84D,0 2px 6px rgba(0,0,0,.6)}
+html.theme-easter .hbp .orn::before,
+html.theme-easter .hbp .orn::after{background:linear-gradient(90deg,transparent,#FFD84D,transparent)}
+html.theme-easter .hbt tbody tr:hover td,
+html.theme-easter .hbt tbody tr:hover th{background:rgba(255,216,77,.08)}
+
+html.theme-melbourne-cup .hbw{
+  background:linear-gradient(145deg,#E0B84F 0%,#A81F45 18%,#F6E7B9 34%,#15130F 52%,#E0B84F 70%,#0B0B0D 86%,#E0B84F 100%);
+}
+html.theme-melbourne-cup .hbp{
+  color:#F6E7B9;
+  box-shadow:inset 0 0 0 2px #0B0B0D,inset 0 0 0 5px rgba(224,184,79,.55),inset 0 0 0 7px #1B1B20,inset 0 0 40px rgba(0,0,0,.65);
+  background:
+    radial-gradient(ellipse at 30% 0%,rgba(224,184,79,.14),transparent 60%),
+    repeating-linear-gradient(92deg,transparent 0 7px,rgba(0,0,0,.16) 7px 9px,rgba(255,255,255,.03) 9px 12px,rgba(0,0,0,.08) 12px 19px),
+    linear-gradient(90deg,#0B0B0D,#16161A 22%,#1B1B20 45%,#201016 68%,#0B0B0D);
+}
+html.theme-melbourne-cup .hbh .club,
+html.theme-melbourne-cup .hbp h2,
+html.theme-melbourne-cup .hbt th,
+html.theme-melbourne-cup .hbt .yr{color:#F6E7B9}
+html.theme-melbourne-cup .hbp .est,
+html.theme-melbourne-cup .hbp .orn,
+html.theme-melbourne-cup .hbp .note,
+html.theme-melbourne-cup .hbt td{color:#E0B84F}
+html.theme-melbourne-cup .hbt th,
+html.theme-melbourne-cup .hbt tbody tr:last-child td,
+html.theme-melbourne-cup .hbt tbody tr:last-child th{border-bottom-color:#E0B84F}
+html.theme-melbourne-cup .hbt td,
+html.theme-melbourne-cup .hbt .yr,
+html.theme-melbourne-cup .hbt th.yr{border-color:rgba(224,184,79,.4)}
+html.theme-melbourne-cup .hbh img{box-shadow:0 0 0 2px #E0B84F,0 2px 6px rgba(0,0,0,.6)}
+html.theme-melbourne-cup .hbp .orn::before,
+html.theme-melbourne-cup .hbp .orn::after{background:linear-gradient(90deg,transparent,#E0B84F,transparent)}
+html.theme-melbourne-cup .hbt tbody tr:hover td,
+html.theme-melbourne-cup .hbt tbody tr:hover th{background:rgba(224,184,79,.08)}
 
 @media (prefers-reduced-motion:reduce){
   html.theme-christmas .hero::before,

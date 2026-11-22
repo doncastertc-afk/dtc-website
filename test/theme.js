@@ -1,6 +1,7 @@
 /* Seasonal site themes: client-side only, live Google Sheet. Not a visitor picker.
-   Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none).
-   Christmas supports ?santa=now or ?fx=now to force a sleigh pass (preview only). */
+   Preview with ?theme=christmas|easter|melbourne-cup (persists for this tab via sessionStorage).
+   ?theme=none or ?theme=auto clears the preview and returns to the sheet (none also
+   forces the normal site on that one page). Christmas supports ?santa=now or ?fx=now. */
 (function(){
   var CONTENT='1VqoOP7ec88J1Rl-DN7PtynWBuAoA3McwAMSIjn8o-FA';
   var KEYS={
@@ -17,14 +18,28 @@
     if(s==='cup'||s==='melbournecup'||s==='melbourn-cup')s='melbourne-cup';
     return KEYS[s]?s:'';
   }
+  var PREVIEW='dtc-theme-preview';
   function queryTheme(){
     try{
       var m=location.search.match(/[?&]theme=([^&]*)/i);
       if(!m)return null;
       var raw=decodeURIComponent(m[1].replace(/\+/g,' ')).trim().toLowerCase();
+      if(raw==='auto'||raw==='default'||raw==='sheet')return 'auto';
       if(raw===''||raw==='none'||raw==='off'||raw==='0'||raw==='normal')return '';
-      return normKey(raw);
+      return normKey(raw)||null;
     }catch(e){return null}
+  }
+  function readPreview(){
+    try{
+      var k=sessionStorage.getItem(PREVIEW);
+      return k?normKey(k):'';
+    }catch(e){return ''}
+  }
+  function writePreview(key){
+    try{
+      if(key)sessionStorage.setItem(PREVIEW,key);
+      else sessionStorage.removeItem(PREVIEW);
+    }catch(e){}
   }
   function melbourneToday(){
     var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Melbourne',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).split('-');
@@ -303,13 +318,27 @@
     (document.head||document.documentElement).appendChild(s);
   }
 
-  override=queryTheme();
-  if(override!==null){
-    if(override)apply(override,KEYS[override].def);
-    else apply('','');
+  var q=queryTheme();
+  if(q==='auto'){
+    writePreview('');
+    override=null;
+  }else if(q===''){
+    writePreview('');
+    override='';
+    apply('','');
+  }else if(q){
+    writePreview(q);
+    override=q;
+    apply(q,KEYS[q].def);
   }else{
-    var cached=readCache();
-    if(cached)apply(cached.key,cached.msg);
+    var prev=readPreview();
+    if(prev){
+      override=prev;
+      apply(prev,KEYS[prev].def);
+    }else{
+      var cached=readCache();
+      if(cached)apply(cached.key,cached.msg);
+    }
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();load()});
   else{if(current)mountRibbon();load()}
