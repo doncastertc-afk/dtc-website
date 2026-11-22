@@ -1,0 +1,156 @@
+/* Seasonal site themes (Christmas, Easter, Melbourne Cup).
+   Driven by the Themes tab in DTC Website Content — not a visitor picker.
+   Preview with ?theme=christmas|easter|melbourne-cup (or ?theme=none). */
+
+html.theme-christmas:not([data-theme]){
+  --g:#1E4F32;
+  --g2:#2B6A43;
+  --y:#E4C76A;
+  --l:#F3F7F1;
+}
+html.theme-easter:not([data-theme]){
+  --g:#3A6A50;
+  --g2:#5E8A6E;
+  --y:#E6C9A8;
+  --l:#F7F4F1;
+}
+html.theme-melbourne-cup:not([data-theme]){
+  --g:#1C3F2D;
+  --g2:#2E5A40;
+  --y:#D4B45A;
+  --l:#F5F3EC;
+}
+
+html.theme-christmas header{border-bottom-color:#d4b45a}
+html.theme-easter header{border-bottom-color:#d7c0b0}
+html.theme-melbourne-cup header{border-bottom-color:#c9a227}
+
+/* Ribbon under the header */
+.season-ribbon{
+  display:none;
+  position:relative;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:8px 20px;
+  font-weight:700;
+  font-size:.92rem;
+  letter-spacing:.02em;
+  text-align:center;
+  line-height:1.3;
+  z-index:4;
+}
+html.theme-christmas .season-ribbon,
+html.theme-easter .season-ribbon,
+html.theme-melbourne-cup .season-ribbon{display:flex}
+.season-ribbon-msg{max-width:70ch}
+.season-ribbon-icon{
+  flex:none;
+  width:22px;
+  height:22px;
+  background:center/contain no-repeat;
+}
+html.theme-christmas .season-ribbon{
+  background:linear-gradient(90deg,#163a24,#1E4F32 18%,#1E4F32 82%,#163a24);
+  color:#F8EFCC;
+  border-bottom:1px solid rgba(228,199,106,.45);
+}
+html.theme-christmas .season-ribbon-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M7.5 17.5c-1.8-4.4 2.2-8.6 5.8-6.6-.7-3.6 3.6-7 6.4-3.4 2.4-2.8 7.2.6 5.4 4.8 3.2-.6 6.8 4.2 3.4 7-2.4 1.8-7 .2-7.8 3.6-1.8-2.6-7-.8-7 1.8-3.4-1.6-7.2-2.6-5.2-7.2z' fill='%231F6A3A'/><circle cx='16' cy='17.5' r='2' fill='%23B4232C'/><circle cx='13.6' cy='16' r='1.6' fill='%23C42B34'/><circle cx='18.5' cy='16.2' r='1.5' fill='%23C42B34'/></svg>");
+}
+html.theme-easter .season-ribbon{
+  background:linear-gradient(90deg,#efe4dc,#f4efe8 20%,#e8efe6 80%,#e4ece3);
+  color:#2A3A30;
+  border-bottom:1px solid #d9cfc6;
+}
+html.theme-easter .season-ribbon-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><ellipse cx='12' cy='18' rx='8.5' ry='11.5' fill='%23F1D6C6'/><ellipse cx='12' cy='18' rx='8.5' ry='11.5' fill='none' stroke='%23C4A090' stroke-width='.8'/><path d='M6.5 16c2-1.2 3.6 1 5.5 0s3.8-1.8 5.6.2' stroke='%237A9E86' stroke-width='1.3' fill='none' stroke-linecap='round'/><circle cx='12' cy='21.5' r='1.2' fill='%23C9A06A'/></svg>");
+}
+html.theme-melbourne-cup .season-ribbon{
+  background:linear-gradient(90deg,#15281c,#1C3F2D 16%,#1C3F2D 84%,#15281c);
+  color:#F3E4B8;
+  border-bottom:1px solid rgba(212,180,90,.5);
+}
+html.theme-melbourne-cup .season-ribbon::before,
+html.theme-melbourne-cup .season-ribbon::after{
+  content:"";
+  position:absolute;
+  top:0;bottom:0;
+  width:10px;
+  background:repeating-linear-gradient(180deg,#8C1E3A 0 5px,#D4B45A 5px 8px,#1C3F2D 8px 12px);
+  opacity:.9;
+}
+html.theme-melbourne-cup .season-ribbon::before{left:0}
+html.theme-melbourne-cup .season-ribbon::after{right:0}
+html.theme-melbourne-cup .season-ribbon-icon{
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 28c-6.2-4-9-9-8.2-14.2 3.8-1.6 6 2.2 8.2 2.2s4.4-3.8 8.2-2.2C25 19 22.2 24 16 28z' fill='%232E6A42'/><circle cx='16' cy='12' r='6.6' fill='%238C2A3E'/><circle cx='16' cy='12' r='3.8' fill='%23B83B52'/><circle cx='16' cy='12' r='1.6' fill='%23E8C56B'/></svg>");
+}
+
+/* Hero + inner-page heading treatment */
+html.theme-christmas .hero,
+html.theme-easter .hero,
+html.theme-melbourne-cup .hero,
+html.theme-christmas .phead,
+html.theme-easter .phead,
+html.theme-melbourne-cup .phead{isolation:isolate;position:relative;overflow:hidden}
+html.theme-christmas .hero::before,
+html.theme-christmas .phead::before,
+html.theme-easter .hero::before,
+html.theme-easter .phead::before,
+html.theme-melbourne-cup .hero::before,
+html.theme-melbourne-cup .phead::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+html.theme-christmas .hero .wrap,
+html.theme-christmas .phead .wrap,
+html.theme-easter .hero .wrap,
+html.theme-easter .phead .wrap,
+html.theme-melbourne-cup .hero .wrap,
+html.theme-melbourne-cup .phead .wrap{position:relative;z-index:1}
+
+/* Christmas: sparse snowfall + a quiet holly sprig in the corner */
+html.theme-christmas .hero::before,
+html.theme-christmas .phead::before{
+  background-image:
+    radial-gradient(circle 2px at 18px 22px, rgba(255,255,255,.85) 55%, transparent 60%),
+    radial-gradient(circle 1.4px at 86px 48px, rgba(255,255,255,.7) 55%, transparent 60%),
+    radial-gradient(circle 1.8px at 140px 16px, rgba(255,255,255,.75) 55%, transparent 60%),
+    radial-gradient(circle 1.2px at 210px 70px, rgba(255,255,255,.6) 55%, transparent 60%);
+  background-size:220px 180px, 170px 160px, 250px 200px, 190px 170px;
+  opacity:.7;
+  animation:dtc-snow 22s linear infinite;
+}
+@keyframes dtc-snow{
+  from{background-position:0 0, 0 0, 0 0, 0 0}
+  to{background-position:0 180px, 40px 160px, -20px 200px, 30px 170px}
+}
+
+/* Easter: soft pastel wash and a pair of quiet eggs */
+html.theme-easter .hero::before,
+html.theme-easter .phead::before{
+  background:
+    radial-gradient(circle at 12% 80%, rgba(243,214,198,.28), transparent 42%),
+    radial-gradient(circle at 88% 24%, rgba(214,228,214,.3), transparent 46%);
+}
+
+/* Melbourne Cup: warm gold wash and a hint of rose */
+html.theme-melbourne-cup .hero::before,
+html.theme-melbourne-cup .phead::before{
+  background:
+    linear-gradient(180deg, rgba(212,180,90,.12), transparent 42%),
+    radial-gradient(circle at 90% 86%, rgba(140,30,58,.22), transparent 34%);
+}
+
+@media (prefers-reduced-motion:reduce){
+  html.theme-christmas .hero::before,
+  html.theme-christmas .phead::before{animation:none;opacity:.4}
+}
+@media (max-width:700px){
+  .season-ribbon{gap:8px;padding:8px 14px;font-size:.82rem}
+  .season-ribbon-icon{width:18px;height:18px}
+  html.theme-melbourne-cup .season-ribbon{padding-left:20px;padding-right:20px}
+}
