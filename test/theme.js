@@ -1,5 +1,5 @@
 /* Seasonal site themes: client-side only, live Google Sheet.
-   Preview with ?theme=christmas|easter|melbourne-cup|new-year|chinese-new-year|diwali
+   Preview with ?theme=christmas|easter|melbourne-cup|new-year|chinese-new-year|diwali|halloween
    or a slam name (ao, australian-open, rg, roland-garros, wim, wimbledon, us, us-open)
    (persists for this tab via sessionStorage).
    ?theme=none or ?theme=auto clears the preview and returns to the sheet (none also
@@ -19,6 +19,7 @@
     'new-year':{cls:'theme-new-year', def:'Happy New Year from DTC'},
     'chinese-new-year':{cls:'theme-chinese-new-year', def:'Happy Chinese New Year from DTC'},
     diwali:{cls:'theme-diwali', def:'Happy Diwali from DTC'},
+    halloween:{cls:'theme-halloween', def:'Happy Halloween from DTC'},
     ao:{cls:'theme-ao', def:'Australian Open time at DTC', slam:true},
     rg:{cls:'theme-rg', def:'Roland-Garros time at DTC', slam:true},
     wim:{cls:'theme-wim', def:'Wimbledon time at DTC', slam:true},
@@ -31,8 +32,9 @@
   var DISMISSED='dtc-season-dismissed';
 
   function normKey(s){
-    s=(s||'').toString().trim().toLowerCase().replace(/[_\s]+/g,'-');
+    s=(s||'').toString().trim().toLowerCase().replace(/[_\s]+/g,'-').replace(/['’]/g,'');
     if(s==='cup'||s==='melbournecup'||s==='melbourn-cup')s='melbourne-cup';
+    if(s==='spooky'||s==='halloweeen'||s==='hallowe-en')s='halloween';
     if(s==='newyear'||s==='nye'||s==='new-years'||s==='new-years-eve')s='new-year';
     if(s==='cny'||s==='lunar-new-year'||s==='lunar'||s==='chinese-newyear'||s==='chinesenewyear')s='chinese-new-year';
     if(s==='deepavali'||s==='deepawali')s='diwali';
