@@ -5,8 +5,11 @@
    ?theme=none or ?theme=auto clears the preview and returns to the sheet (none also
    forces the normal site on that one page). Christmas supports ?santa=now or ?fx=now.
 
-   Festive sheet themes override the visitor colour picker. Slam sheet themes set
-   the default only: an explicit picker choice (including "DTC club colours") wins. */
+   A seasonal theme (festive or slam) first overrides any saved colour-picker
+   choice. Once that period has been shown, a visitor's picker choice sticks
+   until the next seasonal period starts (the same theme next year is a new
+   period). When no period is active, the saved picker choice applies as usual.
+   ?theme= previews are unchanged and do not write those localStorage flags. */
 (function(){
   var CONTENT='1VqoOP7ec88J1Rl-DN7PtynWBuAoA3McwAMSIjn8o-FA';
   var KEYS={
@@ -23,7 +26,9 @@
   };
   var CACHE='dtc-season-theme';
   var root=document.documentElement;
-  var override=null, current=null, pending=false;
+  var override=null, current=null, pending=false, season=null, lastRows=null, sheetReady=false;
+  var PRESENTED='dtc-season-presented';
+  var DISMISSED='dtc-season-dismissed';
 
   function normKey(s){
     s=(s||'').toString().trim().toLowerCase().replace(/[_\s]+/g,'-');
@@ -37,7 +42,6 @@
     if(s==='us-open'||s==='usopen'||s==='u-s-open'||s==='uso')s='us';
     return KEYS[s]?s:'';
   }
-  function isSlam(key){return !!(key&&KEYS[key]&&KEYS[key].slam)}
   function pickerChoice(){
     try{
       var t=localStorage.getItem('dtc-theme');
@@ -55,14 +59,12 @@
       if(x.dataset&&('t' in x.dataset))x.setAttribute('aria-pressed',x.dataset.t===cur);
     });
   }
-  function paintSlamColours(key,force){
-    var use=force||pickerChoice()===null;
-    if(use){
-      root.classList.add(KEYS[key].cls);
-      root.dataset.theme=key;
-    }else{
-      restorePickerTheme();
-    }
+  function readLS(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function writeLS(k,v){try{if(v)localStorage.setItem(k,v);else localStorage.removeItem(k)}catch(e){}}
+  function periodId(key,start){
+    key=normKey(key);
+    if(!key||!start)return '';
+    return key+':'+start.getFullYear()+'-'+String(start.getMonth()+1).padStart(2,'0')+'-'+String(start.getDate()).padStart(2,'0');
   }
   var PREVIEW='dtc-theme-preview';
   function queryTheme(){
@@ -88,6 +90,14 @@
     }catch(e){}
   }
   function melbourneToday(){
+    try{
+      var s=window.__dtcToday;
+      if(typeof s!=='string'||!s)s=sessionStorage.getItem('__dtcToday')||'';
+      if(typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)){
+        var a=s.split('-');
+        return new Date(+a[0],+a[1]-1,+a[2]);
+      }
+    }catch(e){}
     var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Melbourne',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).split('-');
     return new Date(+p[0],+p[1]-1,+p[2]);
   }
@@ -122,14 +132,31 @@
     var t=ymd(today);
     return ymd(start)<=t&&t<=ymd(end);
   }
-  function apply(key,msg){
+  function apply(key,msg,opts){
+    opts=opts||{};
     key=normKey(key);
     Object.keys(KEYS).forEach(function(k){root.classList.remove(KEYS[k].cls)});
     restorePickerTheme();
-    current=key?{key:key,msg:(msg&&String(msg).trim())||KEYS[key].def}:null;
-    if(current){
-      if(isSlam(current.key))paintSlamColours(current.key, override===current.key);
-      else root.classList.add(KEYS[current.key].cls);
+    var id=periodId(key,opts.start);
+    season=key?{key:key,msg:(msg&&String(msg).trim())||KEYS[key].def,start:opts.start||null,id:id}:null;
+    var show=false;
+    if(key){
+      if(opts.force)show=true;
+      else if(id){
+        if(readLS(PRESENTED)!==id){
+          writeLS(PRESENTED,id);
+          if(readLS(DISMISSED)!==id)writeLS(DISMISSED,'');
+          show=true;
+        }else show=readLS(DISMISSED)!==id;
+      }else show=true;
+    }
+    if(show){
+      delete root.dataset.theme;
+      root.classList.add(KEYS[key].cls);
+      current=season;
+    }else{
+      current=null;
+      restorePickerTheme();
     }
     if(document.body){mountRibbon();syncCopy();syncPickerPressed()}
   }
@@ -329,26 +356,29 @@
     });
     return rows;
   }
-  function fail(){
+  function applyActive(){
     if(override!==null){
-      if(override)apply(override,KEYS[override].def);
-      else apply('', '');
+      if(!override)apply('','');
+      else apply(override,messageFor(override,lastRows||[])||KEYS[override].def,{force:true});
       return;
     }
+    var row=pick(lastRows||[],melbourneToday());
+    if(!row){apply('','');writeCache(null);return}
+    apply(row.key,row.msg||KEYS[row.key].def,{start:row.start});
+    writeCache(row);
+  }
+  function fail(){
+    sheetReady=true;
+    if(override!==null){applyActive();notify();return}
     apply('','');
     writeCache(null);
+    notify();
   }
   function ok(table){
-    var rows=parseRows(table||{}), today=melbourneToday();
-    if(override!==null){
-      if(!override){apply('','');return}
-      apply(override, messageFor(override,rows)||KEYS[override].def);
-      return;
-    }
-    var row=pick(rows,today);
-    if(!row){apply('','');writeCache(null);return}
-    apply(row.key,row.msg||KEYS[row.key].def);
-    writeCache(row);
+    lastRows=parseRows(table||{});
+    applyActive();
+    sheetReady=true;
+    notify();
   }
   function load(){
     if(pending)return;
@@ -394,18 +424,46 @@
       apply(prev,KEYS[prev].def);
     }else{
       var cached=readCache();
-      if(cached)apply(cached.key,cached.msg);
+      if(cached)apply(cached.key,cached.msg,{start:cached.start});
     }
   }
   document.addEventListener('click',function(e){
-    var btn=e.target.closest&&e.target.closest('.tpop button,.themes button');
+    var t=e.target;
+    if(t&&t.nodeType!==1)t=t.parentElement;
+    var btn=t&&t.closest&&t.closest('.tpop button,.themes button');
     if(!btn||!btn.dataset||!('t' in btn.dataset))return;
-    if(current&&isSlam(current.key)&&override===null){
-      Object.keys(KEYS).forEach(function(k){if(KEYS[k].slam)root.classList.remove(KEYS[k].cls)});
-      paintSlamColours(current.key,false);
-      if(document.body){mountRibbon();syncCopy();syncPickerPressed()}
+    if(override!==null)return;
+    if(season&&season.id){
+      writeLS(DISMISSED,season.id);
+      apply(season.key,season.msg,{start:season.start});
     }
   });
+  function snapshot(){
+    var d=melbourneToday();
+    return {
+      today:d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),
+      presented:readLS(PRESENTED),
+      dismissed:readLS(DISMISSED),
+      season:season&&season.key||'',
+      period:season&&season.id||'',
+      showing:current&&current.key||'',
+      picker:pickerChoice(),
+      cls:root.className,
+      dataTheme:root.dataset.theme||'',
+      ribbon:(document.querySelector('.season-ribbon-msg')||{}).textContent||'',
+      santa:!!document.getElementById('dtc-santa'),
+      lights:!!document.querySelector('.season-lights'),
+      ready:sheetReady
+    };
+  }
+  function notify(){
+    try{document.dispatchEvent(new CustomEvent('dtc-theme-ready',{detail:snapshot()}))}catch(e){}
+  }
+  window.__dtcThemeTest={
+    setToday:function(iso){try{window.__dtcToday=iso||'';}catch(e){}try{if(iso)sessionStorage.setItem('__dtcToday',iso);else sessionStorage.removeItem('__dtcToday');}catch(e){}},
+    refresh:function(){applyActive();notify();},
+    state:snapshot
+  };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){if(current)mountRibbon();syncCopy();syncPickerPressed();load()});
   else{if(current)mountRibbon();syncCopy();syncPickerPressed();load()}
 })();

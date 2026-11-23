@@ -6,9 +6,10 @@
    (persists for this tab).
    ?theme=none or ?theme=auto clears the preview. Christmas supports ?santa=now or ?fx=now.
 
-   Festive themes win over the visitor colour picker (data-theme=ao|rg|wim|us);
-   the picker's choice is still saved and returns when the festive theme ends.
-   A slam date theme only sets the default: an explicit picker choice wins. */
+   A seasonal theme first overrides any saved colour-picker choice. Once that
+   period has been shown, a visitor's picker choice (data-theme=ao|rg|wim|us,
+   or club colours) sticks until the next seasonal period starts. Removing the
+   theme-* class must leave no festive leftovers (ribbon, lights, Santa). */
 
 /* ---------- Tokens ---------- */
 html.theme-christmas{
