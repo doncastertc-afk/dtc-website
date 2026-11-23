@@ -9,7 +9,8 @@
     {id:'champions',label:'Club Champions'},
     {id:'wof',label:'Wall of Fame'},
     {id:'office',label:'Office Bearers'},
-    {id:'courts',label:'Ladders & Court Allocations'}
+    {id:'courts',label:'Ladders & Court Allocations'},
+    {id:'supervisors',label:'Junior supervisors'}
   ];
   var PAGES=['index.html','courts.html','results.html','wall-of-fame.html','office-bearers.html','faq.html'];
   var ALLOC_TABS=[
@@ -256,6 +257,34 @@
         var cat=cell(c[0]);
         var snip=a.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'$1').replace(/\s+/g,' ').trim();
         add({group:'faq',title:q,snippet:snip,url:'faq.html#'+slugQuestion(q),path:'FAQ'+(cat?' · '+cat:'')});
+      });
+    });
+    loadSheet(ALLOC,'Junior Supervisors',1,function(r){
+      function parseDate(c){
+        if(!c)return null;
+        if(c.v!=null && typeof c.v==='string'){var m=c.v.match(/^Date\((\d+),(\d+),(\d+)/);if(m)return new Date(+m[1],+m[2],+m[3]);}
+        var s=cell(c),m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        if(m)return new Date(+m[3],+m[2]-1,+m[1]);
+        return null;
+      }
+      var WD=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var map={}, order=[];
+      rows(r).forEach(function(c){
+        if(cell(c[4]).toLowerCase()!=='yes')return;
+        var name=cell(c[2]), day=cell(c[0]), d=parseDate(c[1]);
+        if(!name||!d)return;
+        var key=name.toLowerCase();
+        if(!map[key]){map[key]={name:name,dates:[]};order.push(key)}
+        map[key].dates.push({d:d,day:day,notes:cell(c[3])});
+      });
+      order.forEach(function(key){
+        var p=map[key];
+        p.dates.sort(function(a,b){return a.d-b.d});
+        var bits=p.dates.map(function(x){
+          return (x.day?x.day+' ':'')+x.d.getDate()+' '+MON[x.d.getMonth()]+' '+x.d.getFullYear();
+        });
+        add({group:'supervisors',title:p.name,snippet:bits.join(' · '),url:'courts.html#supervisors',path:'Junior Supervisors',extra:p.dates.map(function(x){return x.notes}).join(' ')});
       });
     });
     ALLOC_TABS.forEach(function(tab){
