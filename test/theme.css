@@ -1671,15 +1671,18 @@ html.theme-christmas .hbp{
 html.theme-christmas .hbh .club,
 html.theme-christmas .hbp h2,
 html.theme-christmas .hbt th,
-html.theme-christmas .hbt .yr{color:#F6E7B9}
+html.theme-christmas .hbt .yr,
+html.theme-christmas .lm-cols .lm-yr{color:#F6E7B9}
 html.theme-christmas .hbp .est,
 html.theme-christmas .hbp .orn,
 html.theme-christmas .hbp .note,
-html.theme-christmas .hbt td{color:#E8C96A}
+html.theme-christmas .hbt td,
+html.theme-christmas .lm-cols li{color:#E8C96A}
 html.theme-christmas .hbt th,
 html.theme-christmas .hbt tbody tr:last-child td,
 html.theme-christmas .hbt tbody tr:last-child th{border-bottom-color:#F0C14B}
 html.theme-christmas .hbt td,
+html.theme-christmas .lm-cols li,
 html.theme-christmas .hbt .yr,
 html.theme-christmas .hbt th.yr{border-color:rgba(240,193,75,.4)}
 html.theme-christmas .hbh img{box-shadow:0 0 0 2px #F0C14B,0 2px 6px rgba(0,0,0,.6)}
@@ -1702,15 +1705,18 @@ html.theme-easter .hbp{
 html.theme-easter .hbh .club,
 html.theme-easter .hbp h2,
 html.theme-easter .hbt th,
-html.theme-easter .hbt .yr{color:#FFF0B3}
+html.theme-easter .hbt .yr,
+html.theme-easter .lm-cols .lm-yr{color:#FFF0B3}
 html.theme-easter .hbp .est,
 html.theme-easter .hbp .orn,
 html.theme-easter .hbp .note,
-html.theme-easter .hbt td{color:#E8D48A}
+html.theme-easter .hbt td,
+html.theme-easter .lm-cols li{color:#E8D48A}
 html.theme-easter .hbt th,
 html.theme-easter .hbt tbody tr:last-child td,
 html.theme-easter .hbt tbody tr:last-child th{border-bottom-color:#FFD84D}
 html.theme-easter .hbt td,
+html.theme-easter .lm-cols li,
 html.theme-easter .hbt .yr,
 html.theme-easter .hbt th.yr{border-color:rgba(255,216,77,.4)}
 html.theme-easter .hbh img{box-shadow:0 0 0 2px #FFD84D,0 2px 6px rgba(0,0,0,.6)}
@@ -1733,15 +1739,18 @@ html.theme-melbourne-cup .hbp{
 html.theme-melbourne-cup .hbh .club,
 html.theme-melbourne-cup .hbp h2,
 html.theme-melbourne-cup .hbt th,
-html.theme-melbourne-cup .hbt .yr{color:#F6E7B9}
+html.theme-melbourne-cup .hbt .yr,
+html.theme-melbourne-cup .lm-cols .lm-yr{color:#F6E7B9}
 html.theme-melbourne-cup .hbp .est,
 html.theme-melbourne-cup .hbp .orn,
 html.theme-melbourne-cup .hbp .note,
-html.theme-melbourne-cup .hbt td{color:#E0B84F}
+html.theme-melbourne-cup .hbt td,
+html.theme-melbourne-cup .lm-cols li{color:#E0B84F}
 html.theme-melbourne-cup .hbt th,
 html.theme-melbourne-cup .hbt tbody tr:last-child td,
 html.theme-melbourne-cup .hbt tbody tr:last-child th{border-bottom-color:#E0B84F}
 html.theme-melbourne-cup .hbt td,
+html.theme-melbourne-cup .lm-cols li,
 html.theme-melbourne-cup .hbt .yr,
 html.theme-melbourne-cup .hbt th.yr{border-color:rgba(224,184,79,.4)}
 html.theme-melbourne-cup .hbh img{box-shadow:0 0 0 2px #E0B84F,0 2px 6px rgba(0,0,0,.6)}
@@ -1764,15 +1773,18 @@ html.theme-new-year .hbp{
 html.theme-new-year .hbh .club,
 html.theme-new-year .hbp h2,
 html.theme-new-year .hbt th,
-html.theme-new-year .hbt .yr{color:#F4E7C3}
+html.theme-new-year .hbt .yr,
+html.theme-new-year .lm-cols .lm-yr{color:#F4E7C3}
 html.theme-new-year .hbp .est,
 html.theme-new-year .hbp .orn,
 html.theme-new-year .hbp .note,
-html.theme-new-year .hbt td{color:#D4AF37}
+html.theme-new-year .hbt td,
+html.theme-new-year .lm-cols li{color:#D4AF37}
 html.theme-new-year .hbt th,
 html.theme-new-year .hbt tbody tr:last-child td,
 html.theme-new-year .hbt tbody tr:last-child th{border-bottom-color:#D4AF37}
 html.theme-new-year .hbt td,
+html.theme-new-year .lm-cols li,
 html.theme-new-year .hbt .yr,
 html.theme-new-year .hbt th.yr{border-color:rgba(212,175,55,.45)}
 html.theme-new-year .hbh img{box-shadow:0 0 0 2px #D4AF37,0 0 0 4px #C5CDD8,0 2px 6px rgba(0,0,0,.6)}
@@ -1795,15 +1807,18 @@ html.theme-chinese-new-year .hbp{
 html.theme-chinese-new-year .hbh .club,
 html.theme-chinese-new-year .hbp h2,
 html.theme-chinese-new-year .hbt th,
-html.theme-chinese-new-year .hbt .yr{color:#FFF4D0}
+html.theme-chinese-new-year .hbt .yr,
+html.theme-chinese-new-year .lm-cols .lm-yr{color:#FFF4D0}
 html.theme-chinese-new-year .hbp .est,
 html.theme-chinese-new-year .hbp .orn,
 html.theme-chinese-new-year .hbp .note,
-html.theme-chinese-new-year .hbt td{color:#F0C14B}
+html.theme-chinese-new-year .hbt td,
+html.theme-chinese-new-year .lm-cols li{color:#F0C14B}
 html.theme-chinese-new-year .hbt th,
 html.theme-chinese-new-year .hbt tbody tr:last-child td,
 html.theme-chinese-new-year .hbt tbody tr:last-child th{border-bottom-color:#F0C14B}
 html.theme-chinese-new-year .hbt td,
+html.theme-chinese-new-year .lm-cols li,
 html.theme-chinese-new-year .hbt .yr,
 html.theme-chinese-new-year .hbt th.yr{border-color:rgba(240,193,75,.4)}
 html.theme-chinese-new-year .hbh img{box-shadow:0 0 0 2px #F0C14B,0 2px 6px rgba(0,0,0,.6)}
@@ -1827,15 +1842,18 @@ html.theme-diwali .hbp{
 html.theme-diwali .hbh .club,
 html.theme-diwali .hbp h2,
 html.theme-diwali .hbt th,
-html.theme-diwali .hbt .yr{color:#FFF4D0}
+html.theme-diwali .hbt .yr,
+html.theme-diwali .lm-cols .lm-yr{color:#FFF4D0}
 html.theme-diwali .hbp .est,
 html.theme-diwali .hbp .orn,
 html.theme-diwali .hbp .note,
-html.theme-diwali .hbt td{color:#FFC44D}
+html.theme-diwali .hbt td,
+html.theme-diwali .lm-cols li{color:#FFC44D}
 html.theme-diwali .hbt th,
 html.theme-diwali .hbt tbody tr:last-child td,
 html.theme-diwali .hbt tbody tr:last-child th{border-bottom-color:#FFC44D}
 html.theme-diwali .hbt td,
+html.theme-diwali .lm-cols li,
 html.theme-diwali .hbt .yr,
 html.theme-diwali .hbt th.yr{border-color:rgba(255,196,77,.4)}
 html.theme-diwali .hbh img{box-shadow:0 0 0 2px #FFC44D,0 2px 6px rgba(0,0,0,.6)}
@@ -1859,15 +1877,18 @@ html.theme-halloween .hbp{
 html.theme-halloween .hbh .club,
 html.theme-halloween .hbp h2,
 html.theme-halloween .hbt th,
-html.theme-halloween .hbt .yr{color:#FFF4E4}
+html.theme-halloween .hbt .yr,
+html.theme-halloween .lm-cols .lm-yr{color:#FFF4E4}
 html.theme-halloween .hbp .est,
 html.theme-halloween .hbp .orn,
 html.theme-halloween .hbp .note,
-html.theme-halloween .hbt td{color:#F4A347}
+html.theme-halloween .hbt td,
+html.theme-halloween .lm-cols li{color:#F4A347}
 html.theme-halloween .hbt th,
 html.theme-halloween .hbt tbody tr:last-child td,
 html.theme-halloween .hbt tbody tr:last-child th{border-bottom-color:#F4A347}
 html.theme-halloween .hbt td,
+html.theme-halloween .lm-cols li,
 html.theme-halloween .hbt .yr,
 html.theme-halloween .hbt th.yr{border-color:rgba(244,163,71,.4)}
 html.theme-halloween .hbh img{box-shadow:0 0 0 2px #F4A347,0 2px 6px rgba(0,0,0,.6)}
@@ -2208,11 +2229,13 @@ html.theme-chinese-new-year .comps-sub{color:#FFF4D0}
 html.theme-chinese-new-year .hbp .est,
 html.theme-chinese-new-year .hbp .orn,
 html.theme-chinese-new-year .hbp .note,
-html.theme-chinese-new-year .hbt td{color:#FFF8E0}
+html.theme-chinese-new-year .hbt td,
+html.theme-chinese-new-year .lm-cols li{color:#FFF8E0}
 html.theme-chinese-new-year .hbh .club,
 html.theme-chinese-new-year .hbp h2,
 html.theme-chinese-new-year .hbt th,
-html.theme-chinese-new-year .hbt .yr{color:#FFE7A8}
+html.theme-chinese-new-year .hbt .yr,
+html.theme-chinese-new-year .lm-cols .lm-yr{color:#FFE7A8}
 html.theme-chinese-new-year .ca tr.now:not(.np) td,
 html.theme-chinese-new-year .ca tr.now:not(.np) td.dt{
   background:#F0C14B !important;
