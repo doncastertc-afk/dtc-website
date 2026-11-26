@@ -68,13 +68,14 @@
     items.push(it);
   }
 
-  function loadSheet(id,tab,headers,fn){
+  function loadSheet(id,tab,headers,fn,range){
     pending++;
     var cb='dtcSearchCb'+(++cid),done=false;
     function finish(ok,r){if(done)return;done=true;pending--;try{if(ok)fn(r)}catch(e){}if(!pending)ready=true;if(open)render(input&&input.value)}
     window[cb]=function(r){try{delete window[cb]}catch(e){}finish(true,r)};
     var s=document.createElement('script');
     s.src='https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:json;responseHandler:'+cb+'&sheet='+encodeURIComponent(tab)+'&headers='+headers+'&t='+T;
+    if(range)s.src+='&range='+encodeURIComponent(range);
     s.onerror=function(){try{delete window[cb]}catch(e){}finish(false)};
     document.head.appendChild(s);
   }
@@ -235,6 +236,15 @@
       });
       collapsePeople(list,'office','Club Office Bearers',function(){return 'office-bearers.html'});
     });
+    loadSheet(CONTENT,'Life Members',1,function(r){
+      var list=[];
+      rows(r).forEach(function(c){
+        var n=cell(c[0]); if(!n)return;
+        var y=cell(c[1]);
+        list.push({name:n,bit:y?'Life Member, '+y:'Life Member',url:'office-bearers.html#life-members'});
+      });
+      collapsePeople(list,'office','Life Members',function(){return 'office-bearers.html#life-members'});
+    },'A2:D');
     loadSheet(CONTENT,'Contacts',1,function(r){
       rows(r).forEach(function(c){
         if(!yes(cell(c[1])))return;
@@ -453,7 +463,7 @@
         '<button class="s-x" type="button" aria-label="Close search">'+CROSS+'</button>'+
       '</div>'+
       '<div class="s-body"></div>'+
-      '<div class="s-foot"><span data-count></span><span class="s-hint">Pages, FAQs, honour boards, Wall of Fame, office bearers, ladders &amp; allocations</span></div>'+
+      '<div class="s-foot"><span data-count></span><span class="s-hint">Pages, FAQs, honour boards, Wall of Fame, office bearers, life members, ladders &amp; allocations</span></div>'+
     '</div>';
     document.body.appendChild(ov);
     input=ov.querySelector('.s-input');

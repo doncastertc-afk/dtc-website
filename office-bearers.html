@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Office Bearers · Doncaster Tennis Club · Melbourne</title>
-<meta name="description" content="Club office bearers of Doncaster Tennis Club — presidents, secretaries, treasurers and club captains by year.">
+<title>Office Bearers &amp; Life Members · Doncaster Tennis Club · Melbourne</title>
+<meta name="description" content="Club office bearers and life members of Doncaster Tennis Club — presidents, secretaries, treasurers and club captains by year, and the club's lifetime members.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -296,11 +296,31 @@ table.hbt{width:100%;border-collapse:collapse;table-layout:fixed;font-family:inh
 .hbt-ob,.hbt-ob tbody,.hbt-ob tr,.hbt-ob td,.hbt-ob th{display:block;width:100%;max-width:100%;border-left:0;border-right:0}
 .hbt-ob{table-layout:auto}
 .hbt-ob tr{padding:4px 0 8px;border-bottom:1px solid rgba(217,178,87,.38)}
-.hbt-ob tbody tr:last-child,.hbt-ob tbody tr:last-child td,.hbt-ob tbody tr:last-child th{border-bottom:2px solid #c9a14a}
+.hbt-ob tbody tr:last-child{border-bottom:2px solid #c9a14a}
+.hbt-ob tbody tr:last-child td,.hbt-ob tbody tr:last-child th{border-bottom:0}
 .hbt-ob th.yr{text-align:center;padding:12px 6px 6px;font-size:1.05rem;letter-spacing:.14em;border:0}
 .hbt-ob td{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:5px 8px;text-align:right;border:0}
 .hbt-ob td::before{content:attr(data-l);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#d9b257;font-weight:700;text-align:left;flex:0 0 42%}
 }
+
+/* life members honour board */
+#life-members{margin-top:36px;scroll-margin-top:84px}
+#office-bearers{scroll-margin-top:84px}
+#life-members-board .hbw{margin-top:10px}
+.hbp-lm{
+background:
+ radial-gradient(ellipse at 30% 0%,rgba(255,200,140,.10),transparent 60%),
+ repeating-linear-gradient(92deg,rgba(0,0,0,.0) 0 7px,rgba(0,0,0,.13) 7px 9px,rgba(255,255,255,.025) 9px 12px,rgba(0,0,0,.06) 12px 19px),
+ repeating-linear-gradient(88deg,rgba(90,20,30,.28) 0 2px,transparent 2px 31px),
+ linear-gradient(90deg,#3a1018,#5c1a28 22%,#4a141c 45%,#6a2230 68%,#321016)}
+.lm-shield{display:inline-block;vertical-align:middle;width:16px;height:19px;margin:0 2px;fill:rgba(0,0,0,.28);stroke:currentColor;stroke-width:1.4}
+.lm-cols{columns:2;column-gap:48px;column-fill:balance;list-style:none;margin:8px auto 0;padding:0;max-width:680px;text-align:left}
+.lm-cols li{break-inside:avoid;page-break-inside:avoid;-webkit-column-break-inside:avoid;padding:7px 8px;font-size:.98rem;color:#f1d58a;border-bottom:1px solid rgba(217,178,87,.38);letter-spacing:.03em}
+.lm-cols .lm-yr{margin-left:.4em;font-size:.82em;font-weight:700;letter-spacing:.08em;color:#ffe9a6;white-space:nowrap}
+.ob-jump{margin:0 0 16px;text-align:center;font-size:.92rem}
+.ob-jump a{font-weight:700;color:var(--g)}
+@media(max-width:900px){.lm-cols li{font-size:.72rem;padding:7px 3px}}
+@media(max-width:600px){.lm-cols{columns:1;max-width:none}.lm-cols li{font-size:.85rem;padding:7px 8px}}
 </style>
 <link rel="stylesheet" href="search.css">
 <link rel="stylesheet" href="theme.css">
@@ -321,10 +341,17 @@ table.hbt{width:100%;border-collapse:collapse;table-layout:fixed;font-family:inh
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
  </button>
 </div></header>
-<main id="main"><section class="phead"><div class="wrap"><span class="kicker">Office Bearers</span><h1>Club Office Bearers</h1><p>Presidents, secretaries, treasurers and club captains since 1969.</p></div></section>
-<section class="rpage" id="office-bearers"><div class="wrap"><div class="tp">
-  <p class="empty" hidden>The honour board is unavailable right now.</p>
+<main id="main"><section class="phead"><div class="wrap"><span class="kicker">Office Bearers</span><h1>Club Office Bearers</h1><p>Presidents, secretaries, treasurers and club captains since 1969, and the club’s life members.</p></div></section>
+<section class="rpage"><div class="wrap"><div class="tp">
+  <p class="ob-jump"><a href="#office-bearers">Office Bearers</a> · <a href="#life-members">Life Members</a></p>
+  <div id="office-bearers">
+  <p class="empty" hidden>The Office Bearers board is unavailable right now.</p>
   <div id="office-bearers-board"></div>
+  </div>
+  <div id="life-members">
+  <p class="empty" hidden>The Life Members board is unavailable right now.</p>
+  <div id="life-members-board"></div>
+  </div>
   <p class="ob-also">See also the <a href="results.html#honour-board">Club Champs honour boards</a> and the <a href="wall-of-fame.html">Wall of Fame</a>.</p>
 </div></div></section></main>
 <footer><div class="wrap">
@@ -365,9 +392,11 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
  function esc(t){return String(t).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;'}[ch]})}
  function today(){var n=new Date();n.setHours(0,0,0,0);return n}
  function rows(r){var out=[],rs=(r&&r.table&&r.table.rows)||[];for(var i=0;i<rs.length;i++){var c=rs[i].c||[],any=false;for(var j=0;j<c.length;j++)if(cell(c[j]))any=true;if(any)out.push(c)}return out}
- function load(tab,cb,fn,fail){var done=false;function once(ok,rs){if(done)return;done=true;try{if(ok)fn(rs);else if(fail)fail()}catch(e){}}
+ function load(tab,cb,fn,fail,opts){var done=false;function once(ok,rs){if(done)return;done=true;try{if(ok)fn(rs);else if(fail)fail()}catch(e){}}
   window[cb]=function(r){try{if(r&&r.status==='error')return once(false);var rs=rows(r);if(rs.length)once(true,rs);else once(false)}catch(e){once(false)}};
-  var s=document.createElement('script');s.src='https://docs.google.com/spreadsheets/d/'+ID+'/gviz/tq?tqx=out:json;responseHandler:'+cb+'&sheet='+encodeURIComponent(tab)+'&headers=1&t='+T;
+  var headers=(opts&&opts.headers!=null)?opts.headers:1;
+  var s=document.createElement('script');s.src='https://docs.google.com/spreadsheets/d/'+ID+'/gviz/tq?tqx=out:json;responseHandler:'+cb+'&sheet='+encodeURIComponent(tab)+'&headers='+headers+'&t='+T;
+  if(opts&&opts.range)s.src+='&range='+encodeURIComponent(opts.range);
   s.onerror=function(){once(false)};document.head.appendChild(s);if(fail)setTimeout(function(){once(false)},12000)}
  // Banner: Show | Message | Link text | Link URL | Start | End | NEW tag
  var b=document.getElementById('banner');
@@ -430,6 +459,19 @@ t.onclick=function(e){e.stopPropagation();p.hidden=!p.hidden;t.setAttribute('ari
  var ob=document.getElementById('office-bearers-board');
  if(ob)load('Office Bearers','dtcOfficeBearers',function(rs){rs=rs.filter(function(c){return cell(c[0])});if(!rs.length){failBoard(ob);return}
   showBoard(ob,honourPlaque(rs))},function(){failBoard(ob)});
+ // Life Members: Name | Year (optional) | Order | Notes  (sheet-only, no fallback; headings in row 2)
+ function lifePlaque(rs){
+  var people=rs.map(function(c){return {name:cell(c[0]),year:cell(c[1]),order:parseFloat(cell(c[2]))}}).filter(function(p){return p.name});
+  people.sort(function(a,b){var ao=isFinite(a.order)?a.order:1e9,bo=isFinite(b.order)?b.order:1e9;return ao===bo?0:ao-bo});
+  var items=people.map(function(p){var y=p.year?' <span class="lm-yr">'+esc(p.year)+'</span>':'';return '<li>'+esc(p.name)+y+'</li>'}).join('');
+  var h='<p class="jhb-label">Life Members</p><div class="hbw"><div class="hbp hbp-lm">';
+  h+='<div class="hbh"><img src="logo-white.png" alt="Doncaster Tennis Club logo"><p class="club eng">Doncaster Tennis Club</p></div>';
+  h+='<h2 class="eng">Life Members</h2><div class="orn" aria-hidden="true"><svg class="lm-shield" viewBox="0 0 24 28" focusable="false"><path d="M12 1.6l9 3.2v8.2c0 6.2-3.9 10.8-9 13-5.1-2.2-9-6.8-9-13V4.8l9-3.2z"/></svg></div>';
+  return h+'<ul class="lm-cols eng">'+items+'</ul></div></div>'
+ }
+ var lm=document.getElementById('life-members-board');
+ if(lm)load('Life Members','dtcLifeMembers',function(rs){if(!rs.length){failBoard(lm);return}
+  showBoard(lm,lifePlaque(rs))},function(){failBoard(lm)},{range:'A2:D',headers:1});
 })();
 </script>
 <script src="search.js" defer></script>
